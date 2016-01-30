@@ -32,7 +32,7 @@ GameObject:
   - 114: {fileID: 11433104}
   m_Layer: 0
   m_Name: LevelManager
-  m_TagString: Untagged
+  m_TagString: LevelManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -295,6 +295,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6692df79820dac1408ab7a85999d424f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sound: {fileID: 0}
+  level: {fileID: 0}
+  minDistance: 0
 --- !u!114 &11437812
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -341,6 +344,7 @@ MonoBehaviour:
   timeSinceBeat: 0
   timePerBeat: 1
   levelScore: 0
+  levelScoreBuffer: 0
   orderedNumbers: 
   shakeMagnitude: 0
   shakeDuration: 0

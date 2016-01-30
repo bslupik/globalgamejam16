@@ -113,7 +113,7 @@ public class SaveManager : Base
         TextAsset inputFile = (TextAsset)Resources.Load(inputFilePath + fileToLoad);
         if (inputFile == null)
         {
-            //return;
+            return;
         }
 
         UnloadLevel();
