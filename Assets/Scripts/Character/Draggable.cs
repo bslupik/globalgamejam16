@@ -26,9 +26,20 @@ public class Draggable : Base {
 
         while (Input.GetMouseButton(0)) //while being dragged
         {
-            this.transform.position = mousePosInWorld() - relativeMousePos;
+            setPosition(mousePosInWorld() - relativeMousePos);
             yield return null;
         }
+        OnDragEnd();
+    }
+
+    protected virtual void setPosition(Vector2 position)
+    {
+        this.transform.position = position;
+    }
+
+    protected virtual void OnDragEnd()
+    {
+
     }
 
     public static Vector3 mousePosInWorld()
