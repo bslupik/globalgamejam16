@@ -44,7 +44,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sound: {fileID: 0}
   level: {fileID: 0}
-  savableID: 1
+  savableID: 0
   timeToSpawn: 0
 --- !u!114 &11482990
 MonoBehaviour:
