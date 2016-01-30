@@ -13,7 +13,7 @@ public class Tags{
 
     public class Layers
     {
-
+        public const string swipable = "Swipable";
     }
 
     public class AnimatorParams
