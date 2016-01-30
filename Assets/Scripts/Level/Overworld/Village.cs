@@ -32,9 +32,11 @@ public class Village : MonoBehaviour {
         Time.timeScale = 0;
         saves.Load(levelNames[Random.Range(0, levelNames.Length - 1)]);
         yield return scripting.FadeIn();
-        Time.timeScale = 1;
+        Debug.Log("Timescale");
+        Time.timeScale = 1f;
         yield return new WaitForSeconds(30f);
         saves.UnloadLevel();
         active = true;
+        Debug.Log("Back to overworld");
     }
 }
