@@ -13,17 +13,17 @@ public class Level : Base
     // public Text scoreText;
 
     [SerializeField]
-    protected int[] foodNumbers;
+    protected int[] orderedNumbers;
 
-    Queue<int> sortedFoodNumbers;
+    Queue<int> sortedOrderedNumbers;
     List<FoodDraggable> completedFood = new List<FoodDraggable>();
 
     List<Collider2D> overlappingColliders = new List<Collider2D>();
 
     void Awake()
     {
-        Array.Sort(foodNumbers);
-        sortedFoodNumbers = new Queue<int>(foodNumbers);
+        Array.Sort(orderedNumbers);
+        sortedOrderedNumbers = new Queue<int>(orderedNumbers);
     }
 
 	public override void Start()
@@ -85,9 +85,9 @@ public class Level : Base
         if (overlappingColliders.Contains(food.Collider))
         {
             Debug.Log("Food Contains");
-            if (food.order == sortedFoodNumbers.Peek())
+            if (food.order == sortedOrderedNumbers.Peek())
             {
-                sortedFoodNumbers.Dequeue();
+                sortedOrderedNumbers.Dequeue();
                 PlayerActed();
                 completedFood.Add(food);
                 return true;
@@ -105,5 +105,19 @@ public class Level : Base
             }
         }
         return false;
+    }
+
+    public bool PlayerActed(int order)
+    {
+        if (order == sortedOrderedNumbers.Peek())
+        {
+            sortedOrderedNumbers.Dequeue();
+            PlayerActed();
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }
