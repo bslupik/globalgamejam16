@@ -10,6 +10,7 @@ public class Level : Base
     public float timeSinceBeat = 0.0f;
     public float timePerBeat = 1.0f;
     public float levelScore = 0.0f;
+    public float levelScoreBuffer = 0;
     // public Text scoreText;
 
     [SerializeField]
@@ -72,6 +73,17 @@ public class Level : Base
         {
             ScreenShake();
         }
+    }
+
+    public void FlushScoreBuffer()
+    {
+        PlayerActed(levelScoreBuffer);
+        levelScoreBuffer = 0;
+    }
+
+    public void PlayerActedBuffer(float score = 1.0f)
+    {
+        levelScoreBuffer += score;
     }
 
     public void ScreenShake()
