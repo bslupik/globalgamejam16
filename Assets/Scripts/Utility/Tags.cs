@@ -8,6 +8,7 @@ public class Tags{
     public const string player = "Player";
     public const string levelManager = "LevelManager";
     public const string soundManager = "SoundManager";
+    public const string fileNameInput = "FileNameInput";
     public class Scenes
     {
     }

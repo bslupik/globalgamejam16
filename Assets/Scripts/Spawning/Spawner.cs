@@ -1,20 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Spawner : Base
+public class Spawner : MonoBehaviour
 {
     public SpawnCondition condition;
     public GameObject spawnObject;
 
-	public override void Start()
+	public virtual void Start()
 	{
-		base.Start();
         condition = GetComponent<SpawnCondition>();
     }
-	
-	public override void Update()
+
+    public virtual void Update()
 	{
-		base.Update();
         if (condition.ShouldSpawn())
         {
             condition.OnSpawn(Spawn());
