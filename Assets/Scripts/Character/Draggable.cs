@@ -2,23 +2,44 @@
 using System.Collections;
 
 [RequireComponent(typeof(Collider2D))]
-public class Draggable : MonoBehaviour {
+public class Draggable : Base {
 
-    void OnMouseDown()
+    public override void Start()
+    {
+        base.Start();
+    }
+
+    public override void Update()
+    {
+        base.Update();
+    }
+
+    protected virtual void OnMouseDown()
     {
 
         StartCoroutine(DoDrag());
     }
 
-    IEnumerator DoDrag()
+    protected virtual IEnumerator DoDrag()
     {
         Vector3 relativeMousePos = mousePosInWorld() - this.transform.position;
 
         while (Input.GetMouseButton(0)) //while being dragged
         {
-            this.transform.position = mousePosInWorld() - relativeMousePos;
+            setPosition(mousePosInWorld() - relativeMousePos);
             yield return null;
         }
+        OnDragEnd();
+    }
+
+    protected virtual void setPosition(Vector2 position)
+    {
+        this.transform.position = position;
+    }
+
+    protected virtual void OnDragEnd()
+    {
+
     }
 
     public static Vector3 mousePosInWorld()
