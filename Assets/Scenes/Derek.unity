@@ -183,6 +183,8 @@ GameObject:
   - 124: {fileID: 1453994989}
   - 81: {fileID: 1453994988}
   - 114: {fileID: 1453994993}
+  - 114: {fileID: 1453994994}
+  - 114: {fileID: 1453994995}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -266,5 +268,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6692df79820dac1408ab7a85999d424f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1453994994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1453994987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f897ad79450f4d146a8b203f75fcd499, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BlitMaterial: {fileID: 2100000, guid: 0e998e57c4ab3e341bf998692b357679, type: 2}
+  fadeProgress: 0
+--- !u!114 &1453994995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1453994987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85c1e1f27c98e8948b9e3cf977927734, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
