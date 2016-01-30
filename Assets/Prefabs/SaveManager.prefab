@@ -321,7 +321,7 @@ MonoBehaviour:
   level: {fileID: 0}
   outputFilePath: Assets\Resources\LevelFiles\
   inputFilePath: LevelFiles\
-  fileName: 
+  fileName: TorchMiniGame
   savableObjects: []
   spawnableObjects:
   - {fileID: 179040, guid: 343d4de1f560afb469a1dcdf8eaf8fac, type: 2}

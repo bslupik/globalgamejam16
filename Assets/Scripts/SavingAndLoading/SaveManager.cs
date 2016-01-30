@@ -50,6 +50,11 @@ public class SaveManager : Base
 		base.Start();
         objectsToSpawn = new List<SpawnData>();
         loadedObjects = new List<GameObject>();
+
+        if (fileName != "")
+        {
+            Load();
+        }
     }
 	
 	public override void Update()
