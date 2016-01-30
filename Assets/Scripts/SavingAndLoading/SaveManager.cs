@@ -28,7 +28,7 @@ public class SpawnData : IComparable<SpawnData>
     }
 }
 
-public class SaveManager : Base
+public class SaveManager : MonoBehaviour
 {
     public string outputFilePath;
     public string inputFilePath;
@@ -44,9 +44,8 @@ public class SaveManager : Base
         savableObjects = new List<Savable>();
     }
 
-	public override void Start()
+	public void Start()
 	{
-		base.Start();
         objectsToSpawn = new List<SpawnData>();
         loadedObjects = new List<GameObject>();
 
@@ -56,11 +55,10 @@ public class SaveManager : Base
         }
     }
 	
-	public override void Update()
+	public void Update()
 	{
-		base.Update();
         gameTime += Time.deltaTime;
-        print(objectsToSpawn.Count);
+        //print(objectsToSpawn.Count);
         while (objectsToSpawn.Count > 0 && gameTime >= objectsToSpawn[objectsToSpawn.Count - 1].spawnTime)
         {
             SpawnObject(objectsToSpawn[objectsToSpawn.Count - 1]);
@@ -113,7 +111,7 @@ public class SaveManager : Base
         TextAsset inputFile = (TextAsset)Resources.Load(inputFilePath + fileToLoad);
         if (inputFile == null)
         {
-            //return;
+            return;
         }
 
         UnloadLevel();
@@ -148,9 +146,9 @@ public class SaveManager : Base
 
     public void UpdateFileName()
     {
-        if (GameObject.FindWithTag("FileNameInput") != null)
+        if (GameObject.FindWithTag(Tags.fileNameInput) != null)
         {
-            fileName = GameObject.FindWithTag("FileNameInput").GetComponent<InputField>().text;
+            fileName = GameObject.FindWithTag(Tags.fileNameInput).GetComponent<InputField>().text;
         }
     }
 }
