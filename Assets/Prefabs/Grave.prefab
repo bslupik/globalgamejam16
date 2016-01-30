@@ -9,6 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 436056}
   - 212: {fileID: 21237762}
+  - 114: {fileID: 11462230}
   m_Layer: 0
   m_Name: Grave
   m_TagString: Untagged
@@ -73,6 +74,21 @@ MonoBehaviour:
   level: {fileID: 0}
   condition: {fileID: 0}
   spawnObject: {fileID: 193638, guid: ec68487a90cb1c840bac3489bc1ae981, type: 2}
+--- !u!114 &11462230
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 135732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a60a74faa62f6914cbcd1688dacddeb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: {fileID: 0}
+  level: {fileID: 0}
+  savableID: 1
+  timeToSpawn: 0
 --- !u!114 &11488250
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -128,7 +144,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: savableID
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 135732}
