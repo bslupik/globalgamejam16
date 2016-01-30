@@ -9,8 +9,7 @@ public class SpawnData : IComparable<SpawnData>
 {
     public float spawnTime;
     public int savableID;
-    public float spawnX;
-    public float spawnY;
+    public Vector3 spawnPosition;
 
     public int CompareTo(SpawnData other)
     {
@@ -61,7 +60,7 @@ public class SaveManager : Base
 	{
 		base.Update();
         gameTime += Time.deltaTime;
-
+        print(objectsToSpawn.Count);
         while (objectsToSpawn.Count > 0 && gameTime >= objectsToSpawn[objectsToSpawn.Count - 1].spawnTime)
         {
             SpawnObject(objectsToSpawn[objectsToSpawn.Count - 1]);
@@ -82,21 +81,18 @@ public class SaveManager : Base
             if (savableObjects[i] != null)
             {
                 savableObjects[i].Save(output);
+                if (i != savableObjects.Count - 1)
+                {
+                    output.Write('\n');
+                }
             }
         }
 
         output.Close();
     }
 
-    public void Load()
+    public void UnloadLevel()
     {
-        print(inputFilePath + fileName);
-        TextAsset inputFile = (TextAsset)Resources.Load(inputFilePath + fileName);
-        if (inputFile == null)
-        {
-            //return;
-        }
-
         for (int i = 0; i < loadedObjects.Count; ++i)
         {
             if (loadedObjects[i] != null)
@@ -105,6 +101,22 @@ public class SaveManager : Base
             }
         }
         loadedObjects = new List<GameObject>();
+    }
+
+    public void Load()
+    {
+        Load(fileName);
+    }
+
+    public void Load(string fileToLoad)
+    {
+        TextAsset inputFile = (TextAsset)Resources.Load(inputFilePath + fileToLoad);
+        if (inputFile == null)
+        {
+            //return;
+        }
+
+        UnloadLevel();
 
         string[] lines = inputFile.text.Split('\n');
         for (int i = 0; i < lines.Length; ++i)
@@ -125,14 +137,13 @@ public class SaveManager : Base
         SpawnData newObject = new SpawnData();
         newObject.spawnTime = float.Parse(data[0]);
         newObject.savableID = int.Parse(data[1]);
-        newObject.spawnX = float.Parse(data[2]);
-        newObject.spawnY = float.Parse(data[3]);
+        newObject.spawnPosition = new Vector3(float.Parse(data[2]), float.Parse(data[3]), float.Parse(data[4]));
         objectsToSpawn.Add(newObject);
     }
 
     public void SpawnObject(SpawnData data)
     {
-        loadedObjects.Add((GameObject) GameObject.Instantiate(spawnableObjects[data.savableID], new Vector3(data.spawnX, data.spawnY), Quaternion.identity));
+        loadedObjects.Add((GameObject) GameObject.Instantiate(spawnableObjects[data.savableID], data.spawnPosition, Quaternion.identity));
     }
 
     public void UpdateFileName()

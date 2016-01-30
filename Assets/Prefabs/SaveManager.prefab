@@ -321,7 +321,7 @@ MonoBehaviour:
   level: {fileID: 0}
   outputFilePath: Assets\Resources\LevelFiles\
   inputFilePath: LevelFiles\
-  fileName: TorchMiniGame
+  fileName: 
   savableObjects: []
   spawnableObjects:
   - {fileID: 179040, guid: 343d4de1f560afb469a1dcdf8eaf8fac, type: 2}
@@ -329,6 +329,7 @@ MonoBehaviour:
   - {fileID: 184810, guid: 1ca81d2235b53794593d7f84801d166d, type: 2}
   - {fileID: 124916, guid: 6e298b188f6a19046947a86d709199f7, type: 2}
   - {fileID: 162598, guid: f526e9afb9c39da4c8f43253381f2b0d, type: 2}
+  - {fileID: 138144, guid: bb05d4a5a714cf840a149c7261558e02, type: 2}
   gameTime: 0
   loadedObjects: []
 --- !u!114 &11422490
