@@ -6,6 +6,9 @@ public class Swipe : MonoBehaviour {
 
     int swipableLayerMask;
 
+    [SerializeField]
+    protected float minDistance;
+
 	// Use this for initialization
 	void Start () {
         swipableLayerMask = LayerMask.GetMask(Tags.Layers.swipable);
@@ -22,9 +25,19 @@ public class Swipe : MonoBehaviour {
 
     IEnumerator OnClick()
     {
-        Vector2 previousPoint = Draggable.mousePosInWorld();
+        Vector2 startPoint = Draggable.mousePosInWorld();
+        Vector2 previousPoint = startPoint;
 
         HashSet<Transform> alreadyHitObjects = new HashSet<Transform>();
+
+        while (Input.GetMouseButton(0))
+        {
+            Vector2 newPoint = Draggable.mousePosInWorld();
+            if (Vector2.Distance(startPoint, newPoint) < minDistance)
+                yield return null;
+            else
+                break;
+        }
 
         while (Input.GetMouseButton(0))
         {
