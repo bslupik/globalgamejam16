@@ -2,15 +2,25 @@
 using System.Collections;
 
 [RequireComponent(typeof(Collider2D))]
-public class Draggable : MonoBehaviour {
+public class Draggable : Base {
 
-    void OnMouseDown()
+    public override void Start()
+    {
+        base.Start();
+    }
+
+    public override void Update()
+    {
+        base.Update();
+    }
+
+    protected virtual void OnMouseDown()
     {
 
         StartCoroutine(DoDrag());
     }
 
-    IEnumerator DoDrag()
+    protected IEnumerator DoDrag()
     {
         Vector3 relativeMousePos = mousePosInWorld() - this.transform.position;
 
