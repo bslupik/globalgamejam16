@@ -46,6 +46,11 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Base.cs" />
+     <Compile Include="Assets\Scripts\Level\ClickLevel.cs" />
+     <Compile Include="Assets\Scripts\Level\Level.cs" />
+     <Compile Include="Assets\Scripts\Level\SoundManager.cs" />
+     <Compile Include="Assets\Scripts\Spawning\SpawnCondition.cs" />
+     <Compile Include="Assets\Scripts\Torch.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
