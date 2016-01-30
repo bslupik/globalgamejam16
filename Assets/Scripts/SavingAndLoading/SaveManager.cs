@@ -85,7 +85,7 @@ public class SaveManager : Base
 
     public void Load()
     {
-        print(inputFilePath + fileName + ".txt");
+        print(inputFilePath + fileName);
         TextAsset inputFile = (TextAsset)Resources.Load(inputFilePath + fileName);
         if (inputFile == null)
         {
@@ -132,6 +132,9 @@ public class SaveManager : Base
 
     public void UpdateFileName()
     {
-        fileName = GameObject.FindWithTag("FileNameInput").GetComponent<InputField>().text;
+        if (GameObject.FindWithTag("FileNameInput") != null)
+        {
+            fileName = GameObject.FindWithTag("FileNameInput").GetComponent<InputField>().text;
+        }
     }
 }
