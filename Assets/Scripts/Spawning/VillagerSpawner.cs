@@ -19,7 +19,7 @@ public class VillagerSpawner : Spawner
     public override GameObject Spawn()
     {
         GameObject spawnedObject = base.Spawn();
-        spawnedObject.GetComponent<Drift>().speed = speedBase + Random.Range(-speedVariation, speedVariation);
+        spawnedObject.GetComponent<Villager>().speed = speedBase + Random.Range(-speedVariation, speedVariation);
         return spawnedObject;
     }
 }

@@ -1,0 +1,31 @@
+﻿using UnityEngine;
+using System.Collections;
+
+public class Choppable : AbstractSwipable
+{
+    public Sprite chopped;
+    public int type;
+    public bool choppable = false;
+    
+	public override void Start()
+	{
+		base.Start();
+	}
+	
+	public override void Update()
+	{
+		base.Update();
+	}
+
+    public override void Notify(SwipableMessage m)
+    {
+        base.Notify(m);
+        if (!choppable)
+        {
+            return;
+        }
+
+        GetComponent<SpriteRenderer>().sprite = chopped;
+        level.Chopped(type);
+    }
+}

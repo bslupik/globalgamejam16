@@ -48,8 +48,21 @@ public class Level : Base
         levelScore += score * multiplier;
     }
 
+    // ==================== Graveyard ==================== //
     public void GhostEscaped()
     {
-        // Play a sound here
+        // Play a sound here.
+    }
+
+    // ==================== Village Raid ==================== //
+    public void EnemyGotThrough()
+    {
+        // Play a sound here.
+    }
+
+    // ==================== When I'm Chopping Lumber ==================== //
+    public void Chopped(int type)
+    {
+        // Play a sound here.
     }
 }
