@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class Level : Base
 {
     public float timeSinceBeat = 0.0f;
-    public float beatSpeed = 1.0f;
+    public float timePerBeat = 1.0f;
     public float levelScore = 0.0f;
     public Text scoreText;
 
@@ -19,9 +19,10 @@ public class Level : Base
 	{
         base.Update();
         timeSinceBeat += Time.deltaTime;
-        if (timeSinceBeat > beatSpeed)
+        if (timeSinceBeat > timePerBeat)
         {
-            timeSinceBeat -= beatSpeed;
+            Debug.Log("BEAT");
+            timeSinceBeat -= timePerBeat;
         }
 
         scoreText.text = "" + levelScore;
@@ -29,8 +30,11 @@ public class Level : Base
 
     public float ScoreMultiplier()
     {
+
+        float clampedTimeSinceBeat = timeSinceBeat / timePerBeat;
+
         // 1.1 so that we don't go negative.
-        return 1.1f - (timeSinceBeat / beatSpeed);
+        return 1.1f - Mathf.Min(clampedTimeSinceBeat, 1 - clampedTimeSinceBeat);
     }
 
     public void PlayerActed(float score = 1.0f)
