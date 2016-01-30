@@ -3,10 +3,15 @@ using System.Collections;
 
 public class Ghost : TimedLife
 {
+    public float health;
+    public float maxHealth;
+    public float clickDamage;
+
 	public override void Start()
 	{
 		base.Start();
-	}
+        health = maxHealth;
+    }
 	
 	public override void Update()
 	{
