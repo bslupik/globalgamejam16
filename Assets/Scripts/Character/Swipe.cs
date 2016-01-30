@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class Swipe : MonoBehaviour {
+public class Swipe : Base {
 
     int swipableLayerMask;
 
@@ -10,12 +10,14 @@ public class Swipe : MonoBehaviour {
     protected float minDistance;
 
 	// Use this for initialization
-	void Start () {
+	public override void Start () {
+        base.Start();
         swipableLayerMask = LayerMask.GetMask(Tags.Layers.swipable);
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	public override void Update () {
+        base.Update();
         if (Input.GetMouseButtonDown(0))
         {
 
@@ -62,6 +64,8 @@ public class Swipe : MonoBehaviour {
 
             yield return null;
         }
+
+        level.FlushScoreBuffer();
     }
 }
 
