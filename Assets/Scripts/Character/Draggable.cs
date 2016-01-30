@@ -20,7 +20,7 @@ public class Draggable : Base {
         StartCoroutine(DoDrag());
     }
 
-    protected IEnumerator DoDrag()
+    protected virtual IEnumerator DoDrag()
     {
         Vector3 relativeMousePos = mousePosInWorld() - this.transform.position;
 
