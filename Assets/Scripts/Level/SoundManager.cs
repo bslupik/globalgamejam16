@@ -15,10 +15,6 @@ public class SoundManager : MonoBehaviour
 	
 	public void Update()
 	{
-        if(Input.GetMouseButtonDown(0))
-        {
-            PlayForeground(1);
-        }
 	}
 
     public void PlayForeground(int targetClip)
