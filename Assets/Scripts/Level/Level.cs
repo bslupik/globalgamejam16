@@ -16,7 +16,7 @@ public class Level : Base
     protected int[] orderedNumbers;
 
     Queue<int> sortedOrderedNumbers;
-    List<FoodDraggable> completedFood = new List<FoodDraggable>();
+    List<IResettable> completedObjects = new List<IResettable>();
 
     List<Collider2D> overlappingColliders = new List<Collider2D>();
 
@@ -81,30 +81,69 @@ public class Level : Base
 
     public bool PlayerActed(FoodDraggable food)
     {
-        Debug.Log("FOOD");
         if (overlappingColliders.Contains(food.Collider))
         {
-            Debug.Log("Food Contains");
             if (food.order == sortedOrderedNumbers.Peek())
             {
                 sortedOrderedNumbers.Dequeue();
                 PlayerActed();
-                completedFood.Add(food);
+                completedObjects.Add(food);
                 return true;
             }
             else
             {
 
-                for (int i = 0; i < completedFood.Count; i++)
+                for (int i = 0; i < completedObjects.Count; i++)
                 {
-                    completedFood[i].reset();
+                    completedObjects[i].reset();
                 }
                 food.reset();
-                completedFood.Clear();
+                completedObjects.Clear();
+                overlappingColliders.Clear();
+                sortedOrderedNumbers = new Queue<int>(orderedNumbers);
                 return false;
             }
         }
+        else
+        {
+            food.reset();
+        }
         return false;
+    }
+
+    public bool PlayerActed(MazeNode node)
+    {
+        MazeNode target = null;
+
+
+        Collider2D[] targets = Physics2D.OverlapPointAll(Draggable.mousePosInWorld());
+        for(int i = 0; i < targets.Length; i++)
+        {
+            target = targets[i].transform.GetComponent<MazeNode>();
+            if (target != null)
+                break;
+        }
+
+        if (target != null)
+        {
+
+            if (node.order == sortedOrderedNumbers.Peek())
+            {
+                completedObjects.Add(node);
+                sortedOrderedNumbers.Dequeue();
+                if (target.order == sortedOrderedNumbers.Peek())
+                {
+                    return true;
+                }
+            }
+            completedObjects.Clear();
+            sortedOrderedNumbers = new Queue<int>(orderedNumbers);
+            return false;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     public bool PlayerActed(int order)
@@ -120,4 +159,10 @@ public class Level : Base
             return false;
         }
     }
+}
+
+
+public interface IResettable
+{
+    void reset();
 }

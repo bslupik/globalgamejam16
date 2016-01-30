@@ -16,7 +16,6 @@ public class Draggable : Base {
 
     protected virtual void OnMouseDown()
     {
-
         StartCoroutine(DoDrag());
     }
 
