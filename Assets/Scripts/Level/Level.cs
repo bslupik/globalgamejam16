@@ -15,6 +15,12 @@ public class Level : Base
     [SerializeField]
     protected int[] orderedNumbers;
 
+    [SerializeField]
+    protected float shakeMagnitude;
+
+    [SerializeField]
+    protected float shakeDuration;
+
     Queue<int> sortedOrderedNumbers;
     List<IResettable> completedObjects = new List<IResettable>();
 
@@ -62,6 +68,15 @@ public class Level : Base
         // Play a sound here.
         float multiplier = ScoreMultiplier();
         levelScore += score * multiplier;
+        if (!OnBeat())
+        {
+            ScreenShake();
+        }
+    }
+
+    public void ScreenShake()
+    {
+        Callback.DoLerp((float l) => Camera.main.transform.localPosition = UnityEngine.Random.insideUnitCircle * shakeMagnitude * l, shakeDuration, this, reverse: true);
     }
 
     public void GhostEscaped()
@@ -133,6 +148,7 @@ public class Level : Base
                 sortedOrderedNumbers.Dequeue();
                 if (target.order == sortedOrderedNumbers.Peek())
                 {
+                    PlayerActed();
                     return true;
                 }
             }
