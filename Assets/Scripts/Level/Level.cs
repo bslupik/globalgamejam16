@@ -4,15 +4,16 @@ using UnityEngine.UI;
 
 public class Level : Base
 {
+    public const float BEAT_THRESHOLD = 0.5f;
     public float timeSinceBeat = 0.0f;
     public float timePerBeat = 1.0f;
     public float levelScore = 0.0f;
-    public Text scoreText;
+    // public Text scoreText;
 
 	public override void Start()
 	{
         base.Start();
-        scoreText = GameObject.Find("ScoreText").GetComponent<Text>();
+        // scoreText = GameObject.Find("ScoreText").GetComponent<Text>();
     }
 	
 	public override void Update()
@@ -25,16 +26,19 @@ public class Level : Base
             timeSinceBeat -= timePerBeat;
         }
 
-        scoreText.text = "" + levelScore;
+        // scoreText.text = "" + levelScore;
     }
 
     public float ScoreMultiplier()
     {
-
         float clampedTimeSinceBeat = timeSinceBeat / timePerBeat;
 
-        // 1.1 so that we don't go negative.
-        return 1.1f - Mathf.Min(clampedTimeSinceBeat, 1 - clampedTimeSinceBeat);
+        return 1.0f - 2 * Mathf.Max(0.0f, Mathf.Min(clampedTimeSinceBeat, 1.0f - clampedTimeSinceBeat));
+    }
+
+    public bool OnBeat()
+    {
+        return ScoreMultiplier() >= BEAT_THRESHOLD;
     }
 
     public void PlayerActed(float score = 1.0f)
