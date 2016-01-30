@@ -8,8 +8,8 @@ public class Base : MonoBehaviour
 
     public virtual void Start()
     {
-        sound = GameObject.FindWithTag("SoundManager").GetComponent<SoundManager>();
-        level = GameObject.FindWithTag("LevelManager").GetComponent<Level>();
+        sound = GameObject.FindWithTag(Tags.soundManager).GetComponent<SoundManager>();
+        level = GameObject.FindWithTag(Tags.levelManager).GetComponent<Level>();
     }
 
     public virtual void Update()

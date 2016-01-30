@@ -16,19 +16,29 @@ public class Draggable : Base {
 
     protected virtual void OnMouseDown()
     {
-
         StartCoroutine(DoDrag());
     }
 
-    protected IEnumerator DoDrag()
+    protected virtual IEnumerator DoDrag()
     {
         Vector3 relativeMousePos = mousePosInWorld() - this.transform.position;
 
         while (Input.GetMouseButton(0)) //while being dragged
         {
-            this.transform.position = mousePosInWorld() - relativeMousePos;
+            setPosition(mousePosInWorld() - relativeMousePos);
             yield return null;
         }
+        OnDragEnd();
+    }
+
+    protected virtual void setPosition(Vector2 position)
+    {
+        this.transform.position = position;
+    }
+
+    protected virtual void OnDragEnd()
+    {
+
     }
 
     public static Vector3 mousePosInWorld()
