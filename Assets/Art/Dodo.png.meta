@@ -1,11 +1,6 @@
 fileFormatVersion: 2
-<<<<<<< ebe0246bcd25f7ed3652d7f2b2de0b443755af44
-guid: d9972c9c0651bdd418cc56b15a77150d
-timeCreated: 1454179643
-=======
-guid: c6d6b0ee27735214f9dc5247ec188414
-timeCreated: 1454178948
->>>>>>> Added bow, arrow, and dodo scripts. Also added some custom spawn conditions
+guid: fcaaf3b9dbf1d4648863d7fe06621e14
+timeCreated: 1454191255
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}

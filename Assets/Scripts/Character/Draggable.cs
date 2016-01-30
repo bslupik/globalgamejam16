@@ -49,8 +49,12 @@ public class Draggable : Base {
     public static Vector3 mousePosInWorld(Transform cameraTransform)
     {
         Vector3 screenPoint = Input.mousePosition;
-        screenPoint.z = -cameraTransform.position.z;
-        return screenPoint.toWorldPoint();
+        screenPoint.z = 0;
+        
+        Vector3 mousePoint = screenPoint.toWorldPoint();
+        mousePoint.z = 0;
+
+        return mousePoint;
     }
 }
 
