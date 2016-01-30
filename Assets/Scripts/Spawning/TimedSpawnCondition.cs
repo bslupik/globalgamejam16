@@ -12,7 +12,10 @@ public class TimedSpawnCondition : SpawnCondition
 	public override void Start()
 	{
 		base.Start();
-        spawnTime = baseSpawnTime + Random.Range(-spawnTimeVariation, spawnTimeVariation);
+        if (spawnTime == 0.0f)
+        {
+            spawnTime = baseSpawnTime + Random.Range(-spawnTimeVariation, spawnTimeVariation);
+        }
     }
 	
 	public override void Update()

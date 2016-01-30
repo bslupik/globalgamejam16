@@ -92,6 +92,9 @@ MonoBehaviour:
   sound: {fileID: 0}
   level: {fileID: 0}
   lifeTime: 3
+  health: 0
+  maxHealth: 100
+  clickDamage: 100
 --- !u!212 &21209186
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -118,7 +121,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b833f71094e2d094a9ff5613532498f7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 09c482ba0a524d744b369012c0a2bf91, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -140,6 +143,19 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: lifeTime
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 09c482ba0a524d744b369012c0a2bf91,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: maxHealth
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: clickDamage
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

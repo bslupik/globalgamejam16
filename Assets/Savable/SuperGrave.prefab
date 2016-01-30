@@ -107,7 +107,7 @@ MonoBehaviour:
   sound: {fileID: 0}
   level: {fileID: 0}
   condition: {fileID: 0}
-  spawnObject: {fileID: 193638, guid: ec68487a90cb1c840bac3489bc1ae981, type: 2}
+  spawnObject: {fileID: 108978, guid: 50c9b26eea845b349b264389ddd0e470, type: 2}
 --- !u!212 &21214390
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -154,6 +154,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: ca46cfc0484eede4ead420c869a81b2a,
         type: 3}
+    - target: {fileID: 0}
+      propertyPath: spawnObject
+      value: 
+      objectReference: {fileID: 108978, guid: 50c9b26eea845b349b264389ddd0e470, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 114450}

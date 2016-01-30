@@ -4,8 +4,8 @@ using System.Collections;
 public class Ghost : TimedLife
 {
     public float health;
-    public float maxHealth;
-    public float clickDamage;
+    public float maxHealth = 100.0f;
+    public float clickDamage = 100.0f;
 
 	public override void Start()
 	{
@@ -16,17 +16,25 @@ public class Ghost : TimedLife
 	public override void Update()
 	{
 		base.Update();
+        if (health <= 0.0f)
+        {
+            OnDeath();
+        }
 	}
 
     public void OnMouseDown()
     {
         level.PlayerActed();
-        GameObject.Destroy(gameObject);
+        health -= clickDamage;
     }
 
     public override void OnDeath()
     {
-        level.GhostEscaped();
+        if (health > 0)
+        {
+            level.GhostEscaped();
+        }
+        
         base.OnDeath();
     }
 }
