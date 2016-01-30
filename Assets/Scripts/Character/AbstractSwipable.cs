@@ -5,16 +5,16 @@ using System.Collections;
 public class AbstractSwipable : MonoBehaviour, Swipable {
 
 	// Use this for initialization
-	void Start () {
+	public virtual void Start() {
 	
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	public virtual void Update() {
 	
 	}
 
-    public void Notify(SwipableMessage m)
+    public virtual void Notify(SwipableMessage m)
     {
         Debug.Log("HIT!");
     }
