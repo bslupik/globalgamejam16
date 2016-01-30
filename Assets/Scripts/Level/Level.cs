@@ -19,7 +19,7 @@ public class Level : Base
 	{
         base.Update();
         timeSinceBeat += Time.deltaTime;
-        if (timeSinceBeat > beatSpeed)
+        if (timeSinceBeat >= beatSpeed)
         {
             timeSinceBeat -= beatSpeed;
         }
@@ -37,8 +37,11 @@ public class Level : Base
     {
         // Play a sound here.
         float multiplier = ScoreMultiplier();
-        print(multiplier);
-        print(timeSinceBeat);
         levelScore += score * multiplier;
+    }
+
+    public void GhostEscaped()
+    {
+        // Play a sound here
     }
 }
