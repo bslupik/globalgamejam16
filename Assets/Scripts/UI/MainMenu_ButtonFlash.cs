@@ -9,9 +9,6 @@ public class MainMenu_ButtonFlash : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        Color temp = target.image.color;
-        temp.a = Mathf.PingPong(Time.time * 80, 1);
-
         float scale = Mathf.PingPong(Time.time * 80, 50) + 120;
         target.image.rectTransform.sizeDelta = new Vector2(scale, scale);
 	}

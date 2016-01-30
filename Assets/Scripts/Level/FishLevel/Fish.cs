@@ -24,4 +24,9 @@ public class Fish : Base, ICirclable {
     {
         Physics2D.IgnoreCollision(col, otherCol, false);
     }
+
+    public void Despawn()
+    {
+        Destroy(this.transform.root.gameObject);
+    }
 }

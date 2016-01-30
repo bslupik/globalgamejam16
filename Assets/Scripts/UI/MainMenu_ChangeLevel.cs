@@ -7,4 +7,9 @@ public class MainMenu_ChangeLevel : MonoBehaviour {
     {
         //SceneManager.LoadScene(levelindex);
     }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 }

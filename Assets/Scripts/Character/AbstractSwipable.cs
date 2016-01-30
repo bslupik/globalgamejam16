@@ -5,6 +5,6 @@ using System.Collections;
 public class AbstractSwipable : Base, Swipable {
     public virtual void Notify(SwipableMessage m)
     {
-        Debug.Log("HIT!");
+        level.PlayerActedBuffer();
     }
 }
