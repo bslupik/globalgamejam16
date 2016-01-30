@@ -10,7 +10,6 @@ public class SoundManager : MonoBehaviour
 
 	public void Start()
 	{
-        foregroundMusic.Start();
     }
 	
 	public void Update()
