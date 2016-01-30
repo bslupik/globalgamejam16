@@ -2,20 +2,14 @@
 using System.Collections;
 using System.IO;
 
-public class Savable : Base
+public class Savable : MonoBehaviour
 {
     public int savableID;
     public float timeToSpawn = 0.0f;
 
-	public override void Start()
+	public void Start()
 	{
-		base.Start();
         GameObject.FindGameObjectWithTag("SaveManager").GetComponent<SaveManager>().RegisterSavable(this);
-	}
-	
-	public override void Update()
-	{
-		base.Update();
 	}
 
     public virtual void Save(StreamWriter output)

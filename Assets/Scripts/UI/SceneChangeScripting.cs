@@ -10,11 +10,16 @@ public class SceneChangeScripting : MonoBehaviour {
         blit = GetComponent<Blit>();
 
         //for testing
-        Callback.FireAndForget(FadeOut, 10, this);
+        //Callback.FireAndForget(FadeOut, 10, this);
 	}
 
-    public void FadeOut()
+    public Coroutine FadeOut()
     {
-        Callback.DoLerp((float l) => blit.fadeProgress = l, 2, this);
+        return Callback.DoLerp((float l) => blit.fadeProgress = l, 2, this);
+    }
+
+    public Coroutine FadeIn()
+    {
+        return Callback.DoLerp((float l) => blit.fadeProgress = l, 2, this, reverse : true, mode : Callback.Mode.REALTIME);
     }
 }
