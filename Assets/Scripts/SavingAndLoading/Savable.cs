@@ -27,6 +27,7 @@ public class Savable : Base
         output.Write(transform.position.x);
         output.Write(' ');
         output.Write(transform.position.y);
-        output.Write('\n');
+        output.Write(' ');
+        output.Write(transform.position.z);
     }
 }
