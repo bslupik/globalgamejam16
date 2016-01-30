@@ -1,44 +1,123 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using System;
 using UnityEngine.UI;
 
 public class Level : Base
 {
+    public const float BEAT_THRESHOLD = 0.5f;
     public float timeSinceBeat = 0.0f;
-    public float beatSpeed = 1.0f;
+    public float timePerBeat = 1.0f;
     public float levelScore = 0.0f;
-    public Text scoreText;
+    // public Text scoreText;
+
+    [SerializeField]
+    protected int[] orderedNumbers;
+
+    Queue<int> sortedOrderedNumbers;
+    List<FoodDraggable> completedFood = new List<FoodDraggable>();
+
+    List<Collider2D> overlappingColliders = new List<Collider2D>();
+
+    void Awake()
+    {
+        Array.Sort(orderedNumbers);
+        sortedOrderedNumbers = new Queue<int>(orderedNumbers);
+    }
 
 	public override void Start()
 	{
         base.Start();
-        scoreText = GameObject.Find("ScoreText").GetComponent<Text>();
+        // scoreText = GameObject.Find("ScoreText").GetComponent<Text>();
     }
 	
 	public override void Update()
 	{
         base.Update();
         timeSinceBeat += Time.deltaTime;
-        if (timeSinceBeat > beatSpeed)
+        if (timeSinceBeat > timePerBeat)
         {
-            timeSinceBeat -= beatSpeed;
+            Debug.Log("BEAT");
+            timeSinceBeat -= timePerBeat;
         }
 
-        scoreText.text = "" + levelScore;
+        // scoreText.text = "" + levelScore;
     }
 
     public float ScoreMultiplier()
     {
-        // 1.1 so that we don't go negative.
-        return 1.1f - (timeSinceBeat / beatSpeed);
+        float clampedTimeSinceBeat = timeSinceBeat / timePerBeat;
+
+        return 1.0f - 2 * Mathf.Max(0.0f, Mathf.Min(clampedTimeSinceBeat, 1.0f - clampedTimeSinceBeat));
+    }
+
+    public bool OnBeat()
+    {
+        return ScoreMultiplier() >= BEAT_THRESHOLD;
     }
 
     public void PlayerActed(float score = 1.0f)
     {
         // Play a sound here.
         float multiplier = ScoreMultiplier();
-        print(multiplier);
-        print(timeSinceBeat);
         levelScore += score * multiplier;
+    }
+
+    public void GhostEscaped()
+    {
+        // Play a sound here
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        overlappingColliders.Add(other);
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        overlappingColliders.Remove(other);
+    }
+
+    public bool PlayerActed(FoodDraggable food)
+    {
+        Debug.Log("FOOD");
+        if (overlappingColliders.Contains(food.Collider))
+        {
+            Debug.Log("Food Contains");
+            if (food.order == sortedOrderedNumbers.Peek())
+            {
+                sortedOrderedNumbers.Dequeue();
+                PlayerActed();
+                completedFood.Add(food);
+                return true;
+            }
+            else
+            {
+
+                for (int i = 0; i < completedFood.Count; i++)
+                {
+                    completedFood[i].reset();
+                }
+                food.reset();
+                completedFood.Clear();
+                return false;
+            }
+        }
+        return false;
+    }
+
+    public bool PlayerActed(int order)
+    {
+        if (order == sortedOrderedNumbers.Peek())
+        {
+            sortedOrderedNumbers.Dequeue();
+            PlayerActed();
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }
