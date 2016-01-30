@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Swipe : MonoBehaviour {
 
@@ -23,19 +24,24 @@ public class Swipe : MonoBehaviour {
     {
         Vector2 previousPoint = Draggable.mousePosInWorld();
 
+        HashSet<Transform> alreadyHitObjects = new HashSet<Transform>();
+
         while (Input.GetMouseButton(0))
         {
             Vector2 newPoint = Draggable.mousePosInWorld();
 
             RaycastHit2D[] hitObjects = Physics2D.LinecastAll(previousPoint, newPoint, swipableLayerMask);
+
+
             foreach (RaycastHit2D hit in hitObjects)
             {
-
-                // TODO : filter out multiple hits for slow swipes
-
-                foreach (Swipable swipe in hit.transform.GetComponentsInChildren<Swipable>())
+                if (!alreadyHitObjects.Contains(hit.transform))
                 {
-                    swipe.Notify(new SwipableMessage());
+                    alreadyHitObjects.Add(hit.transform);
+                    foreach (Swipable swipe in hit.transform.GetComponentsInChildren<Swipable>())
+                    {
+                        swipe.Notify(new SwipableMessage());
+                    }
                 }
             }
 
