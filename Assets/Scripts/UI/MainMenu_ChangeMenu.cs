@@ -6,6 +6,7 @@ public class MainMenu_ChangeMenu : MonoBehaviour {
     public GameObject SettingsMenu;
     public GameObject CreditsMenu;
     public GameObject MainMenu;
+    public GameObject EndlessMenu;
 
 	public void ToggleSettings()
     {
@@ -32,6 +33,20 @@ public class MainMenu_ChangeMenu : MonoBehaviour {
         {
             MainMenu.SetActive(false);
             CreditsMenu.SetActive(true);
+        }
+    }
+
+    public void ToggleEndless()
+    {
+        if (EndlessMenu.activeSelf)
+        {
+            EndlessMenu.SetActive(false);
+            MainMenu.SetActive(true);
+        }
+        else
+        {
+            MainMenu.SetActive(false);
+            EndlessMenu.SetActive(true);
         }
     }
 }
