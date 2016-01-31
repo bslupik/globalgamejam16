@@ -58,7 +58,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   savableID: 10
   timeToSpawn: 0
-  metadata: []
+  metadata:
+  - 0
 --- !u!114 &11446134
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -111,6 +112,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: metadata.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: savableID
       value: 10
