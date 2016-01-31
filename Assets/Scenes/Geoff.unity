@@ -336,6 +336,18 @@ Prefab:
       propertyPath: arrowSpawner
       value: 
       objectReference: {fileID: 191166755}
+    - target: {fileID: 421780, guid: e3589b28d26b76c438f4e24af500ae4e, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 421780, guid: e3589b28d26b76c438f4e24af500ae4e, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 421780, guid: e3589b28d26b76c438f4e24af500ae4e, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e3589b28d26b76c438f4e24af500ae4e, type: 2}
   m_IsPrefabParent: 0

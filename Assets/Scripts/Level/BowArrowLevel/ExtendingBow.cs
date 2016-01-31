@@ -40,23 +40,20 @@ public class ExtendingBow : OnBeatDraggable {
             float mouseDist = Vector3.Distance(mousePosInWorld(), transform.position);
             bowCharge = Mathf.Min(MAX_CHARGE, (mouseDist / DISTANCE_TO_FIRE) * MAX_CHARGE);
 
-            if(bowCharge >= MAX_CHARGE)
-            {
-                arrowSpawnCondition.ReleaseBow(this.transform.position, direction);
-                bowCharge = 0.0f;
-                base.sound.PlaySound(0);
-                bowArrow.GetComponent<SpriteRenderer>().enabled = false;
-                yield break;
-            }
-
             yield return null;
         }
     }
 
     protected override void OnMouseUp()
     {
-        bowCharge = 0.0f;
+        if (bowCharge >= MAX_CHARGE)
+        {
+            Vector3 direction = (transform.position - mousePosInWorld()).normalized;
+            arrowSpawnCondition.ReleaseBow(this.transform.position, direction);
+            base.sound.PlaySound(0);
+        }
         bowArrow.GetComponent<SpriteRenderer>().enabled = false;
+        bowCharge = 0.0f;
     }
 
 }
