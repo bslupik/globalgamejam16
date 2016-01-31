@@ -87,23 +87,6 @@ public class Level : Base, IObservable<int>
         Callback.DoLerp((float l) => Camera.main.transform.localPosition = UnityEngine.Random.insideUnitCircle * shakeMagnitude * l, shakeDuration, this, reverse: true);
     }
 
-    // ==================== Graveyard ==================== //
-    public void GhostEscaped()
-    {
-        // Play a sound here.
-    }
-
-    // ==================== Village Raid ==================== //
-    public void EnemyGotThrough()
-    {
-        // Play a sound here.
-    }
-
-    // ==================== When I'm Chopping Lumber ==================== //
-    public void Chopped(int type)
-    {
-        // Play a sound here.
-    }
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -210,14 +193,61 @@ public class Level : Base, IObservable<int>
         }
     }
 
-    public void ArrowMissed()
-    {
-        // Do something maybe
-    }
-
+    // ==================== Dodo Shooting ==================== //
     public void DodoKilled()
     {
-        // Play sound, give points
+        levelScore += 1f;
+    }
+    // ==================== Graveyard ==================== //
+    public void GhostEscaped()
+    {
+        levelScore -= 0.5f;
+    }
+
+    public void GhostClicked()
+    {
+        levelScore += level.ScoreMultiplier();
+    }
+
+    // ==================== Village Raid ==================== //
+    public void EnemyGotThrough()
+    {
+        levelScore -= 1f;
+    }
+    public void EnemySlashed()
+    {
+        levelScore += level.ScoreMultiplier();
+    }
+
+    // ==================== When I'm Chopping Lumber ==================== //
+    public void Chopped(int type)
+    {
+        switch (type)
+        {
+            case 0:
+                levelScore -= 1f;
+                break;
+            case 1:
+                levelScore += level.ScoreMultiplier();
+                break;
+        }
+    }
+
+    // ==================== Tiki Torches ==================== //
+    public void TorchClicked()
+    {
+        levelScore += level.ScoreMultiplier();
+    }
+
+    // ==================== Acupuncture ==================== //
+    public void AcupuncturePinned()
+    {
+        levelScore += level.ScoreMultiplier();
+    }
+
+    public void AcupunctureMiss()
+    {
+        levelScore -= 1f;
     }
 }
 
