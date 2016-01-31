@@ -3,18 +3,23 @@ using System.Collections;
 
 public class SceneChangeScripting : MonoBehaviour {
 
-    Blit blit;
+    Blit[] blits;
 
 	// Use this for initialization
 	void Start () {
-        blit = GetComponent<Blit>();
+        blits = GetComponents<Blit>();
 
         //for testing
-        Callback.FireAndForget(FadeOut, 10, this);
+        //Callback.FireAndForget(FadeOut, 10, this);
 	}
 
-    public void FadeOut()
+    public Coroutine FadeOut()
     {
-        Callback.DoLerp((float l) => blit.fadeProgress = l, 2, this);
+        return Callback.DoLerp((float l) => { foreach (Blit blit in blits) blit.fadeProgress = l; }, 2, this);
+    }
+
+    public Coroutine FadeIn()
+    {
+        return Callback.DoLerp((float l) => { foreach (Blit blit in blits) blit.fadeProgress = l; }, 2, this, reverse: true, mode: Callback.Mode.REALTIME);
     }
 }

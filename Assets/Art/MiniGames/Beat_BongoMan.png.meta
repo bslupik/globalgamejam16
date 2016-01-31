@@ -1,11 +1,12 @@
 fileFormatVersion: 2
-guid: a80cf96d7d9191b4e9259421e64be5bb
-timeCreated: 1454194329
+guid: 2f7c07c9c6b69c944879ba483800424d
+timeCreated: 1454196594
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: MiniGame_Torchfire_Fire_0
-    21300002: MiniGame_Torchfire_Fire_1
+    21300000: Beat_BongoMan_0
+    21300002: Beat_BongoMan_1
+    21300004: Beat_BongoMan_2
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -46,34 +47,74 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 30
+  spritePixelsToUnits: 35
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: MiniGame_Torchfire_Fire_0
+    - name: Beat_BongoMan_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 26
-        height: 44
+        width: 48
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-    - name: MiniGame_Torchfire_Fire_1
+      outline:
+      - - {x: -17, y: 28}
+        - {x: -23, y: 13}
+        - {x: -23, y: -30}
+        - {x: 24, y: -30}
+        - {x: 24, y: 26}
+        - {x: 15, y: 28}
+    - name: Beat_BongoMan_1
       rect:
         serializedVersion: 2
-        x: 26
+        x: 48
         y: 0
-        width: 26
-        height: 44
+        width: 48
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: 17, y: -5}
+        - {x: 13, y: -5}
+        - {x: 24, y: -5}
+        - {x: 24, y: 4}
+        - {x: 22, y: 5}
+        - {x: 16, y: 22}
+        - {x: 8, y: 28}
+        - {x: -8, y: 28}
+        - {x: -18, y: 25}
+        - {x: -24, y: 10}
+        - {x: -24, y: -21}
+        - {x: -22, y: -25}
+        - {x: -12, y: -28}
+        - {x: 17, y: -28}
+        - {x: 24, y: -20}
+        - {x: 24, y: -10}
+        - {x: 23, y: -8}
+    - name: Beat_BongoMan_2
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 48
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: 28}
+        - {x: -24, y: 16}
+        - {x: -24, y: -30}
+        - {x: 23, y: -30}
+        - {x: 23, y: 26}
+        - {x: 16, y: 28}
     outline: []
   spritePackingTag: 
   userData: 
