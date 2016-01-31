@@ -186,8 +186,6 @@ public class Level : Base, IObservable<int>
                 }
             }
             ScreenShake();
-            completedObjects.Clear();
-            sortedOrderedNumbers = new LinkedList<int>(orderedNumbers);
             Debug.Log("a");
             return false;
         }
