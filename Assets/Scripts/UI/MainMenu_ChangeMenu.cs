@@ -9,7 +9,6 @@ public class MainMenu_ChangeMenu : MonoBehaviour {
 
 	public void ToggleSettings()
     {
-        Debug.Log("Toggle S");
         if(SettingsMenu.activeSelf)
         {
             SettingsMenu.SetActive(false);
@@ -24,7 +23,6 @@ public class MainMenu_ChangeMenu : MonoBehaviour {
 
     public void ToggleCredits()
     {
-        Debug.Log("Toggle C");
         if (CreditsMenu.activeSelf)
         {
             CreditsMenu.SetActive(false);

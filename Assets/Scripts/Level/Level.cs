@@ -167,10 +167,8 @@ public class Level : Base, IObservable<int>
 
             if (node.order == sortedOrderedNumbers.Peek())
             {
-                Debug.Log("c");
                 completedObjects.Add(node);
                 sortedOrderedNumbers.Dequeue();
-                Debug.Log(target.order + " " + sortedOrderedNumbers.Peek());
                 if (target.order == sortedOrderedNumbers.Peek())
                 {
                     PlayerActed();
@@ -180,12 +178,10 @@ public class Level : Base, IObservable<int>
             ScreenShake();
             completedObjects.Clear();
             sortedOrderedNumbers = new Queue<int>(orderedNumbers);
-            Debug.Log("a");
             return false;
         }
         else
         {
-            Debug.Log("b");
             ScreenShake();
             return false;
         }
