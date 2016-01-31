@@ -27,16 +27,12 @@ public class Level : Base
 
     List<Collider2D> overlappingColliders = new List<Collider2D>();
 
-    void Awake()
-    {
-        Array.Sort(orderedNumbers);
-        Debug.Log(orderedNumbers);
-        sortedOrderedNumbers = new Queue<int>(orderedNumbers);
-    }
-
 	public override void Start()
 	{
+        print("level start");
         base.Start();
+        Array.Sort(orderedNumbers);
+        sortedOrderedNumbers = new Queue<int>(orderedNumbers);
         // scoreText = GameObject.Find("ScoreText").GetComponent<Text>();
     }
 	

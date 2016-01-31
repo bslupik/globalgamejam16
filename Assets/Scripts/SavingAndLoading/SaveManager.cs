@@ -197,6 +197,7 @@ public class SaveManager : MonoBehaviour
         switch (data.savableID)
         {
             case 9: // Acupuncture level manager
+                print("Acu");
                 instantiatedObject.GetComponentInChildren<Level>().orderedNumbers = new int[(int) data.metadata[0]];
                 for (int i = 0; i < data.metadata[0]; ++i)
                 {
