@@ -61,6 +61,9 @@ MonoBehaviour:
   timePerBeat: 1
   levelScore: 0
   levelScoreBuffer: 0
+  levelTime: 0
+  maxLevelTime: 30
+  worldManager: {fileID: 0}
   orderedNumbers: 
   shakeMagnitude: 0
   shakeDuration: 0
@@ -104,6 +107,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_TagString
       value: LevelManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: maxLevelTime
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

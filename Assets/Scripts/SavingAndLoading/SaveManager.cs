@@ -59,7 +59,6 @@ public class SaveManager : MonoBehaviour
 	public void Update()
 	{
         gameTime += Time.deltaTime;
-        //print(objectsToSpawn.Count);
         while (objectsToSpawn.Count > 0 && gameTime >= objectsToSpawn[objectsToSpawn.Count - 1].spawnTime)
         {
             SpawnObject(objectsToSpawn[objectsToSpawn.Count - 1]);
@@ -139,6 +138,23 @@ public class SaveManager : MonoBehaviour
         newObject.spawnPosition = new Vector3(float.Parse(data[2]), float.Parse(data[3]), float.Parse(data[4]));
         switch (newObject.savableID)
         {
+            case 15: // Writing Rect
+                newObject.metadata = new List<float>();
+                if (data.Length >= 9)
+                {
+                    newObject.metadata.Add(float.Parse(data[5]));
+                    newObject.metadata.Add(float.Parse(data[6]));
+                    newObject.metadata.Add(float.Parse(data[7]));
+                    newObject.metadata.Add(float.Parse(data[8]));
+                }
+                else
+                {
+                    newObject.metadata.Add(0);
+                    newObject.metadata.Add(0);
+                    newObject.metadata.Add(0);
+                    newObject.metadata.Add(0);
+                }
+                break;
             case 27: // Maze Node
             case 9: // Acupuncture level manager
                 newObject.metadata = new List<float>();
@@ -199,6 +215,12 @@ public class SaveManager : MonoBehaviour
         loadedObjects.Add(instantiatedObject);
         switch (data.savableID)
         {
+            case 15: // Writing Swipe
+                instantiatedObject.GetComponent<WritingRect>().start.x = data.metadata[0];
+                instantiatedObject.GetComponent<WritingRect>().start.y = data.metadata[1];
+                instantiatedObject.GetComponent<WritingRect>().end.x = data.metadata[2];
+                instantiatedObject.GetComponent<WritingRect>().end.y = data.metadata[3];
+                break;
             case 27: // Maze Node
                 instantiatedObject.GetComponentInChildren<MazeNode>().setOrder = (int) data.metadata[0];
                 break;

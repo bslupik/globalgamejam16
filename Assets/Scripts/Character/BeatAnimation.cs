@@ -14,7 +14,8 @@ public class BeatAnimation : Base {
         if (sequenceOneSprites.Length > 0)
         {
             spriteIndex = 0;
-            beatRenderer.sprite = sequenceOneSprites[0];
+            if(beatRenderer != null)
+                beatRenderer.sprite = sequenceOneSprites[0];
         }
     }
 	
@@ -26,9 +27,21 @@ public class BeatAnimation : Base {
             loadNextSprite();
 	}
 
+    public Sprite GetSprite()
+    {
+        if(spriteIndex == -1)
+            return null;
+
+        if(sequenceOne)
+        {
+            return sequenceOneSprites[spriteIndex];
+        }
+        return sequenceTwoSprites[spriteIndex];
+    }
+
     private float timePerSprite()
     {
-        if(sequenceOneSprites.Length == 0 || sequenceTwoSprites.Length == 0)
+        if(sequenceOneSprites.Length == 0)
         {
             return 0.0f;
         }
@@ -43,7 +56,6 @@ public class BeatAnimation : Base {
     {
         if (sequenceOneSprites.Length == 0 || sequenceTwoSprites.Length == 0)
         {
-            beatRenderer.sprite = null;
             spriteIndex = -1;
             return;
         }
@@ -53,16 +65,19 @@ public class BeatAnimation : Base {
         else
             spriteIndex = (spriteIndex + 1) % sequenceTwoSprites.Length;
 
-        if (spriteIndex == 0)
+        if (spriteIndex == 0 && sequenceTwoSprites.Length > 0)
             sequenceOne = !sequenceOne;
 
-        if (sequenceOne)
+        if(beatRenderer != null)
         {
-            beatRenderer.sprite = sequenceOneSprites[spriteIndex];
-        }
-        else
-        {
-            beatRenderer.sprite = sequenceTwoSprites[spriteIndex];
+            if (sequenceOne)
+            {
+                beatRenderer.sprite = sequenceOneSprites[spriteIndex];
+            }
+            else
+            {
+                beatRenderer.sprite = sequenceTwoSprites[spriteIndex];
+            }
         }
     }
 }

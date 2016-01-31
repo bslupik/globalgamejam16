@@ -84,7 +84,7 @@ LineRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 8c222aa942fb84042b6c069f334016e9, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -104,8 +104,8 @@ LineRenderer:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   m_Parameters:
-    startWidth: 0.1
-    endWidth: 0.1
+    startWidth: 1
+    endWidth: 1
     m_StartColor:
       serializedVersion: 2
       rgba: 4294967295
@@ -135,6 +135,18 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Size.y
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8c222aa942fb84042b6c069f334016e9, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_Parameters.startWidth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Parameters.endWidth
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

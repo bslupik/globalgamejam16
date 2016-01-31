@@ -46,6 +46,9 @@ MonoBehaviour:
   timePerBeat: 1
   levelScore: 0
   levelScoreBuffer: 0
+  levelTime: 0
+  maxLevelTime: 30
+  worldManager: {fileID: 0}
   orderedNumbers: 0000000001000000020000000300000004000000050000000600000007000000
   shakeMagnitude: 1
   shakeDuration: 1
@@ -109,6 +112,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: orderedNumbers.Array.data[6]
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: maxLevelTime
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

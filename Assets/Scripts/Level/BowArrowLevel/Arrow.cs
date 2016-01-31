@@ -13,7 +13,6 @@ public class Arrow : TimedLife {
 
     public override void OnDeath()
     {
-        level.ArrowMissed();
         base.OnDeath();
     }
 

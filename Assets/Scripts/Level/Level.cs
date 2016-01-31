@@ -11,6 +11,32 @@ public class Level : Base, IObservable<int>
     public float timePerBeat = 1.0f;
     public float levelScore = 0.0f;
     public float levelScoreBuffer = 0;
+    public float levelTime = 0.0f;
+    public float maxLevelTime = 30.0f;
+    public WorldManager worldManager;
+    public float localTime = 0f;
+    public float totalScoreMult = 1f;
+    public int mazeNodeCount = 21;
+    public int writingLineCount = 10;
+    public int fishCaught = 0;
+    public int circlesDrawn = 0;
+    public int firesExtinguished = 0;
+    public int dodosCaught = 0;
+
+    public float dodoScoreValue = 1f;
+    public float ghostFailValue = 0.5f;
+    public float ghostScoreValue = 1f;
+    public float villagerFailValue = 1f;
+    public float villagerScoreValue = 1f;
+    public float lumberFailValue = 1f;
+    public float lumberScoreValue = 1f;
+    public float torchScoreValue = 1f;
+    public float acupunctureScoreValue = 1f;
+    public float acupunctureFailValue = 1f;
+    public float mazeScoreValue = 1f;
+    public float writingScoreValue = 1f;
+    public float cauldronScoreValue = 1f;
+
     // public Text scoreText;
 
     Observable<int> orderObservable = new Observable<int>();
@@ -26,7 +52,7 @@ public class Level : Base, IObservable<int>
     [SerializeField]
     protected float shakeDuration;
 
-    Queue<int> sortedOrderedNumbers;
+    LinkedList<int> sortedOrderedNumbers;
     List<IResettable> completedObjects = new List<IResettable>();
 
     List<Collider2D> overlappingColliders = new List<Collider2D>();
@@ -34,8 +60,9 @@ public class Level : Base, IObservable<int>
 	public override void Start()
 	{
         base.Start();
+        worldManager = GameObject.Find("WorldManager").GetComponent<WorldManager>();
         Array.Sort(orderedNumbers);
-        sortedOrderedNumbers = new Queue<int>(orderedNumbers);
+        sortedOrderedNumbers = new LinkedList<int>(orderedNumbers);
         // scoreText = GameObject.Find("ScoreText").GetComponent<Text>();
     }
 	
@@ -45,10 +72,16 @@ public class Level : Base, IObservable<int>
         timeSinceBeat += Time.deltaTime;
         if (timeSinceBeat > timePerBeat)
         {
-            Debug.Log("BEAT");
+            //Debug.Log("BEAT");
             timeSinceBeat -= timePerBeat;
         }
+        localTime += Time.deltaTime;
         // scoreText.text = "" + levelScore;
+        levelTime += Time.deltaTime;
+        if (levelTime >= maxLevelTime)
+        {
+            EndLevel();
+        }
     }
 
     public float ScoreMultiplier()
@@ -60,7 +93,7 @@ public class Level : Base, IObservable<int>
 
     public bool OnBeat()
     {
-        Debug.Log(ScoreMultiplier());
+        //Debug.Log(ScoreMultiplier());
         return ScoreMultiplier() >= BEAT_THRESHOLD;
     }
 
@@ -87,23 +120,6 @@ public class Level : Base, IObservable<int>
         Callback.DoLerp((float l) => Camera.main.transform.localPosition = UnityEngine.Random.insideUnitCircle * shakeMagnitude * l, shakeDuration, this, reverse: true);
     }
 
-    // ==================== Graveyard ==================== //
-    public void GhostEscaped()
-    {
-        // Play a sound here.
-    }
-
-    // ==================== Village Raid ==================== //
-    public void EnemyGotThrough()
-    {
-        // Play a sound here.
-    }
-
-    // ==================== When I'm Chopping Lumber ==================== //
-    public void Chopped(int type)
-    {
-        // Play a sound here.
-    }
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -119,9 +135,9 @@ public class Level : Base, IObservable<int>
     {
         if (overlappingColliders.Contains(food.Collider))
         {
-            if (food.order == sortedOrderedNumbers.Peek())
+            if (food.order == nextOrderedNumber())
             {
-                sortedOrderedNumbers.Dequeue();
+                sortedOrderedNumbers.RemoveFirst();
                 PlayerActed();
                 completedObjects.Add(food);
                 orderObservable.Post(food.order + 3);
@@ -137,7 +153,7 @@ public class Level : Base, IObservable<int>
                 food.reset();
                 completedObjects.Clear();
                 overlappingColliders.Clear();
-                sortedOrderedNumbers = new Queue<int>(orderedNumbers);
+                sortedOrderedNumbers = new LinkedList<int>(orderedNumbers);
                 ScreenShake();
                 return false;
             }
@@ -165,27 +181,27 @@ public class Level : Base, IObservable<int>
         if (target != null)
         {
 
-            if (node.order == sortedOrderedNumbers.Peek())
+            if (node.order == nextOrderedNumber())
             {
-                Debug.Log("c");
-                completedObjects.Add(node);
-                sortedOrderedNumbers.Dequeue();
-                Debug.Log(target.order + " " + sortedOrderedNumbers.Peek());
-                if (target.order == sortedOrderedNumbers.Peek())
+                sortedOrderedNumbers.RemoveFirst();
+                if (target.order == nextOrderedNumber())
                 {
+                    completedObjects.Add(node);
                     PlayerActed();
                     return true;
                 }
+                else
+                {
+                    sortedOrderedNumbers.AddFirst(node.order);
+                }
             }
             ScreenShake();
-            completedObjects.Clear();
-            sortedOrderedNumbers = new Queue<int>(orderedNumbers);
-            Debug.Log("a");
+            //Debug.Log("a");
             return false;
         }
         else
         {
-            Debug.Log("b");
+            //Debug.Log("b");
             ScreenShake();
             return false;
         }
@@ -193,15 +209,13 @@ public class Level : Base, IObservable<int>
 
     public bool PlayerActed(int order)
     {
-        if (order == sortedOrderedNumbers.Peek())
+        if (order == nextOrderedNumber())
         {
-            sortedOrderedNumbers.Dequeue();
+            sortedOrderedNumbers.RemoveFirst();
             PlayerActed();
-            print(sortedOrderedNumbers.Count);
             if (sortedOrderedNumbers.Count == 0)
             {
-                print("ending everything");
-                GameObject.Find("WorldManager").GetComponent<WorldManager>().EndLevel(levelScore);
+                EndLevel();
             }
             return true;
         }
@@ -212,14 +226,146 @@ public class Level : Base, IObservable<int>
         }
     }
 
-    public void ArrowMissed()
-    {
-        // Do something maybe
-    }
-
+    // ==================== Dodo Shooting ==================== //
     public void DodoKilled()
     {
-        // Play sound, give points
+        levelScore += dodoScoreValue;
+    }
+
+    // ==================== Graveyard ==================== //
+    public void GhostEscaped()
+    {
+        levelScore -= ghostFailValue;
+    }
+
+    public void GhostClicked()
+    {
+        levelScore += level.ScoreMultiplier() * ghostScoreValue;
+    }
+
+    // ==================== Village Raid ==================== //
+    public void EnemyGotThrough()
+    {
+        levelScore -= 1f;
+    }
+    public void EnemySlashed()
+    {
+        levelScore += level.ScoreMultiplier() * villagerFailValue;
+    }
+
+    // ==================== When I'm Chopping Lumber ==================== //
+    public void Chopped(int type)
+    {
+        switch (type)
+        {
+            case 0:
+                levelScore -= lumberFailValue;
+                break;
+            case 1:
+                levelScore += level.ScoreMultiplier() * lumberScoreValue;
+                break;
+        }
+    }
+
+    // ==================== Tiki Torches ==================== //
+    public void TorchClicked()
+    {
+        levelScore += level.ScoreMultiplier() * torchScoreValue;
+    }
+
+    // ==================== Acupuncture ==================== //
+    public void AcupuncturePinned()
+    {
+        levelScore += level.ScoreMultiplier() * acupunctureScoreValue;
+    }
+
+    public void AcupunctureMiss()
+    {
+        levelScore -= acupunctureFailValue;
+    }
+
+    // ==================== Maze ==================== //
+    public void NodeReached()
+    {
+        totalScoreMult += level.ScoreMultiplier() * mazeScoreValue;
+    }
+
+    // ==================== Writing ==================== // 
+    public void LineDrawn()
+    {
+        totalScoreMult += level.ScoreMultiplier() * writingScoreValue;
+    }
+
+    // ==================== Cauldron ==================== //
+    public void RecipeCompleted()
+    {
+        levelScore += cauldronScoreValue;
+    }
+
+    // ==================== Putting out Fires ==================== //
+    public void ExtinguishArea() // Call whenever you draw a circle
+    {
+        levelScore += level.ScoreMultiplier();
+        circlesDrawn++;
+    }
+    public void ExtinguishFire(int numfires) // Call when you extinguish Fires in circle
+    {
+        firesExtinguished += numfires;
+    }
+
+    // ==================== NetFishing ==================== //
+    public void HerdFish() // Call whenever you draw a circle
+    {
+        totalScoreMult += level.ScoreMultiplier();
+        circlesDrawn++;
+    }
+    public void CatchFish(int numfish) // Call when the net catches fish
+    {
+        fishCaught += numfish;
+    }
+
+    // ==================== Lasso ==================== //
+    public void HerdDodos() // Call whenever you draw a circle
+    {
+        totalScoreMult += level.ScoreMultiplier();
+        circlesDrawn++;
+    }
+    public void CatchDodo(int numDodos) // Call when you catch Dodos in circle
+    {
+        dodosCaught += numDodos;
+    }
+    // =============================================== //
+
+    public void EndLevel()
+    {
+        switch( GameObject.Find("WorldManager").GetComponent<WorldManager>().currentLevelIndex )
+        {
+            case 5:
+                levelScore = (totalScoreMult / mazeNodeCount) * localTime;
+                break;
+            case 8:
+                levelScore = (totalScoreMult / writingLineCount) * localTime;
+                break;
+            case 9:
+                levelScore = (totalScoreMult / circlesDrawn) * fishCaught;
+                break;
+            case 10:
+                levelScore = (totalScoreMult / circlesDrawn) * dodosCaught;
+                break;
+            case 11:
+                levelScore = (totalScoreMult / circlesDrawn) * firesExtinguished;
+                break;
+        }
+        GameObject.Find("WorldManager").GetComponent<WorldManager>().EndLevel(levelScore);
+    }
+
+    private int nextOrderedNumber()
+    {
+        if (sortedOrderedNumbers.First == null)
+        {
+            return -1;
+        }
+        return sortedOrderedNumbers.First.Value;
     }
 }
 
