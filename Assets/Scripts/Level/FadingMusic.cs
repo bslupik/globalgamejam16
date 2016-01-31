@@ -13,9 +13,9 @@ public class FadingMusic : MonoBehaviour {
     private FadeState state;
 
 	public void Start () {
-        if(musicClips.Length >= 1)
+        if(musicClips.Length >= 5)
         {
-            music.clip = musicClips[0];
+            music.clip = musicClips[4];
             music.Play();
             state = FadeState.FadingIn;
         }

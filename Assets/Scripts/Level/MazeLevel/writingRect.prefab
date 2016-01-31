@@ -41,8 +41,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   start: {x: 0, y: 0}
   end: {x: 1, y: 0}
-  width: 2
-  numSegments: 300
+  width: 1
+  numSegments: 20
   sectionPrefab: {fileID: 169544, guid: c44353fcfdcb4f9419f51e7d3a1de978, type: 2}
 --- !u!1001 &100100000
 Prefab:
@@ -65,7 +65,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: width
-      value: 2
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: numSegments
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
