@@ -72,6 +72,27 @@ MonoBehaviour:
   levelTime: 0
   maxLevelTime: 30
   worldManager: {fileID: 0}
+  localTime: 0
+  totalScoreMult: 1
+  mazeNodeCount: 21
+  writingLineCount: 10
+  fishCaught: 0
+  circlesDrawn: 0
+  firesExtinguished: 0
+  dodosCaught: 0
+  dodoScoreValue: 1
+  ghostFailValue: 0.5
+  ghostScoreValue: 1
+  villagerFailValue: 1
+  villagerScoreValue: 1
+  lumberFailValue: 1
+  lumberScoreValue: 1
+  torchScoreValue: 1
+  acupunctureScoreValue: 1
+  acupunctureFailValue: 1
+  mazeScoreValue: 1
+  writingScoreValue: 1
+  cauldronScoreValue: 1
   orderedNumbers: 
   shakeMagnitude: 0
   shakeDuration: 0
@@ -86,6 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92f4d87a37abbdb43a0c2ec7bd63ad02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxLength: 0
 --- !u!114 &11451796
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -124,7 +146,7 @@ LineRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -144,14 +166,14 @@ LineRenderer:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 1}
   m_Parameters:
-    startWidth: 1
-    endWidth: 1
+    startWidth: 0.1
+    endWidth: 0.1
     m_StartColor:
       serializedVersion: 2
-      rgba: 4294967295
+      rgba: 4292666254
     m_EndColor:
       serializedVersion: 2
-      rgba: 4294967295
+      rgba: 4293962890
   m_UseWorldSpace: 1
 --- !u!212 &21233270
 SpriteRenderer:
@@ -197,6 +219,26 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: maxLevelTime
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Parameters.startWidth
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Parameters.endWidth
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Parameters.m_StartColor.rgba
+      value: 4292666254
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Parameters.m_EndColor.rgba
+      value: 4293962890
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

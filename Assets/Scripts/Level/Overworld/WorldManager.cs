@@ -62,8 +62,8 @@ public class WorldManager : MonoBehaviour
     public void InitEndlessMode()
     {
         isEndlessMode = false;
-        string endlessSequenceString = PlayerPrefs.GetString("EndlessLevelSequence");
-        if (endlessSequenceString != null && endlessSequenceString.Length > 0)
+        string endlessSequenceString = PlayerPrefs.GetString("EndlessLevelSequence", "");
+        if (endlessSequenceString != "" && endlessSequenceString.Length > 0)
         {
             isEndlessMode = true;
             string[] endlessSequenceStringArray = endlessSequenceString.Split(' ');
@@ -73,8 +73,8 @@ public class WorldManager : MonoBehaviour
                 endlessSequence[i] = int.Parse(endlessSequenceStringArray[i]);
             }
         }
-        string endlessShuffleString = PlayerPrefs.GetString("EndlessLevelShuffle");
-        if (endlessShuffleString != null)
+        string endlessShuffleString = PlayerPrefs.GetString("EndlessLevelShuffle", "");
+        if (endlessShuffleString != "")
         {
             endlessShuffle = bool.Parse(endlessShuffleString);
         }
