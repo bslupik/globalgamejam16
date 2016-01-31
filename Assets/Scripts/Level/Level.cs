@@ -14,7 +14,7 @@ public class Level : Base
     // public Text scoreText;
 
     [SerializeField]
-    protected int[] orderedNumbers;
+    public int[] orderedNumbers;
 
     [SerializeField]
     protected float shakeMagnitude;

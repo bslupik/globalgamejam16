@@ -139,12 +139,28 @@ public class SaveManager : MonoBehaviour
         newObject.spawnPosition = new Vector3(float.Parse(data[2]), float.Parse(data[3]), float.Parse(data[4]));
         switch (newObject.savableID)
         {
+            case 9: // Acupuncture level manager
+                newObject.metadata = new List<float>();
+                if (data.Length >= 6)
+                {
+                    newObject.metadata.Add(float.Parse(data[5]));
+                }
+                else
+                {
+                    newObject.metadata.Add(0);
+                }
+                break;
             case 2: // Torch
                 newObject.metadata = new List<float>();
                 if (data.Length >= 7)
                 {
                     newObject.metadata.Add(float.Parse(data[5]));
                     newObject.metadata.Add(float.Parse(data[6]));
+                }
+                else
+                {
+                    newObject.metadata.Add(0);
+                    newObject.metadata.Add(0);
                 }
                 break;
             case 0: // Villager spawner
@@ -180,6 +196,13 @@ public class SaveManager : MonoBehaviour
         loadedObjects.Add(instantiatedObject);
         switch (data.savableID)
         {
+            case 9: // Acupuncture level manager
+                instantiatedObject.GetComponentInChildren<Level>().orderedNumbers = new int[(int) data.metadata[0]];
+                for (int i = 0; i < data.metadata[0]; ++i)
+                {
+                    instantiatedObject.GetComponentInChildren<Level>().orderedNumbers[i] = i;
+                }
+                break;
             case 2: // Torch
                 if (data.metadata[0] != 0)
                 {
