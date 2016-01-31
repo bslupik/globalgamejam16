@@ -14,7 +14,7 @@ public class Level : Base
     // public Text scoreText;
 
     [SerializeField]
-    protected int[] orderedNumbers;
+    public int[] orderedNumbers;
 
     [SerializeField]
     protected float shakeMagnitude;
@@ -27,16 +27,12 @@ public class Level : Base
 
     List<Collider2D> overlappingColliders = new List<Collider2D>();
 
-    void Awake()
-    {
-        Array.Sort(orderedNumbers);
-        Debug.Log(orderedNumbers);
-        sortedOrderedNumbers = new Queue<int>(orderedNumbers);
-    }
-
 	public override void Start()
 	{
+        print("level start");
         base.Start();
+        Array.Sort(orderedNumbers);
+        sortedOrderedNumbers = new Queue<int>(orderedNumbers);
         // scoreText = GameObject.Find("ScoreText").GetComponent<Text>();
     }
 	
@@ -71,10 +67,6 @@ public class Level : Base
         // Play a sound here.
         float multiplier = ScoreMultiplier();
         levelScore += score * multiplier;
-        if (!OnBeat())
-        {
-            ScreenShake();
-        }
     }
 
     public void FlushScoreBuffer()
@@ -143,6 +135,7 @@ public class Level : Base
                 completedObjects.Clear();
                 overlappingColliders.Clear();
                 sortedOrderedNumbers = new Queue<int>(orderedNumbers);
+                ScreenShake();
                 return false;
             }
         }
@@ -179,12 +172,14 @@ public class Level : Base
                     return true;
                 }
             }
+            ScreenShake();
             completedObjects.Clear();
             sortedOrderedNumbers = new Queue<int>(orderedNumbers);
             return false;
         }
         else
         {
+            ScreenShake();
             return false;
         }
     }
@@ -199,6 +194,7 @@ public class Level : Base
         }
         else
         {
+            ScreenShake();
             return false;
         }
     }

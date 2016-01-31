@@ -12,7 +12,7 @@ public class Swipe : Base {
 	// Use this for initialization
 	public override void Start () {
         base.Start();
-        swipableLayerMask = LayerMask.GetMask(Tags.Layers.swipable);
+        swipableLayerMask = LayerMask.GetMask(Tags.Layers.swipable, Tags.Layers.overworld);
 	}
 	
 	// Update is called once per frame
@@ -53,7 +53,7 @@ public class Swipe : Base {
                 if (!alreadyHitObjects.Contains(hit.transform))
                 {
                     alreadyHitObjects.Add(hit.transform);
-                    foreach (Swipable swipe in hit.transform.GetComponentsInChildren<Swipable>())
+                    foreach (ISwipable swipe in hit.transform.GetComponentsInChildren<ISwipable>())
                     {
                         swipe.Notify(new SwipableMessage());
                     }
@@ -69,7 +69,7 @@ public class Swipe : Base {
     }
 }
 
-public interface Swipable
+public interface ISwipable
 {
     void Notify(SwipableMessage m);
 }

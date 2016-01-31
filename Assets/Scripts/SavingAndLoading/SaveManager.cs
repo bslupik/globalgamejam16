@@ -139,11 +139,36 @@ public class SaveManager : MonoBehaviour
         newObject.spawnPosition = new Vector3(float.Parse(data[2]), float.Parse(data[3]), float.Parse(data[4]));
         switch (newObject.savableID)
         {
+            case 27: // Maze Node
+            case 9: // Acupuncture level manager
+                newObject.metadata = new List<float>();
+                if (data.Length >= 6)
+                {
+                    newObject.metadata.Add(float.Parse(data[5]));
+                }
+                else
+                {
+                    newObject.metadata.Add(0);
+                }
+                break;
+            case 2: // Torch
+                newObject.metadata = new List<float>();
+                if (data.Length >= 7)
+                {
+                    newObject.metadata.Add(float.Parse(data[5]));
+                    newObject.metadata.Add(float.Parse(data[6]));
+                }
+                else
+                {
+                    newObject.metadata.Add(0);
+                    newObject.metadata.Add(0);
+                }
+                break;
             case 0: // Villager spawner
             case 1: // Grave
-            case 2: // Torch
             case 6: // Super grave
             case 12: // Fire hut
+            case 23: // Dodo spawner
             case 25: // Lasso animal
                 newObject.metadata = new List<float>();
                 if (data.Length >= 8)
@@ -173,6 +198,45 @@ public class SaveManager : MonoBehaviour
         loadedObjects.Add(instantiatedObject);
         switch (data.savableID)
         {
+            case 27: // Maze Node
+                instantiatedObject.GetComponentInChildren<MazeNode>().setOrder = (int) data.metadata[0];
+                break;
+            case 9: // Acupuncture level manager
+                instantiatedObject.GetComponentInChildren<Level>().orderedNumbers = new int[(int) data.metadata[0]];
+                for (int i = 0; i < data.metadata[0]; ++i)
+                {
+                    instantiatedObject.GetComponentInChildren<Level>().orderedNumbers[i] = i;
+                }
+                break;
+            case 2: // Torch
+                if (data.metadata[0] != 0)
+                {
+                    instantiatedObject.GetComponentInChildren<FlameSpawner>().flameLifeBase = data.metadata[0];
+                }
+                if (data.metadata[1] != 0)
+                {
+                    instantiatedObject.GetComponentInChildren<FlameSpawner>().flameLifeVariation = data.metadata[1];
+                }
+                break;
+            case 0: // Villager spawner
+            case 1: // Grave
+            case 6: // Super grave
+            case 12: // Fire hut
+            case 23: // Dodo spawner
+            case 25: // Lasso animal
+                if (data.metadata[0] != 0)
+                {
+                    instantiatedObject.GetComponentInChildren<TimedSpawnCondition>().spawnTime = data.metadata[0];
+                }
+                if (data.metadata[1] != 0)
+                {
+                    instantiatedObject.GetComponentInChildren<TimedSpawnCondition>().baseSpawnTime = data.metadata[1];
+                }
+                if (data.metadata[2] != 0)
+                {
+                    instantiatedObject.GetComponentInChildren<TimedSpawnCondition>().spawnTimeVariation = data.metadata[2];
+                }
+                break;
             case 10: //puncture point
                 instantiatedObject.GetComponent<PuncturePoint>().setOrder = (int)(data.metadata[0]);
                 break;

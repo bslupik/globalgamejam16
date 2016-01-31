@@ -319,7 +319,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outputFilePath: Assets\Resources\LevelFiles\
   inputFilePath: LevelFiles\
-  fileName: WhackAGhost
+  fileName: 
   savableObjects: []
   spawnableObjects:
   - {fileID: 179040, guid: 343d4de1f560afb469a1dcdf8eaf8fac, type: 2}
@@ -345,7 +345,7 @@ MonoBehaviour:
   - {fileID: 134098, guid: 091e56423029f284798b4a615980fcee, type: 2}
   - {fileID: 133972, guid: 5da7598860f8a45488693d9b9f444ff8, type: 2}
   - {fileID: 108542, guid: 980ec3579cb5dd848be487210d870bd5, type: 2}
-  - {fileID: 0}
+  - {fileID: 179934, guid: b94b4bd575587e7448858d2ef4ca179c, type: 2}
   - {fileID: 190500, guid: 55ce7cdc746b5e94b8ab9948763f87f5, type: 2}
   - {fileID: 171106, guid: 280ed71d6b8257a43b46493ae86e942c, type: 2}
   - {fileID: 151116, guid: 970f4e3b02ea4604dab9e59c3d84b9ee, type: 2}

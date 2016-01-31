@@ -16,6 +16,7 @@ public class Tags{
     public class Layers
     {
         public const string swipable = "Swipable";
+        public const string overworld = "Overworld";
     }
 
     public class AnimatorParams
