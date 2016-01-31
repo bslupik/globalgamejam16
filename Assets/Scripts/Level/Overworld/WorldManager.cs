@@ -24,13 +24,16 @@ public class WorldManager : MonoBehaviour
 
     public GameObject levelFinish;
     public GameObject instructionScreen;
+    public GameObject persistentUI;
 
     public void Start()
 	{
         levelFinish = GameObject.Find("LevelFinishUI");
         instructionScreen = GameObject.Find("InstructionScreen");
+        persistentUI = GameObject.Find("PersistentUI");
         levelFinish.SetActive(false);
         instructionScreen.SetActive(false);
+        persistentUI.SetActive(false);
         for (int i = 0; i < village.Length; ++i)
         {
             if (difficulty[i] == 0)
@@ -87,6 +90,7 @@ public class WorldManager : MonoBehaviour
         instructionScreen.SetActive(false);
         yield return scripting.FadeIn();
         Time.timeScale = 1.0f;
+        persistentUI.SetActive(true);
     }
 
     public void EndLevel(float finalScore)
@@ -104,6 +108,7 @@ public class WorldManager : MonoBehaviour
         yield return scripting.FadeOut();
         Time.timeScale = 0;
         GameObject.FindWithTag("SaveManager").GetComponent<SaveManager>().UnloadLevel();
+        GameObject.Find("PersistentUI").SetActive(false);
         OnLevelFinished(finalScore);
         yield return scripting.FadeIn();
         Time.timeScale = 1.0f;
