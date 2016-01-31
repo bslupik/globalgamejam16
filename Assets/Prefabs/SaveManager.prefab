@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &103506
 GameObject:
   m_ObjectHideFlags: 1
@@ -319,7 +319,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outputFilePath: Assets\Resources\LevelFiles\
   inputFilePath: LevelFiles\
-  fileName: 
+  fileName: choppingwood
   savableObjects: []
   spawnableObjects:
   - {fileID: 179040, guid: 343d4de1f560afb469a1dcdf8eaf8fac, type: 2}
@@ -347,9 +347,12 @@ MonoBehaviour:
   - {fileID: 108542, guid: 980ec3579cb5dd848be487210d870bd5, type: 2}
   - {fileID: 179934, guid: b94b4bd575587e7448858d2ef4ca179c, type: 2}
   - {fileID: 190500, guid: 55ce7cdc746b5e94b8ab9948763f87f5, type: 2}
-  - {fileID: 171106, guid: 280ed71d6b8257a43b46493ae86e942c, type: 2}
+  - {fileID: 154358, guid: a92aa45cf6c0ebd4db3ac2ba97241151, type: 2}
   - {fileID: 151116, guid: 970f4e3b02ea4604dab9e59c3d84b9ee, type: 2}
   - {fileID: 112352, guid: 502b6666266dc6c489f00285075cf4c7, type: 2}
+  - {fileID: 182130, guid: f1d20d1f16ec5f74fac5c69b250e9d3b, type: 2}
+  - {fileID: 132166, guid: e3589b28d26b76c438f4e24af500ae4e, type: 2}
+  - {fileID: 128098, guid: 191e241fb6043bc479656aebe564d11b, type: 2}
   gameTime: 0
   loadedObjects: []
 --- !u!114 &11422490
@@ -872,6 +875,10 @@ Prefab:
       propertyPath: spawnableObjects.Array.data[4]
       value: 
       objectReference: {fileID: 162598, guid: f526e9afb9c39da4c8f43253381f2b0d, type: 2}
+    - target: {fileID: 0}
+      propertyPath: spawnableObjects.Array.data[25]
+      value: 
+      objectReference: {fileID: 154358, guid: a92aa45cf6c0ebd4db3ac2ba97241151, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 136372}

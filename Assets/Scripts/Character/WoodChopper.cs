@@ -48,7 +48,7 @@ public class WoodChopper : Base
             position += choppableFrequency[index];
         }
 
-        GameObject newItem = (GameObject) GameObject.Instantiate(choppableObjects[index], new Vector3(transform.position.x - 1.0f, transform.position.y, transform.position.z), Quaternion.identity);
+        GameObject newItem = (GameObject) GameObject.Instantiate(choppableObjects[index], new Vector3(transform.position.x - 1.0f, transform.position.y + 2.0f, transform.position.z), Quaternion.identity);
         newItem.GetComponent<SpriteRenderer>().enabled = false;
         newItem.transform.parent = transform;
         return newItem;
@@ -59,7 +59,7 @@ public class WoodChopper : Base
         if (conveyerBelt[0] != null)
         {
             conveyerBelt[0].transform.Translate(axis * 1.0f);
-            conveyerBelt[0].GetComponent<Choppable>().choppable = true;
+            conveyerBelt[0].GetComponent<Choppable>().animate(true);
             conveyerBelt[0].GetComponent<SpriteRenderer>().enabled = true;
         }
 

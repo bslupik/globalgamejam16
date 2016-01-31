@@ -122,7 +122,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22435898, guid: b94b4bd575587e7448858d2ef4ca179c, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 22435898, guid: b94b4bd575587e7448858d2ef4ca179c, type: 2}
       propertyPath: m_AnchoredPosition.x
@@ -582,7 +582,7 @@ Prefab:
     - target: {fileID: 11477872, guid: e3589b28d26b76c438f4e24af500ae4e, type: 2}
       propertyPath: arrowSpawner
       value: 
-      objectReference: {fileID: 1875631007}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e3589b28d26b76c438f4e24af500ae4e, type: 2}
   m_IsPrefabParent: 0
@@ -619,15 +619,6 @@ MonoBehaviour:
   timePerBeat: 1
   levelScore: 0
   levelScoreBuffer: 0
-  musicIndex: 
-  levelName: []
-  goodScore: []
-  greatScore: []
-  perfectScore: []
-  difficulty: 
-  village: 
-  music: []
-  musicBeatSpeed: []
   orderedNumbers: 
   shakeMagnitude: 0
   shakeDuration: 0
@@ -743,17 +734,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 443734, guid: f1d20d1f16ec5f74fac5c69b250e9d3b, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f1d20d1f16ec5f74fac5c69b250e9d3b, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &1875631007 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11498968, guid: f1d20d1f16ec5f74fac5c69b250e9d3b,
-    type: 2}
-  m_PrefabInternal: {fileID: 1875631006}
-  m_Script: {fileID: 11500000, guid: 99066c088200dca4f9cadeafc6ccde41, type: 3}
 --- !u!1 &2067449474
 GameObject:
   m_ObjectHideFlags: 0

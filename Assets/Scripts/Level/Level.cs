@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System;
 using UnityEngine.UI;
 
-public class Level : Base
+public class Level : Base, IObservable<int>
 {
     public const float BEAT_THRESHOLD = 0.5f;
     public float timeSinceBeat = 0.0f;
@@ -12,6 +12,10 @@ public class Level : Base
     public float levelScore = 0.0f;
     public float levelScoreBuffer = 0;
     // public Text scoreText;
+
+    Observable<int> orderObservable = new Observable<int>();
+
+    public Observable<int> Observable(IObservable<int> self) { return orderObservable; }
 
     [SerializeField]
     public int[] orderedNumbers;
@@ -44,7 +48,6 @@ public class Level : Base
             Debug.Log("BEAT");
             timeSinceBeat -= timePerBeat;
         }
-
         // scoreText.text = "" + levelScore;
     }
 
@@ -121,6 +124,7 @@ public class Level : Base
                 sortedOrderedNumbers.Dequeue();
                 PlayerActed();
                 completedObjects.Add(food);
+                orderObservable.Post(food.order + 3);
                 return true;
             }
             else

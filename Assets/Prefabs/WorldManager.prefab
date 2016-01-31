@@ -41,15 +41,71 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sound: {fileID: 0}
   level: {fileID: 0}
-  musicIndex: 
-  levelName: []
-  goodScore: []
-  greatScore: []
-  perfectScore: []
-  difficulty: 
-  village: 
-  music: []
-  musicBeatSpeed: []
+  musicIndex: 000000000000000000000000010000000100000001000000020000000200000002000000030000000300000003000000
+  levelName:
+  - TikiTorch
+  - WhackAGhost
+  - Acupuncture
+  - PeasantSlayer
+  - ChoppingWood
+  - Writing
+  - Cauldron
+  - ShootingDodos
+  - GardenMaze
+  - NetFishing
+  - LassoAnimals
+  - PutOutFires
+  goodScore:
+  - 10
+  - 25
+  - 10
+  - 10
+  - 8
+  - 5
+  - 4
+  - 5
+  - 5
+  - 10
+  - 5
+  - 10
+  greatScore:
+  - 10
+  - 30
+  - 15
+  - 15
+  - 12
+  - 10
+  - 5
+  - 7
+  - 10
+  - 15
+  - 10
+  - 12
+  perfectScore:
+  - 25
+  - 35
+  - 18
+  - 18
+  - 15
+  - 15
+  - 6
+  - 9
+  - 15
+  - 20
+  - 15
+  - 15
+  difficulty: 010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  village: 000000000000000000000000010000000100000001000000020000000200000002000000030000000300000003000000
+  music:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  musicBeatSpeed:
+  - 0
+  - 0
+  - 0
+  - 0
   levelDifficulty: 1
   currentLevelIndex: -1
   villages: []
@@ -59,7 +115,355 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: music.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: village.Array.size
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: levelName.Array.size
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: goodScore.Array.size
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: musicIndex.Array.size
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: greatScore.Array.size
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: difficulty.Array.size
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: perfectScore.Array.size
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: musicBeatSpeed.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: musicIndex.Array.data[3]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: musicIndex.Array.data[4]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: musicIndex.Array.data[5]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: musicIndex.Array.data[6]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: musicIndex.Array.data[7]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: musicIndex.Array.data[8]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: musicIndex.Array.data[9]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: musicIndex.Array.data[10]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: musicIndex.Array.data[11]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: levelName.Array.data[0]
+      value: TikiTorch
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: levelName.Array.data[1]
+      value: WhackAGhost
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: levelName.Array.data[2]
+      value: Acupuncture
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: levelName.Array.data[3]
+      value: PeasantSlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: levelName.Array.data[4]
+      value: ChoppingWood
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: levelName.Array.data[5]
+      value: Writing
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: levelName.Array.data[6]
+      value: Cauldron
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: levelName.Array.data[7]
+      value: ShootingDodos
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: levelName.Array.data[8]
+      value: GardenMaze
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: levelName.Array.data[9]
+      value: NetFishing
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: levelName.Array.data[10]
+      value: LassoAnimals
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: levelName.Array.data[11]
+      value: PutOutFires
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: goodScore.Array.data[0]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: goodScore.Array.data[1]
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: goodScore.Array.data[2]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: goodScore.Array.data[3]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: goodScore.Array.data[4]
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: goodScore.Array.data[5]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: goodScore.Array.data[6]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: goodScore.Array.data[7]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: goodScore.Array.data[8]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: goodScore.Array.data[9]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: goodScore.Array.data[10]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: goodScore.Array.data[11]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: greatScore.Array.data[0]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: greatScore.Array.data[1]
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: greatScore.Array.data[2]
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: greatScore.Array.data[3]
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: greatScore.Array.data[4]
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: greatScore.Array.data[5]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: greatScore.Array.data[6]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: greatScore.Array.data[7]
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: greatScore.Array.data[8]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: greatScore.Array.data[9]
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: greatScore.Array.data[10]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: greatScore.Array.data[11]
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: perfectScore.Array.data[0]
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: perfectScore.Array.data[1]
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: perfectScore.Array.data[2]
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: perfectScore.Array.data[3]
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: perfectScore.Array.data[4]
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: perfectScore.Array.data[5]
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: perfectScore.Array.data[6]
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: perfectScore.Array.data[7]
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: perfectScore.Array.data[8]
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: perfectScore.Array.data[9]
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: perfectScore.Array.data[10]
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: perfectScore.Array.data[11]
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: difficulty.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: difficulty.Array.data[1]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: difficulty.Array.data[2]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: difficulty.Array.data[3]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: difficulty.Array.data[4]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: difficulty.Array.data[5]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: difficulty.Array.data[6]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: difficulty.Array.data[7]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: difficulty.Array.data[8]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: difficulty.Array.data[9]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: difficulty.Array.data[10]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: difficulty.Array.data[11]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: village.Array.data[3]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: village.Array.data[4]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: village.Array.data[5]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: village.Array.data[6]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: village.Array.data[7]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: village.Array.data[8]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: village.Array.data[9]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: village.Array.data[10]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: village.Array.data[11]
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 136628}
