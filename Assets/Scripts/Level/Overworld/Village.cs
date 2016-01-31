@@ -4,6 +4,8 @@ using System.Collections;
 [RequireComponent(typeof(Collider2D))]
 public class Village : MonoBehaviour {
 
+    public static Village activeVillage;
+
     SaveManager saves;
     SceneChangeScripting scripting;
 
@@ -28,6 +30,7 @@ public class Village : MonoBehaviour {
 
     IEnumerator Spawning()
     {
+        activeVillage = this;
         yield return scripting.FadeOut();
         Time.timeScale = 0;
         saves.Load(levelNames[Random.Range(0, levelNames.Length - 1)]);
@@ -38,5 +41,15 @@ public class Village : MonoBehaviour {
         saves.UnloadLevel();
         active = true;
         Debug.Log("Back to overworld");
+        activeVillage = null;
+    }
+
+    public void Unload()
+    {
+        saves.UnloadLevel();
+        active = true;
+        Debug.Log("Back to overworld");
+        activeVillage = null;
+        StopAllCoroutines();
     }
 }
