@@ -286,7 +286,7 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11421344, guid: b34bef1618de8614b93a58dc9a6c94e5, type: 2}
-      propertyPath: spawnableObjects.Array.data[23]
+      propertyPath: fileName
       value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
