@@ -91,7 +91,6 @@ public class WorldManager : MonoBehaviour
 
     public void EndLevel(float finalScore)
     {
-        print("ending!");
         for (int i = 0; i < villages.Length; ++i)
         {
             villages[i].OnUnload();

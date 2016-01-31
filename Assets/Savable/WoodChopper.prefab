@@ -94,7 +94,7 @@ MonoBehaviour:
   - {fileID: 161616, guid: 08b2deac9d4f9c744af7600b83f60be8, type: 2}
   - {fileID: 188570, guid: 0ae3a7601df665d4386e8d1f14016758, type: 2}
   choppableFrequency:
-  - 1
+  - 4
   - 1
   axis: {x: 1, y: 0, z: 0}
 --- !u!212 &21250060
@@ -157,6 +157,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_LocalScale.z
       value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: choppableFrequency.Array.data[0]
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
