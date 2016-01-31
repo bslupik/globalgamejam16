@@ -14,6 +14,9 @@ public class Base : MonoBehaviour
 
     public virtual void Update()
 	{
-	
+	    if (level == null)
+        {
+            level = GameObject.FindWithTag(Tags.levelManager).GetComponent<Level>();
+        }
 	}
 }

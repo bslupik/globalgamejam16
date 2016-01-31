@@ -21,7 +21,7 @@ public class BeatAnimation : Base {
 	public override void Update() {
 		base.Update();
 
-        int nextSpriteIndex = (int) (base.level.timeSinceBeat / timePerSprite());
+        int nextSpriteIndex = (int) (level.timeSinceBeat / timePerSprite());
         if(nextSpriteIndex != spriteIndex)
             loadNextSprite();
 	}
@@ -34,9 +34,9 @@ public class BeatAnimation : Base {
         }
         if(sequenceOne)
         {
-            return (float) (base.level.timePerBeat / sequenceOneSprites.Length);
+            return (float) (level.timePerBeat / sequenceOneSprites.Length);
         }
-        return (float) (base.level.timePerBeat / sequenceTwoSprites.Length);
+        return (float) (level.timePerBeat / sequenceTwoSprites.Length);
     }
 
     private void loadNextSprite()

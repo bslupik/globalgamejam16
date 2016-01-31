@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class WorldManager : MonoBehaviour
 {
@@ -34,15 +35,15 @@ public class WorldManager : MonoBehaviour
         {
             if (difficulty[i] == 0)
             {
-                villages[i].easy.Add(i);
+                villages[village[i]].easy.Add(i);
             }
             else if (difficulty[i] == 1)
             {
-                villages[i].medium.Add(i);
+                villages[village[i]].medium.Add(i);
             }
             else
             {
-                villages[i].hard.Add(i);
+                villages[village[i]].hard.Add(i);
             }
         }
         scripting = Camera.main.GetComponent<SceneChangeScripting>();
@@ -67,6 +68,7 @@ public class WorldManager : MonoBehaviour
     {
         yield return scripting.FadeOut();
         Time.timeScale = 0;
+        instructionScreen.GetComponentInChildren<Image>().sprite = instructionBackground[currentLevelIndex];
         instructionScreen.SetActive(true);
         yield return scripting.FadeIn();
         Time.timeScale = 1.0f;
