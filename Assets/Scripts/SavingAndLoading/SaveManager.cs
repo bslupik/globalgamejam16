@@ -139,6 +139,9 @@ public class SaveManager : MonoBehaviour
         newObject.spawnPosition = new Vector3(float.Parse(data[2]), float.Parse(data[3]), float.Parse(data[4]));
         switch (newObject.savableID)
         {
+            case 0: // Villager spawner
+            case 1: // Grave
+                case 2
             case 10: //puncture point
                 newObject.metadata = new List<float>();
                 newObject.metadata.Add(float.Parse(data[5]));
