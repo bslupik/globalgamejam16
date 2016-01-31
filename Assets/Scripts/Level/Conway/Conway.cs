@@ -132,8 +132,6 @@ public class Conway : MonoBehaviour {
             for (int y = 0; y < yCount; y++)
             {
                 newNodeValues[x, y] = CalcuateNewState(x, y);
-                if (Random.value > 0.995f)
-                    newNodeValues[x, y] = !newNodeValues[x, y];
             }
         }
 
@@ -141,11 +139,13 @@ public class Conway : MonoBehaviour {
         {
             for (int y = 0; y < yCount; y++)
             {
-                nodes[x, y].alive = newNodeValues[x, y];
                 for (int i = 0; i < 4; i++)
                 {
-                    cols[i + nodes[x, y].uvIndex] = nodes[x, y].alive ? Color.red : Color.clear;
+                    cols[i + nodes[x, y].uvIndex] = newNodeValues[x, y] ? Color.red : Color.clear;
                 }
+                if (Random.value > 0.995f)
+                    newNodeValues[x, y] = !newNodeValues[x, y];
+                nodes[x, y].alive = newNodeValues[x, y];
             }
         }
         meshFil.mesh.colors = cols;
