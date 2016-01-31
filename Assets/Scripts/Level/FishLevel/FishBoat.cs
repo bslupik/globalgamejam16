@@ -10,10 +10,13 @@ public class FishBoat : Base {
     [SerializeField]
     protected float timeBetweenNets;
 
+    SpriteRenderer netRend;
+
     Collider2D col;
 
     void Awake()
     {
+        netRend = GetComponent<SpriteRenderer>();
         col = GetComponent<Collider2D>();
     }
 	public override void Start () {
@@ -30,9 +33,11 @@ public class FishBoat : Base {
             yield return Callback.DoLerp((float l) => boatVisuals.transform.position = Vector2.Lerp(boatPos, new Vector2(netPos.x, boatPos.y), l), 1, this);
             boatPos = boatVisuals.transform.position;
             this.transform.position = boatPos;
+            netRend.enabled = true;
             col.enabled = true;
             yield return Callback.DoLerp((float l) => this.transform.position = Vector2.Lerp(boatPos, netPos, l), 3, this);
             yield return Callback.DoLerp((float l) => this.transform.position = Vector2.Lerp(boatPos, netPos, l), 3, this, reverse : true);
+            netRend.enabled = false;
             yield return new WaitForSeconds(timeBetweenNets);
         }
     }
