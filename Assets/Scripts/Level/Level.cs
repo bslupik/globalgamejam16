@@ -8,7 +8,7 @@ public class Level : Base, IObservable<int>
 {
     public const float BEAT_THRESHOLD = 0.5f;
     public float timeSinceBeat = 0.0f;
-    public float timePerBeat = 1.0f;
+    public float timePerBeat = 0.5357f;
     public float levelScore = 0.0f;
     public float levelScoreBuffer = 0;
     public float levelTime = 0.0f;
@@ -70,6 +70,7 @@ public class Level : Base, IObservable<int>
         {
             maxLevelTime = 33.0f;
         }
+        timePerBeat = 0.5357f;
         // scoreText = GameObject.Find("ScoreText").GetComponent<Text>();
     }
 	

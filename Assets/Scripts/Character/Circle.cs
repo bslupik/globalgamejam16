@@ -7,7 +7,7 @@ using System.Collections.Generic;
 public class Circle : MonoBehaviour {
 
     [SerializeField]
-    protected float maxLength;
+    protected float maxLength = 8.0f;
 
     PolygonCollider2D col;
 
@@ -23,6 +23,10 @@ public class Circle : MonoBehaviour {
     {
         col = GetComponent<PolygonCollider2D>();
         rend = GetComponent<LineRenderer>();
+        if (maxLength != 8.0f)
+        {
+            maxLength = 8.0f;
+        }
     }
 
     // Update is called once per frame
