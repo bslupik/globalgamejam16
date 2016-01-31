@@ -11,6 +11,29 @@ public class Level : Base, IObservable<int>
     public float timePerBeat = 1.0f;
     public float levelScore = 0.0f;
     public float levelScoreBuffer = 0;
+    public float localTime = 0f;
+    public float totalScoreMult = 1f;
+    public int mazeNodeCount = 21;
+    public int writingLineCount = 10;
+    public int fishCaught = 0;
+    public int circlesDrawn = 0;
+    public int firesExtinguished = 0;
+    public int dodosCaught = 0;
+
+    public float dodoScoreValue = 1f;
+    public float ghostFailValue = 0.5f;
+    public float ghostScoreValue = 1f;
+    public float villagerFailValue = 1f;
+    public float villagerScoreValue = 1f;
+    public float lumberFailValue = 1f;
+    public float lumberScoreValue = 1f;
+    public float torchScoreValue = 1f;
+    public float acupunctureScoreValue = 1f;
+    public float acupunctureFailValue = 1f;
+    public float mazeScoreValue = 1f;
+    public float writingScoreValue = 1f;
+    public float cauldronScoreValue = 1f;
+
     // public Text scoreText;
 
     Observable<int> orderObservable = new Observable<int>();
@@ -45,9 +68,10 @@ public class Level : Base, IObservable<int>
         timeSinceBeat += Time.deltaTime;
         if (timeSinceBeat > timePerBeat)
         {
-            Debug.Log("BEAT");
+            //Debug.Log("BEAT");
             timeSinceBeat -= timePerBeat;
         }
+        localTime += Time.deltaTime;
         // scoreText.text = "" + levelScore;
     }
 
@@ -60,7 +84,7 @@ public class Level : Base, IObservable<int>
 
     public bool OnBeat()
     {
-        Debug.Log(ScoreMultiplier());
+        //Debug.Log(ScoreMultiplier());
         return ScoreMultiplier() >= BEAT_THRESHOLD;
     }
 
@@ -150,10 +174,10 @@ public class Level : Base, IObservable<int>
 
             if (node.order == sortedOrderedNumbers.Peek())
             {
-                Debug.Log("c");
+                //Debug.Log("c");
                 completedObjects.Add(node);
                 sortedOrderedNumbers.Dequeue();
-                Debug.Log(target.order + " " + sortedOrderedNumbers.Peek());
+                //Debug.Log(target.order + " " + sortedOrderedNumbers.Peek());
                 if (target.order == sortedOrderedNumbers.Peek())
                 {
                     PlayerActed();
@@ -163,12 +187,12 @@ public class Level : Base, IObservable<int>
             ScreenShake();
             completedObjects.Clear();
             sortedOrderedNumbers = new Queue<int>(orderedNumbers);
-            Debug.Log("a");
+            //Debug.Log("a");
             return false;
         }
         else
         {
-            Debug.Log("b");
+            //Debug.Log("b");
             ScreenShake();
             return false;
         }
@@ -196,17 +220,18 @@ public class Level : Base, IObservable<int>
     // ==================== Dodo Shooting ==================== //
     public void DodoKilled()
     {
-        levelScore += 1f;
+        levelScore += dodoScoreValue;
     }
+
     // ==================== Graveyard ==================== //
     public void GhostEscaped()
     {
-        levelScore -= 0.5f;
+        levelScore -= ghostFailValue;
     }
 
     public void GhostClicked()
     {
-        levelScore += level.ScoreMultiplier();
+        levelScore += level.ScoreMultiplier() * ghostScoreValue;
     }
 
     // ==================== Village Raid ==================== //
@@ -216,7 +241,7 @@ public class Level : Base, IObservable<int>
     }
     public void EnemySlashed()
     {
-        levelScore += level.ScoreMultiplier();
+        levelScore += level.ScoreMultiplier() * villagerFailValue;
     }
 
     // ==================== When I'm Chopping Lumber ==================== //
@@ -225,10 +250,10 @@ public class Level : Base, IObservable<int>
         switch (type)
         {
             case 0:
-                levelScore -= 1f;
+                levelScore -= lumberFailValue;
                 break;
             case 1:
-                levelScore += level.ScoreMultiplier();
+                levelScore += level.ScoreMultiplier() * lumberScoreValue;
                 break;
         }
     }
@@ -236,22 +261,92 @@ public class Level : Base, IObservable<int>
     // ==================== Tiki Torches ==================== //
     public void TorchClicked()
     {
-        levelScore += level.ScoreMultiplier();
+        levelScore += level.ScoreMultiplier() * torchScoreValue;
     }
 
     // ==================== Acupuncture ==================== //
     public void AcupuncturePinned()
     {
-        levelScore += level.ScoreMultiplier();
+        levelScore += level.ScoreMultiplier() * acupunctureScoreValue;
     }
 
     public void AcupunctureMiss()
     {
-        levelScore -= 1f;
+        levelScore -= acupunctureFailValue;
     }
+
+    // ==================== Maze ==================== //
+    public void NodeReached()
+    {
+        totalScoreMult += level.ScoreMultiplier() * mazeScoreValue;
+    }
+
+    // ==================== Writing ==================== // 
+    public void LineDrawn()
+    {
+        totalScoreMult += level.ScoreMultiplier() * writingScoreValue;
+    }
+
+    // ==================== Cauldron ==================== //
+    public void RecipeCompleted()
+    {
+        levelScore += cauldronScoreValue;
+    }
+
+    // ==================== Putting out Fires ==================== //
+    public void ExtinguishArea() // Call whenever you draw a circle
+    {
+        levelScore += level.ScoreMultiplier();
+        circlesDrawn++;
+    }
+    public void ExtinguishFire(int numfires) // Call when you extinguish Fires in circle
+    {
+        firesExtinguished += numfires;
+    }
+
+    // ==================== NetFishing ==================== //
+    public void HerdFish() // Call whenever you draw a circle
+    {
+        totalScoreMult += level.ScoreMultiplier();
+        circlesDrawn++;
+    }
+    public void CatchFish(int numfish) // Call when the net catches fish
+    {
+        fishCaught += numfish;
+    }
+
+    // ==================== Lasso ==================== //
+    public void HerdDodos() // Call whenever you draw a circle
+    {
+        totalScoreMult += level.ScoreMultiplier();
+        circlesDrawn++;
+    }
+    public void CatchDodo(int numDodos) // Call when you catch Dodos in circle
+    {
+        dodosCaught += numDodos;
+    }
+    // =============================================== //
 
     public void EndLevel()
     {
+        switch( GameObject.Find("WorldManager").GetComponent<WorldManager>().currentLevelIndex )
+        {
+            case 5:
+                levelScore = (totalScoreMult / mazeNodeCount) * localTime;
+                break;
+            case 8:
+                levelScore = (totalScoreMult / writingLineCount) * localTime;
+                break;
+            case 9:
+                levelScore = (totalScoreMult / circlesDrawn) * fishCaught;
+                break;
+            case 10:
+                levelScore = (totalScoreMult / circlesDrawn) * dodosCaught;
+                break;
+            case 11:
+                levelScore = (totalScoreMult / circlesDrawn) * firesExtinguished;
+                break;
+        }
         GameObject.Find("WorldManager").GetComponent<WorldManager>().EndLevel(levelScore);
     }
 }
