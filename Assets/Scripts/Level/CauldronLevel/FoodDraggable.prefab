@@ -12,6 +12,7 @@ GameObject:
   - 61: {fileID: 6174546}
   - 114: {fileID: 11478662}
   - 50: {fileID: 5031798}
+  - 114: {fileID: 11483422}
   m_Layer: 0
   m_Name: FoodDraggable
   m_TagString: Untagged
@@ -76,6 +77,21 @@ MonoBehaviour:
   sound: {fileID: 0}
   level: {fileID: 0}
   setOrder: 0
+--- !u!114 &11483422
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 151012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a60a74faa62f6914cbcd1688dacddeb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  savableID: 14
+  timeToSpawn: 0
+  metadata:
+  - 0
 --- !u!212 &21213088
 SpriteRenderer:
   m_ObjectHideFlags: 1
