@@ -19,12 +19,12 @@ public class Arrow : TimedLife {
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("COLLISION");
-        Dodo dodo = collision.transform.GetComponent<Dodo>();
+        RectRoamer dodo = collision.transform.GetComponent<RectRoamer>();
         if(dodo != null)
         {
             base.level.DodoKilled();
-            GameObject.Destroy(dodo);
+            GameObject.Destroy(dodo.gameObject);
+            GameObject.Destroy(this.gameObject);
         }
     }
 }

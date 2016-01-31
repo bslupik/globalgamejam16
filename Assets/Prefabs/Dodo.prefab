@@ -10,8 +10,8 @@ GameObject:
   - 4: {fileID: 469224}
   - 212: {fileID: 21290806}
   - 61: {fileID: 6139780}
-  - 114: {fileID: 11461762}
   - 50: {fileID: 5059264}
+  - 114: {fileID: 11442866}
   m_Layer: 0
   m_Name: Dodo
   m_TagString: Untagged
@@ -62,7 +62,7 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 0.6399999, y: 0.6399999}
---- !u!114 &11461762
+--- !u!114 &11442866
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -70,7 +70,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 121380}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9227326afde0770439107bba5c9058f9, type: 3}
+  m_Script: {fileID: 11500000, guid: 7a4c76cd118fcc94c9386f868408490c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sound: {fileID: 0}
