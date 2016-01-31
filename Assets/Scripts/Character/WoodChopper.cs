@@ -59,7 +59,7 @@ public class WoodChopper : Base
         if (conveyerBelt[0] != null)
         {
             conveyerBelt[0].transform.Translate(axis * 1.0f);
-            conveyerBelt[0].GetComponent<Choppable>().choppable = true;
+            conveyerBelt[0].GetComponent<Choppable>().animate(true);
             conveyerBelt[0].GetComponent<SpriteRenderer>().enabled = true;
         }
 

@@ -23,18 +23,16 @@ public class Village : MonoBehaviour {
 
     void OnMouseDown()
     {
-        if (active)
+        if (active && !world.levelFinish.activeSelf)
         {
             active = false;
-            StartCoroutine(Spawning());
+            Spawning();
         }
     }
 
-    IEnumerator Spawning()
+    void Spawning()
     {
         activeVillage = this;
-        yield return scripting.FadeOut();
-        Time.timeScale = 0;
         if (world.levelDifficulty == 0) {
             world.StartLevel(easy[Random.Range(0, easy.Count)]);
         } else if (world.levelDifficulty == 1) {
@@ -42,10 +40,6 @@ public class Village : MonoBehaviour {
         } else {// if (world.levelDifficulty == 2) {
             world.StartLevel(hard[Random.Range(0, hard.Count)]);
         }
-        
-        yield return scripting.FadeIn();
-        Debug.Log("Timescale");
-        Time.timeScale = 1f;
     }
 
     public void OnStart()

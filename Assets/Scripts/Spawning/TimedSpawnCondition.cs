@@ -12,6 +12,13 @@ public class TimedSpawnCondition : SpawnCondition
 	public override void Start()
 	{
 		base.Start();
+        TimedSpawnCondition parentCondition = GetComponentInParent<TimedSpawnCondition>();
+        if (parentCondition != null)
+        {
+            baseSpawnTime = parentCondition.baseSpawnTime;
+            spawnTimeVariation = parentCondition.spawnTimeVariation;
+        }
+
         if (spawnTime == 0.0f)
         {
             spawnTime = baseSpawnTime + Random.Range(-spawnTimeVariation, spawnTimeVariation);
