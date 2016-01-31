@@ -7,7 +7,10 @@ public class FoodDraggable : OnBeatDraggable, IResettable, IObserver<int> {
     public int order { get; set; }
 
     [SerializeField]
-    protected int setOrder = -1;
+    public int setOrder = -1;
+
+    [SerializeField]
+    protected Sprite[] sprites;
 
     Vector2 originalLocation;
 
@@ -21,18 +24,19 @@ public class FoodDraggable : OnBeatDraggable, IResettable, IObserver<int> {
         rigid = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
         originalLocation = transform.position;
-        if (setOrder != -1)
-        {
-            order = setOrder;
-        }
-        if(order > 0)
-            this.gameObject.SetActive(false);
     }
 
     public override void Start()
     {
         base.Start();
         level.Subscribe(this);
+        if (setOrder != -1)
+        {
+            order = setOrder;
+        }
+        if (order > 2)
+            this.gameObject.SetActive(false);
+        GetComponent<SpriteRenderer>().sprite = sprites[order % sprites.Length];
     }
 
     public void reset()
@@ -49,8 +53,8 @@ public class FoodDraggable : OnBeatDraggable, IResettable, IObserver<int> {
     protected override void OnDragEnd()
     {
         base.OnDragEnd();
-        if((level as CauldronLevel).PlayerActed(this))
-            this.gameObject.SetActive(false);
+        if (level.PlayerActed(this))
+            Destroy(this.gameObject);
     }
 
     public void Notify(int i)
