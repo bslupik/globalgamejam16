@@ -126,7 +126,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11421344, guid: b34bef1618de8614b93a58dc9a6c94e5, type: 2}
       propertyPath: fileName
-      value: PeasantSlayer
+      value: PutOutFires
       objectReference: {fileID: 0}
     - target: {fileID: 101124, guid: b34bef1618de8614b93a58dc9a6c94e5, type: 2}
       propertyPath: m_IsActive
@@ -409,6 +409,47 @@ Prefab:
     - target: {fileID: 147872, guid: 957dfe116c7696a4fbfc068974c64ac8, type: 2}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11484960, guid: 957dfe116c7696a4fbfc068974c64ac8, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1a6bd939372003b4bb8a9b40008cd62a,
+        type: 3}
+    - target: {fileID: 22464098, guid: 957dfe116c7696a4fbfc068974c64ac8, type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 22457940, guid: 957dfe116c7696a4fbfc068974c64ac8, type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 22408692, guid: 957dfe116c7696a4fbfc068974c64ac8, type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 22484460, guid: 957dfe116c7696a4fbfc068974c64ac8, type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 22484460, guid: 957dfe116c7696a4fbfc068974c64ac8, type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -107
+      objectReference: {fileID: 0}
+    - target: {fileID: 22464098, guid: 957dfe116c7696a4fbfc068974c64ac8, type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 106
+      objectReference: {fileID: 0}
+    - target: {fileID: 22457940, guid: 957dfe116c7696a4fbfc068974c64ac8, type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -34
+      objectReference: {fileID: 0}
+    - target: {fileID: 22455112, guid: 957dfe116c7696a4fbfc068974c64ac8, type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 22408692, guid: 957dfe116c7696a4fbfc068974c64ac8, type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 34
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 957dfe116c7696a4fbfc068974c64ac8, type: 2}
