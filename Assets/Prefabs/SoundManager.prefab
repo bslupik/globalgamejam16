@@ -15,7 +15,7 @@ GameObject:
   - 82: {fileID: 8218224}
   m_Layer: 0
   m_Name: SoundManager
-  m_TagString: Untagged
+  m_TagString: SoundManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -267,7 +267,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds: []
   soundSource: {fileID: 8217490}
-  backgroundMusic: {fileID: 8297054}
+  backgroundMusic: {fileID: 0}
   foregroundMusic: {fileID: 11429316}
 --- !u!114 &11429316
 MonoBehaviour:
