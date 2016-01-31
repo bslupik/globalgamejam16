@@ -167,6 +167,7 @@ public class SaveManager : MonoBehaviour
             case 1: // Grave
             case 6: // Super grave
             case 12: // Fire hut
+            case 23: // Dodo spawner
             case 25: // Lasso animal
                 newObject.metadata = new List<float>();
                 if (data.Length >= 8)
@@ -217,6 +218,7 @@ public class SaveManager : MonoBehaviour
             case 1: // Grave
             case 6: // Super grave
             case 12: // Fire hut
+            case 23: // Dodo spawner
             case 25: // Lasso animal
                 if (data.metadata[0] != 0)
                 {
