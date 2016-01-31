@@ -37,6 +37,7 @@ public class Level : Base, IObservable<int>
 	public override void Start()
 	{
         base.Start();
+        worldManager = GameObject.Find("WorldManager").GetComponent<WorldManager>();
         Array.Sort(orderedNumbers);
         sortedOrderedNumbers = new Queue<int>(orderedNumbers);
         // scoreText = GameObject.Find("ScoreText").GetComponent<Text>();
