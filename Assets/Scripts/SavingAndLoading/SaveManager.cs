@@ -167,6 +167,7 @@ public class SaveManager : MonoBehaviour
             case 1: // Grave
             case 6: // Super grave
             case 12: // Fire hut
+            case 23: // Dodo spawner
             case 25: // Lasso animal
                 newObject.metadata = new List<float>();
                 if (data.Length >= 8)
@@ -197,6 +198,7 @@ public class SaveManager : MonoBehaviour
         switch (data.savableID)
         {
             case 9: // Acupuncture level manager
+                print("Acu");
                 instantiatedObject.GetComponentInChildren<Level>().orderedNumbers = new int[(int) data.metadata[0]];
                 for (int i = 0; i < data.metadata[0]; ++i)
                 {
@@ -217,6 +219,7 @@ public class SaveManager : MonoBehaviour
             case 1: // Grave
             case 6: // Super grave
             case 12: // Fire hut
+            case 23: // Dodo spawner
             case 25: // Lasso animal
                 if (data.metadata[0] != 0)
                 {
