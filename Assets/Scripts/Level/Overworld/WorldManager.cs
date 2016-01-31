@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class WorldManager : MonoBehaviour
 {
@@ -67,6 +68,7 @@ public class WorldManager : MonoBehaviour
     {
         yield return scripting.FadeOut();
         Time.timeScale = 0;
+        instructionScreen.GetComponentInChildren<Image>().sprite = instructionBackground[currentLevelIndex];
         instructionScreen.SetActive(true);
         yield return scripting.FadeIn();
         Time.timeScale = 1.0f;
