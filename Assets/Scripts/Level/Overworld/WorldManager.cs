@@ -34,15 +34,15 @@ public class WorldManager : MonoBehaviour
         {
             if (difficulty[i] == 0)
             {
-                villages[i].easy.Add(i);
+                villages[village[i]].easy.Add(i);
             }
             else if (difficulty[i] == 1)
             {
-                villages[i].medium.Add(i);
+                villages[village[i]].medium.Add(i);
             }
             else
             {
-                villages[i].hard.Add(i);
+                villages[village[i]].hard.Add(i);
             }
         }
         scripting = Camera.main.GetComponent<SceneChangeScripting>();
