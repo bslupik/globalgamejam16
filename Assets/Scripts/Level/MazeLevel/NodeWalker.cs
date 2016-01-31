@@ -15,6 +15,8 @@ public class NodeWalker : Base {
     public override void Start () {
 		base.Start();
         initialized = false;
+        direction = new Vector3(0.0f, 0.0f, 0.0f);
+        Debug.Log(direction);
 	}
 	
 	public override void Update () {
@@ -53,6 +55,7 @@ public class NodeWalker : Base {
         }
         targetNode = nodes.Dequeue();
         direction = (targetNode.transform.position - transform.position).normalized;
+        Debug.Log(targetNode.transform.position + " " + transform.position);
         animated.SetDirection(getAnimationDirection());
     }
 
