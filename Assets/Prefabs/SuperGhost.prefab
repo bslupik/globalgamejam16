@@ -76,7 +76,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sound: {fileID: 0}
   level: {fileID: 0}
-  lifeTime: 3
+  lifeTime: 4
+  lifeTimeBase: 6
+  lifeTimeVariation: 2
   health: 0
   maxHealth: 200
   clickDamage: 100
@@ -152,6 +154,18 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: clickDamage
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: lifeTimeBase
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: lifeTimeVariation
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: lifeTime
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
