@@ -7,7 +7,6 @@ public class ExtendingBow : OnBeatDraggable {
     public LineRenderer leftString;
     public LineRenderer rightString;
     public Transform bowArrow;
-    public Spawner arrowSpawner;
     private BowReleasedSpawnCondition arrowSpawnCondition;
     private volatile float mouseDist;
 
