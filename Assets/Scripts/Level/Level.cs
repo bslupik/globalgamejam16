@@ -65,7 +65,6 @@ public class Level : Base, IObservable<int>
         sortedOrderedNumbers = new LinkedList<int>(orderedNumbers);
         Debug.Log(sortedOrderedNumbers);
         sound.PlayBackground(worldManager.musicIndex[worldManager.currentLevelIndex]);
-        sound.PlayForeground(worldManager.musicIndex[worldManager.currentLevelIndex]);
         if (maxLevelTime > 29 && maxLevelTime < 31)
         {
             maxLevelTime = 33.0f;
@@ -105,19 +104,19 @@ public class Level : Base, IObservable<int>
         return ScoreMultiplier() >= BEAT_THRESHOLD;
     }
 
-    public void PlayBaseActionSound()
+    public void PlayBaseActionSound(int actionIndex)
     {
         if (ScoreMultiplier() < 0.5f)
         {
-            sound.PlaySound(0);
+            sound.PlayActionSound(actionIndex, 0);
         }
         else if (ScoreMultiplier() < 0.75f)
         {
-            sound.PlaySound(1);
+            sound.PlayActionSound(actionIndex, 1);
         }
         else
         {
-            sound.PlaySound(2);
+            sound.PlayActionSound(actionIndex, 2);
         }
     }
 
@@ -157,6 +156,7 @@ public class Level : Base, IObservable<int>
 
     public bool PlayerActed(FoodDraggable food)
     {
+        PlayBaseActionSound(3);
         Debug.Log(sortedOrderedNumbers);
         if (overlappingColliders.Contains(food.Collider))
         {
@@ -247,6 +247,7 @@ public class Level : Base, IObservable<int>
     public void DodoKilled()
     {
         levelScore += dodoScoreValue;
+        PlayBaseActionSound(12);
     }
 
     // ==================== Graveyard ==================== //
@@ -258,6 +259,7 @@ public class Level : Base, IObservable<int>
     public void GhostClicked()
     {
         levelScore += level.ScoreMultiplier() * ghostScoreValue;
+        PlayBaseActionSound(15);
     }
 
     // ==================== Village Raid ==================== //
@@ -265,9 +267,11 @@ public class Level : Base, IObservable<int>
     {
         levelScore -= 1f;
     }
+
     public void EnemySlashed()
     {
         levelScore += level.ScoreMultiplier() * villagerFailValue;
+        PlayBaseActionSound(5);
     }
 
     // ==================== When I'm Chopping Lumber ==================== //
@@ -275,11 +279,13 @@ public class Level : Base, IObservable<int>
     {
         switch (type)
         {
-            case 0:
-                levelScore -= lumberFailValue;
-                break;
             case 1:
+                levelScore -= lumberFailValue;
+                PlayBaseActionSound(7);
+                break;
+            case 0:
                 levelScore += level.ScoreMultiplier() * lumberScoreValue;
+                PlayBaseActionSound(9);
                 break;
         }
     }
@@ -288,6 +294,7 @@ public class Level : Base, IObservable<int>
     public void TorchClicked()
     {
         levelScore += level.ScoreMultiplier() * torchScoreValue;
+        PlayBaseActionSound(6);
     }
 
     // ==================== Acupuncture ==================== //
@@ -299,6 +306,7 @@ public class Level : Base, IObservable<int>
     public void AcupunctureMiss()
     {
         levelScore -= acupunctureFailValue;
+        PlayBaseActionSound(8);
     }
 
     // ==================== Maze ==================== //
@@ -311,6 +319,7 @@ public class Level : Base, IObservable<int>
     public void LineDrawn()
     {
         totalScoreMult += level.ScoreMultiplier() * writingScoreValue;
+        PlayBaseActionSound(11);
     }
 
     // ==================== Cauldron ==================== //
@@ -325,9 +334,11 @@ public class Level : Base, IObservable<int>
         levelScore += level.ScoreMultiplier();
         circlesDrawn++;
     }
+
     public void ExtinguishFire(int numfires) // Call when you extinguish Fires in circle
     {
         firesExtinguished += numfires;
+        PlayBaseActionSound(3);
     }
 
     // ==================== NetFishing ==================== //
@@ -339,6 +350,7 @@ public class Level : Base, IObservable<int>
     public void CatchFish(int numfish) // Call when the net catches fish
     {
         fishCaught += numfish;
+        PlayBaseActionSound(3);
     }
 
     // ==================== Lasso ==================== //
@@ -350,6 +362,7 @@ public class Level : Base, IObservable<int>
     public void CatchDodo(int numDodos) // Call when you catch Dodos in circle
     {
         dodosCaught += numDodos;
+        PlayBaseActionSound(13);
     }
     // =============================================== //
 

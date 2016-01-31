@@ -13,7 +13,6 @@ GameObject:
   - 82: {fileID: 8297054}
   - 114: {fileID: 11429316}
   - 82: {fileID: 8218224}
-  - 114: {fileID: 11427486}
   m_Layer: 0
   m_Name: SoundManager
   m_TagString: SoundManager
@@ -270,53 +269,20 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 0c4eabefaa9d411479679fed7169ffbc, type: 3}
   - {fileID: 8300000, guid: b1a5350b2e49e5646a9fbdea8b7feb2a, type: 3}
   - {fileID: 8300000, guid: e175eaa89cc22764a9484c7e29612d71, type: 3}
-  - {fileID: 8300000, guid: 0c4eabefaa9d411479679fed7169ffbc, type: 3}
-  - {fileID: 8300000, guid: 0c4eabefaa9d411479679fed7169ffbc, type: 3}
-  - {fileID: 8300000, guid: 0c4eabefaa9d411479679fed7169ffbc, type: 3}
-  - {fileID: 8300000, guid: 0c4eabefaa9d411479679fed7169ffbc, type: 3}
-  - {fileID: 8300000, guid: 0c4eabefaa9d411479679fed7169ffbc, type: 3}
-  - {fileID: 8300000, guid: 0c4eabefaa9d411479679fed7169ffbc, type: 3}
-  - {fileID: 8300000, guid: 0c4eabefaa9d411479679fed7169ffbc, type: 3}
-  - {fileID: 8300000, guid: 0c4eabefaa9d411479679fed7169ffbc, type: 3}
-  - {fileID: 8300000, guid: 0c4eabefaa9d411479679fed7169ffbc, type: 3}
-  - {fileID: 8300000, guid: 0c4eabefaa9d411479679fed7169ffbc, type: 3}
-  - {fileID: 8300000, guid: 0c4eabefaa9d411479679fed7169ffbc, type: 3}
-  - {fileID: 8300000, guid: 0c4eabefaa9d411479679fed7169ffbc, type: 3}
-  - {fileID: 8300000, guid: 0c4eabefaa9d411479679fed7169ffbc, type: 3}
-  - {fileID: 8300000, guid: 0c4eabefaa9d411479679fed7169ffbc, type: 3}
-  - {fileID: 8300000, guid: 0c4eabefaa9d411479679fed7169ffbc, type: 3}
-  - {fileID: 8300000, guid: 0c4eabefaa9d411479679fed7169ffbc, type: 3}
-  - {fileID: 8300000, guid: 0c4eabefaa9d411479679fed7169ffbc, type: 3}
-  - {fileID: 8300000, guid: 0c4eabefaa9d411479679fed7169ffbc, type: 3}
-  - {fileID: 8300000, guid: 0c4eabefaa9d411479679fed7169ffbc, type: 3}
-  - {fileID: 8300000, guid: 0c4eabefaa9d411479679fed7169ffbc, type: 3}
-  - {fileID: 8300000, guid: 0c4eabefaa9d411479679fed7169ffbc, type: 3}
-  - {fileID: 8300000, guid: 0c4eabefaa9d411479679fed7169ffbc, type: 3}
-  - {fileID: 8300000, guid: 0c4eabefaa9d411479679fed7169ffbc, type: 3}
-  - {fileID: 8300000, guid: 0c4eabefaa9d411479679fed7169ffbc, type: 3}
-  - {fileID: 8300000, guid: 0c4eabefaa9d411479679fed7169ffbc, type: 3}
-  - {fileID: 8300000, guid: 0c4eabefaa9d411479679fed7169ffbc, type: 3}
-  - {fileID: 8300000, guid: 0c4eabefaa9d411479679fed7169ffbc, type: 3}
+  - {fileID: 8300000, guid: 973da90d059e149469161c10470e6412, type: 3}
+  - {fileID: 8300000, guid: 9eae3f8348b9eb64f8bb236ac388dd2d, type: 3}
+  - {fileID: 8300000, guid: f97dfc5b228c05e4790e8344a9cb874c, type: 3}
+  - {fileID: 8300000, guid: 1705651c08e58dd4b83861b12e562cb8, type: 3}
+  - {fileID: 8300000, guid: 1ee6417dee9a83f4ba6da496d6c611d5, type: 3}
+  - {fileID: 8300000, guid: 79e526711394e5147aea06b658356812, type: 3}
+  - {fileID: 8300000, guid: fd95341017bdfb646a53875799c6bdfa, type: 3}
+  - {fileID: 8300000, guid: a7206d85a15c69a4ca2cb07d5124c384, type: 3}
+  - {fileID: 8300000, guid: 84c7c9abce03a5340bcc4f03ea2e3da5, type: 3}
+  - {fileID: 8300000, guid: 789d0b80eafe9c74f908d621d67a81ed, type: 3}
+  - {fileID: 8300000, guid: d70c9c8ada9628644a638a9a6a3fd892, type: 3}
+  - {fileID: 8300000, guid: b4867e4ce04194a439aaf16ee38bd590, type: 3}
   soundSource: {fileID: 8217490}
   backgroundMusic: {fileID: 11429316}
-  foregroundMusic: {fileID: 11427486}
---- !u!114 &11427486
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 134562}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 149e92d8b96207e4ab6406f1ab288803, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  musicClips:
-  - {fileID: 8300000, guid: 776a0d6c382fe4645ae3a95d3b386393, type: 3}
-  - {fileID: 8300000, guid: 3d9fd34f219802043a5b2230b2a41990, type: 3}
-  - {fileID: 8300000, guid: b367b2cc0c1ae8341905d9958a277408, type: 3}
-  - {fileID: 8300000, guid: 7520ad3f4d544a542988736edef6745a, type: 3}
-  music: {fileID: 8297054}
 --- !u!114 &11429316
 MonoBehaviour:
   m_ObjectHideFlags: 1

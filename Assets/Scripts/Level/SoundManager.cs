@@ -6,7 +6,6 @@ public class SoundManager : MonoBehaviour
     public AudioClip[] sounds;
     public AudioSource soundSource;
     public FadingMusic backgroundMusic;
-    public FadingMusic foregroundMusic;
 
 	public void Start()
 	{
@@ -19,11 +18,6 @@ public class SoundManager : MonoBehaviour
     public void PlayBackground(int targetClip)
     {
         backgroundMusic.Play(targetClip);
-    }
-
-    public void PlayForeground(int targetClip)
-    {
-        foregroundMusic.Play(targetClip);
     }
     
     public void PlaySound(int soundIndex)

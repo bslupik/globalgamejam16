@@ -25,6 +25,7 @@ public class TimedLife : Base
 
     public virtual void OnDeath()
     {
+        level.PlayBaseActionSound(10);
         GameObject.Destroy(gameObject);
     }
 }

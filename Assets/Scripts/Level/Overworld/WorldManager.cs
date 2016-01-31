@@ -4,6 +4,9 @@ using UnityEngine.UI;
 
 public class WorldManager : MonoBehaviour
 {
+    public int numMiniGames = 0;
+    public int numStars = 0;
+
     public int[] musicIndex;
     public string[] levelName;
     public float[] goodScore;
@@ -25,6 +28,8 @@ public class WorldManager : MonoBehaviour
     public GameObject levelFinish;
     public GameObject instructionScreen;
     public GameObject persistentUI;
+    public GameObject gameEndingUI;
+    public Sprite[] gameEnds;
 
     public bool isEndlessMode;
     public bool endlessShuffle;
@@ -36,9 +41,11 @@ public class WorldManager : MonoBehaviour
         levelFinish = GameObject.Find("LevelFinishUI");
         instructionScreen = GameObject.Find("InstructionScreen");
         persistentUI = GameObject.Find("PersistentUI");
+        gameEndingUI = GameObject.Find("GameEndingUI");
         levelFinish.SetActive(false);
         instructionScreen.SetActive(false);
         persistentUI.SetActive(false);
+        gameEndingUI.SetActive(false);
         for (int i = 0; i < village.Length; ++i)
         {
             if (difficulty[i] == 0)
@@ -55,7 +62,7 @@ public class WorldManager : MonoBehaviour
             }
         }
         scripting = Camera.main.GetComponent<SceneChangeScripting>();
-
+        GameObject.Find("SoundManager").GetComponent<SoundManager>().PlayBackground(4);
         InitEndlessMode();
     }
 
@@ -86,6 +93,7 @@ public class WorldManager : MonoBehaviour
 
     public void StartLevel(int index)
     {
+        ++numMiniGames;
         currentLevelIndex = index;
         for (int i = 0; i < villages.Length; ++i)
         {
@@ -141,14 +149,38 @@ public class WorldManager : MonoBehaviour
         yield return scripting.FadeOut();
         Time.timeScale = 0;
         GameObject.FindWithTag("SaveManager").GetComponent<SaveManager>().UnloadLevel();
+        GameObject.Find("SoundManager").GetComponent<SoundManager>().PlayBackground(4);
         persistentUI.SetActive(false);
         OnLevelFinished(finalScore);
         yield return scripting.FadeIn();
         Time.timeScale = 1.0f;
     }
 
+    public void ShowEnding()
+    {
+        levelFinish.SetActive(false);
+        int finish = 0;
+        if (numStars >= 8)
+        {
+            finish = 1;
+        }
+
+        if (numStars >= 14)
+        {
+            finish = 2;
+        }
+        gameEndingUI.GetComponentInChildren<Image>().sprite = gameEnds[finish];
+        gameEndingUI.SetActive(true);
+    }
+
     public void CloseLevelFinish()
     {
+        if (numMiniGames >= 5)
+        {
+            ShowEnding();
+            return;
+        }
+
         if(isEndlessMode)
         {
             SetNextEndlessLevel();
@@ -175,6 +207,10 @@ public class WorldManager : MonoBehaviour
         yield return scripting.FadeOut();
         Time.timeScale = 0;
         levelFinish.SetActive(false);
+        for (int i = 0; i < villages.Length; ++i)
+        {
+            villages[i].gameObject.SetActive(false);
+        }
         villages[Random.Range(0, villages.Length)].gameObject.SetActive(true);
         yield return scripting.FadeIn();
         Time.timeScale = 1.0f;
@@ -190,16 +226,19 @@ public class WorldManager : MonoBehaviour
         if (score >= perfectScore[currentLevelIndex])
         {
             GameObject.Find("FourthStar").GetComponent<CanvasRenderer>().SetAlpha(1.0f);
+            ++numStars;
         }
 
         if (score >= greatScore[currentLevelIndex])
         {
             GameObject.Find("ThirdStar").GetComponent<CanvasRenderer>().SetAlpha(1.0f);
+            ++numStars;
         }
 
         if (score >= goodScore[currentLevelIndex])
         {
             GameObject.Find("SecondStar").GetComponent<CanvasRenderer>().SetAlpha(1.0f);
+            ++numStars;
         }
     }
 }

@@ -5,7 +5,7 @@ public class FadingMusic : MonoBehaviour {
 
     enum FadeState { None, Playing, FadingIn, FadingOut };
 
-    public const float WEIGHT = 0.3f;
+    public const float WEIGHT = 0.5f;
 
     public AudioClip[] musicClips;
     public AudioSource music;
