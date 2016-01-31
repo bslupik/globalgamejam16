@@ -71,10 +71,6 @@ public class Level : Base
         // Play a sound here.
         float multiplier = ScoreMultiplier();
         levelScore += score * multiplier;
-        if (!OnBeat())
-        {
-            ScreenShake();
-        }
     }
 
     public void FlushScoreBuffer()
@@ -143,6 +139,7 @@ public class Level : Base
                 completedObjects.Clear();
                 overlappingColliders.Clear();
                 sortedOrderedNumbers = new Queue<int>(orderedNumbers);
+                ScreenShake();
                 return false;
             }
         }
@@ -179,12 +176,14 @@ public class Level : Base
                     return true;
                 }
             }
+            ScreenShake();
             completedObjects.Clear();
             sortedOrderedNumbers = new Queue<int>(orderedNumbers);
             return false;
         }
         else
         {
+            ScreenShake();
             return false;
         }
     }
@@ -199,6 +198,7 @@ public class Level : Base
         }
         else
         {
+            ScreenShake();
             return false;
         }
     }
