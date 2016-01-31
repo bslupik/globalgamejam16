@@ -27,7 +27,6 @@ public class NodeWalker : Base {
 
         if(isAtNode() && !isDone())
         {
-            Debug.Log("at node: " + targetNode);
             moveToNextNode();
         }
 
