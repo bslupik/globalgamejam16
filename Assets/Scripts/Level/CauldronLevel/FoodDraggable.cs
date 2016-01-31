@@ -54,7 +54,10 @@ public class FoodDraggable : OnBeatDraggable, IResettable, IObserver<int> {
     {
         base.OnDragEnd();
         if (level.PlayerActed(this))
+        {
+            level.Unsubscribe(this);
             Destroy(this.gameObject);
+        }
     }
 
     public void Notify(int i)
