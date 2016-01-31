@@ -16,6 +16,11 @@ public class MazeNode : OnBeatDraggable, IResettable
     void Awake()
     {
         rend = GetComponent<LineRenderer>();
+    }
+
+    public override void Start()
+    {
+        base.Start();
         if (setOrder != -1)
         {
             order = setOrder;
