@@ -139,6 +139,7 @@ public class SaveManager : MonoBehaviour
         newObject.spawnPosition = new Vector3(float.Parse(data[2]), float.Parse(data[3]), float.Parse(data[4]));
         switch (newObject.savableID)
         {
+            case 27: // Maze Node
             case 9: // Acupuncture level manager
                 newObject.metadata = new List<float>();
                 if (data.Length >= 6)
@@ -197,8 +198,10 @@ public class SaveManager : MonoBehaviour
         loadedObjects.Add(instantiatedObject);
         switch (data.savableID)
         {
+            case 27: // Maze Node
+                instantiatedObject.GetComponentInChildren<MazeNode>().setOrder = (int) data.metadata[0];
+                break;
             case 9: // Acupuncture level manager
-                print("Acu");
                 instantiatedObject.GetComponentInChildren<Level>().orderedNumbers = new int[(int) data.metadata[0]];
                 for (int i = 0; i < data.metadata[0]; ++i)
                 {

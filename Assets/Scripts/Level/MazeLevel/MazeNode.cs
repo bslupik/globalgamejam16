@@ -7,7 +7,7 @@ public class MazeNode : OnBeatDraggable, IResettable
     public int order { get; set; }
 
     [SerializeField]
-    protected int setOrder = -1;
+    public int setOrder = -1;
 
     LineRenderer rend;
 
