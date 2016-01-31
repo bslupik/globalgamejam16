@@ -86,19 +86,19 @@ public class Conway : MonoBehaviour {
                 
 
                 verts.Add(v1);
-                colors.Add(nodes[x, y].alive ? Color.red : Color.clear);
+                colors.Add(Color.clear);
                 uvs.Add(new Vector2(0.0f, 0.0f));
 
                 verts.Add(v2);
-                colors.Add(nodes[x, y].alive ? Color.red : Color.clear);
+                colors.Add(Color.clear);
                 uvs.Add(new Vector2(0.0f, 1.0f));
 
                 verts.Add(v3);
-                colors.Add(nodes[x, y].alive ? Color.red : Color.clear);
+                colors.Add(Color.clear);
                 uvs.Add(new Vector2(1.0f, 1.0f));
 
                 verts.Add(v4);
-                colors.Add(nodes[x, y].alive ? Color.red : Color.clear);
+                colors.Add(Color.clear);
                 uvs.Add(new Vector2(0.0f, 1.0f));
 
                 //upper left triangle
@@ -141,7 +141,7 @@ public class Conway : MonoBehaviour {
             {
                 for (int i = 0; i < 4; i++)
                 {
-                    cols[i + nodes[x, y].uvIndex] = newNodeValues[x, y] ? Color.red : Color.clear;
+                    cols[i + nodes[x, y].uvIndex] = newNodeValues[x, y] ? HSVColor.HSVToRGB(Random.value, 1, 1) : Color.clear;
                 }
                 if (Random.value > 0.995f)
                     newNodeValues[x, y] = !newNodeValues[x, y];
