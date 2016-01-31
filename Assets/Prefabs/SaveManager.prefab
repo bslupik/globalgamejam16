@@ -319,7 +319,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outputFilePath: Assets\Resources\LevelFiles\
   inputFilePath: LevelFiles\
-  fileName: 
+  fileName: choppingwood
   savableObjects: []
   spawnableObjects:
   - {fileID: 179040, guid: 343d4de1f560afb469a1dcdf8eaf8fac, type: 2}
@@ -352,6 +352,7 @@ MonoBehaviour:
   - {fileID: 112352, guid: 502b6666266dc6c489f00285075cf4c7, type: 2}
   - {fileID: 182130, guid: f1d20d1f16ec5f74fac5c69b250e9d3b, type: 2}
   - {fileID: 132166, guid: e3589b28d26b76c438f4e24af500ae4e, type: 2}
+  - {fileID: 128098, guid: 191e241fb6043bc479656aebe564d11b, type: 2}
   gameTime: 0
   loadedObjects: []
 --- !u!114 &11422490
