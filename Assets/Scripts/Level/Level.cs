@@ -193,6 +193,12 @@ public class Level : Base
         {
             sortedOrderedNumbers.Dequeue();
             PlayerActed();
+            print(sortedOrderedNumbers.Count);
+            if (sortedOrderedNumbers.Count == 0)
+            {
+                print("ending everything");
+                GameObject.Find("WorldManager").GetComponent<WorldManager>().EndLevel(levelScore);
+            }
             return true;
         }
         else
