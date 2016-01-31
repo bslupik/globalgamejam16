@@ -11,6 +11,9 @@ public class Level : Base, IObservable<int>
     public float timePerBeat = 1.0f;
     public float levelScore = 0.0f;
     public float levelScoreBuffer = 0;
+    public float levelTime = 0.0f;
+    public float maxLevelTime = 10.0f;
+    public WorldManager worldManager;
     // public Text scoreText;
 
     Observable<int> orderObservable = new Observable<int>();
@@ -49,6 +52,11 @@ public class Level : Base, IObservable<int>
             timeSinceBeat -= timePerBeat;
         }
         // scoreText.text = "" + levelScore;
+        levelTime += Time.deltaTime;
+        if (levelTime >= maxLevelTime)
+        {
+            EndLevel();
+        }
     }
 
     public float ScoreMultiplier()
@@ -218,7 +226,7 @@ public class Level : Base, IObservable<int>
 
     public void EndLevel()
     {
-        GameObject.Find("WorldManager").GetComponent<WorldManager>().EndLevel(levelScore);
+        worldManager.EndLevel(levelScore);
     }
 }
 

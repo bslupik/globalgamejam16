@@ -108,7 +108,7 @@ public class WorldManager : MonoBehaviour
         yield return scripting.FadeOut();
         Time.timeScale = 0;
         GameObject.FindWithTag("SaveManager").GetComponent<SaveManager>().UnloadLevel();
-        GameObject.Find("PersistentUI").SetActive(false);
+        persistentUI.SetActive(false);
         OnLevelFinished(finalScore);
         yield return scripting.FadeIn();
         Time.timeScale = 1.0f;
