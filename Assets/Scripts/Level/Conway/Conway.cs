@@ -141,7 +141,7 @@ public class Conway : MonoBehaviour {
             {
                 for (int i = 0; i < 4; i++)
                 {
-                    cols[i + nodes[x, y].uvIndex] = newNodeValues[x, y] ? HSVColor.HSVToRGB(Random.value, 1, 1) : Color.clear;
+                    cols[i + nodes[x, y].uvIndex] = newNodeValues[x, y] ? HSVColor.HSVToRGB(Random.value / 5, 1, 1) : Color.clear;
                 }
                 if (Random.value > 0.995f)
                     newNodeValues[x, y] = !newNodeValues[x, y];
