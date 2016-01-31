@@ -61,15 +61,17 @@ public class Circle : MonoBehaviour {
 
     IEnumerator OnClick()
     {
-        List<Vector2> points = new List<Vector2>();
+        List<Vector3> points = new List<Vector3>();
 
         rend.enabled = true;
 
         while (Input.GetMouseButton(0))
         {
-            points.Add(Draggable.mousePosInWorld());
+            Vector3 newPoint = Draggable.mousePosInWorld();
+            newPoint.z = -8.0f;
+            points.Add(newPoint);
             rend.SetVertexCount(points.Count);
-            rend.SetPositions(ListToVector3(points));
+            rend.SetPositions(points.ToArray());
             yield return null;
         }
 
@@ -78,20 +80,20 @@ public class Circle : MonoBehaviour {
         for (int i = 1; i < points.Count; i++)
         {
             float segmentLength = Vector2.Distance(points[i], points[i - 1]);
-            sumPoints += (points[i] + points[i - 1]) * segmentLength / 2;
+            sumPoints += (Vector2)(points[i] + points[i - 1]) * segmentLength / 2;
             length += segmentLength;
         }
 
         averageCenter = sumPoints / length;
 
         col.enabled = true;
-        col.points = points.ToArray();
+        col.points = ListToVector2(points);
         framesLeft = 60;
     }
 
-    Vector3[] ListToVector3(List<Vector2> vectors)
+    Vector2[] ListToVector2(List<Vector3> vectors)
     {
-        Vector3[] result = new Vector3[vectors.Count];
+        Vector2[] result = new Vector2[vectors.Count];
         for (int i = 0; i < vectors.Count; i++)
         {
             result[i] = vectors[i];
