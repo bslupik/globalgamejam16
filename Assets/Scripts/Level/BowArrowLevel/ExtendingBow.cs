@@ -47,7 +47,8 @@ public class ExtendingBow : OnBeatDraggable {
         {
             Vector3 direction = (transform.position - mousePosInWorld()).normalized;
             arrowSpawnCondition.ReleaseBow(this.transform.position, direction);
-            base.sound.PlaySound(0);
+            // SOUND DO: Bow Shot
+            // sound.PlaySound(2);
         }
         bowArrow.GetComponent<SpriteRenderer>().enabled = false;
         mouseDist = 0.0f;
