@@ -184,8 +184,6 @@ public class Level : Base, IObservable<int>
                 }
             }
             ScreenShake();
-            completedObjects.Clear();
-            sortedOrderedNumbers = new Queue<int>(orderedNumbers);
             return false;
         }
         else

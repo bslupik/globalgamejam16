@@ -45,6 +45,7 @@ public class MazeNode : OnBeatDraggable, IResettable
 
     protected override void OnDragEnd()
     {
+        rend.enabled = false;
         if(player.IsAtNode())
         {
             base.OnDragEnd();
@@ -65,5 +66,6 @@ public class MazeNode : OnBeatDraggable, IResettable
         locked = false;
         gameObject.SetActive(true);
         rend.SetPosition(1, Vector3.zero);
+        rend.enabled = true;
     }
 }
