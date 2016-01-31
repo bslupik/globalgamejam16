@@ -58,6 +58,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   savableID: 10
   timeToSpawn: 0
+  metadata: []
 --- !u!114 &11446134
 MonoBehaviour:
   m_ObjectHideFlags: 1

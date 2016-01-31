@@ -317,11 +317,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae7a586db7d78954fb7c7acbf092b4ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sound: {fileID: 0}
-  level: {fileID: 0}
   outputFilePath: Assets\Resources\LevelFiles\
   inputFilePath: LevelFiles\
-  fileName: 
+  fileName: WhackAGhost
   savableObjects: []
   spawnableObjects:
   - {fileID: 179040, guid: 343d4de1f560afb469a1dcdf8eaf8fac, type: 2}
@@ -332,6 +330,26 @@ MonoBehaviour:
   - {fileID: 138144, guid: bb05d4a5a714cf840a149c7261558e02, type: 2}
   - {fileID: 114450, guid: 36dca87049a668b49a026970b4d62ab4, type: 2}
   - {fileID: 153586, guid: 5595034c983a2b242857ddf0d29ab7c0, type: 2}
+  - {fileID: 114334, guid: 7cc2c7a249667e3488ad0877ce8db938, type: 2}
+  - {fileID: 192092, guid: 658aca91014b9e24d8e3f61d0feec294, type: 2}
+  - {fileID: 172016, guid: 8de7841b5f55e6541bd0af477cf0ad85, type: 2}
+  - {fileID: 131608, guid: c12dd4f0e9aef3c48b6f4a2e3b457a52, type: 2}
+  - {fileID: 169240, guid: c8cf4ea4013ea7447b97f6ace0d9edf4, type: 2}
+  - {fileID: 168872, guid: 065acd90fb539e247a39bd2a181ee4db, type: 2}
+  - {fileID: 157954, guid: 6d30d86db7cfe2249b4b0ebeec86eff2, type: 2}
+  - {fileID: 166968, guid: 90b88a594bf2327418eecc916080fee1, type: 2}
+  - {fileID: 140310, guid: 02e96657e267d01468e8f654585e1d05, type: 2}
+  - {fileID: 104926, guid: f2e2b9f58726a3e428cf02452945bafd, type: 2}
+  - {fileID: 100738, guid: 29b91b2e0dd8026468761f7d75148ded, type: 2}
+  - {fileID: 188054, guid: 81db218f646e8fb448a6f77aae70a28d, type: 2}
+  - {fileID: 134098, guid: 091e56423029f284798b4a615980fcee, type: 2}
+  - {fileID: 133972, guid: 5da7598860f8a45488693d9b9f444ff8, type: 2}
+  - {fileID: 108542, guid: 980ec3579cb5dd848be487210d870bd5, type: 2}
+  - {fileID: 128098, guid: 191e241fb6043bc479656aebe564d11b, type: 2}
+  - {fileID: 190500, guid: 55ce7cdc746b5e94b8ab9948763f87f5, type: 2}
+  - {fileID: 171106, guid: 280ed71d6b8257a43b46493ae86e942c, type: 2}
+  - {fileID: 151116, guid: 970f4e3b02ea4604dab9e59c3d84b9ee, type: 2}
+  - {fileID: 112352, guid: 502b6666266dc6c489f00285075cf4c7, type: 2}
   gameTime: 0
   loadedObjects: []
 --- !u!114 &11422490

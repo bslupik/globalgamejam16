@@ -6,6 +6,7 @@ public class Savable : MonoBehaviour
 {
     public int savableID;
     public float timeToSpawn = 0.0f;
+    public float[] metadata;
 
 	public void Start()
 	{
@@ -23,12 +24,10 @@ public class Savable : MonoBehaviour
         output.Write(transform.position.y);
         output.Write(' ');
         output.Write(transform.position.z);
-        switch (savableID)
+        for (int i = 0; i < metadata.Length; ++i)
         {
-            case 10: //acupuncture points
-                output.Write(' ');
-                output.Write(GetComponent<PuncturePoint>().order);
-                break;
+            output.Write(' ');
+            output.Write(metadata[i]);
         }
     }
 }

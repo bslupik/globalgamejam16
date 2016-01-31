@@ -42,6 +42,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   savableID: 8
   timeToSpawn: 0
+  metadata: []
 --- !u!212 &21294582
 SpriteRenderer:
   m_ObjectHideFlags: 1
