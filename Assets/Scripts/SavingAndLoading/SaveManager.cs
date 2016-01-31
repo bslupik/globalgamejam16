@@ -10,6 +10,7 @@ public class SpawnData : IComparable<SpawnData>
     public float spawnTime;
     public int savableID;
     public Vector3 spawnPosition;
+    public List<float> metadata;
 
     public int CompareTo(SpawnData other)
     {
@@ -26,8 +27,6 @@ public class SpawnData : IComparable<SpawnData>
             return 0;
         }
     }
-
-    public int order;
 }
 
 public class SaveManager : MonoBehaviour
@@ -141,6 +140,8 @@ public class SaveManager : MonoBehaviour
         switch (newObject.savableID)
         {
             case 10: //puncture point
+                newObject.metadata = new List<float>();
+                newObject.metadata.Add(float.Parse(data[5]));
                 break;
         }
         objectsToSpawn.Add(newObject);
@@ -148,7 +149,14 @@ public class SaveManager : MonoBehaviour
 
     public void SpawnObject(SpawnData data)
     {
-        loadedObjects.Add((GameObject) GameObject.Instantiate(spawnableObjects[data.savableID], data.spawnPosition, Quaternion.identity));
+        GameObject instantiatedObject = (GameObject) GameObject.Instantiate(spawnableObjects[data.savableID], data.spawnPosition, Quaternion.identity);
+        loadedObjects.Add(instantiatedObject);
+        switch (data.savableID)
+        {
+            case 10: //puncture point
+                instantiatedObject.GetComponent<PuncturePoint>().setOrder = (int)(data.metadata[0]);
+                break;
+        }
     }
 
     public void UpdateFileName()

@@ -30,6 +30,7 @@ public class Level : Base
     void Awake()
     {
         Array.Sort(orderedNumbers);
+        Debug.Log(orderedNumbers);
         sortedOrderedNumbers = new Queue<int>(orderedNumbers);
     }
 
