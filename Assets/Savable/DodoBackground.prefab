@@ -17,6 +17,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &178576
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 482592}
+  - 114: {fileID: 11442634}
+  - 114: {fileID: 11494634}
+  m_Layer: 0
+  m_Name: LevelManager
+  m_TagString: LevelManager
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &471306
 Transform:
   m_ObjectHideFlags: 1
@@ -26,9 +43,63 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 482592}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!4 &482592
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 178576}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 471306}
+  m_RootOrder: 0
+--- !u!114 &11442634
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 178576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e11f22b440023644097889a09d62b52f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: {fileID: 0}
+  level: {fileID: 0}
+  timeSinceBeat: 0
+  timePerBeat: 1
+  levelScore: 0
+  levelScoreBuffer: 0
+  musicIndex: 02000000
+  levelName:
+  - Torches_Easy
+  goodScore:
+  - 200
+  greatScore:
+  - 500
+  perfectScore:
+  - 800
+  difficulty: 00000000
+  village: 00000000
+  music:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  musicBeatSpeed:
+  - 0
+  - 0
+  - 0
+  - 0
+  orderedNumbers: 
+  shakeMagnitude: 0
+  shakeDuration: 0
 --- !u!114 &11450108
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -43,6 +114,20 @@ MonoBehaviour:
   savableID: 20
   timeToSpawn: 0
   metadata: []
+--- !u!114 &11494634
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 178576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6692df79820dac1408ab7a85999d424f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: {fileID: 0}
+  level: {fileID: 0}
+  minDistance: 0
 --- !u!212 &21215288
 SpriteRenderer:
   m_ObjectHideFlags: 1
