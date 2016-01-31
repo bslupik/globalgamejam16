@@ -73,7 +73,7 @@ MonoBehaviour:
   sound: {fileID: 0}
   level: {fileID: 0}
   spawnedObject: {fileID: 0}
-  baseSpawnTime: 8
+  baseSpawnTime: 6
   spawnTimeVariation: 2
   timeSinceSpawn: 0
   spawnTime: 0
@@ -91,6 +91,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   savableID: 6
   timeToSpawn: 0
+  metadata: []
 --- !u!114 &11484748
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -156,7 +157,7 @@ Prefab:
       objectReference: {fileID: 108978, guid: 50c9b26eea845b349b264389ddd0e470, type: 2}
     - target: {fileID: 0}
       propertyPath: baseSpawnTime
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: spawnTimeVariation

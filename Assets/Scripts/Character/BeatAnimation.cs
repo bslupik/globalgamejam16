@@ -24,8 +24,6 @@ public class BeatAnimation : Base {
         int nextSpriteIndex = (int) (base.level.timeSinceBeat / timePerSprite());
         if(nextSpriteIndex != spriteIndex)
             loadNextSprite();
-
-        
 	}
 
     private float timePerSprite()

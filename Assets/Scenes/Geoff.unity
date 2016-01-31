@@ -354,7 +354,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!61 &949382191
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -619,6 +619,15 @@ MonoBehaviour:
   timePerBeat: 1
   levelScore: 0
   levelScoreBuffer: 0
+  musicIndex: 
+  levelName: []
+  goodScore: []
+  greatScore: []
+  perfectScore: []
+  difficulty: 
+  village: 
+  music: []
+  musicBeatSpeed: []
   orderedNumbers: 
   shakeMagnitude: 0
   shakeDuration: 0
