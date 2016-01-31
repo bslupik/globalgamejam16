@@ -13,17 +13,6 @@ public class Level : Base
     public float levelScoreBuffer = 0;
     // public Text scoreText;
 
-    public int[] musicIndex;
-    public string[] levelName;
-    public float[] goodScore;
-    public float[] greatScore;
-    public float[] perfectScore;
-    public int[] difficulty;
-    public int[] village;
-
-    public AudioClip[] music;
-    public float[] musicBeatSpeed;
-
     [SerializeField]
     public int[] orderedNumbers;
 

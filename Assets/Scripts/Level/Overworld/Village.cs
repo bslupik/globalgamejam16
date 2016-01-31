@@ -1,21 +1,23 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 [RequireComponent(typeof(Collider2D))]
 public class Village : MonoBehaviour {
 
     public static Village activeVillage;
 
-    SaveManager saves;
+    WorldManager world;
     SceneChangeScripting scripting;
 
-    [SerializeField]
-    protected string[] levelNames;
+    public List<int> easy;
+    public List<int> medium;
+    public List<int> hard;
 
     static bool active = true;
 
 	void Start () {
-        saves = GameObject.FindGameObjectWithTag("SaveManager").GetComponent<SaveManager>();
+        world = GameObject.Find("WorldManager").GetComponent<WorldManager>();
         scripting = Camera.main.GetComponent<SceneChangeScripting>();
 	}
 
@@ -33,23 +35,27 @@ public class Village : MonoBehaviour {
         activeVillage = this;
         yield return scripting.FadeOut();
         Time.timeScale = 0;
-        saves.Load(levelNames[Random.Range(0, levelNames.Length - 1)]);
+        if (world.levelDifficulty == 0) {
+            world.StartLevel(easy[Random.Range(0, easy.Count)]);
+        } else if (world.levelDifficulty == 1) {
+            world.StartLevel(medium[Random.Range(0, medium.Count)]);
+        } else {// if (world.levelDifficulty == 2) {
+            world.StartLevel(hard[Random.Range(0, hard.Count)]);
+        }
+        
         yield return scripting.FadeIn();
         Debug.Log("Timescale");
         Time.timeScale = 1f;
-        yield return new WaitForSeconds(30f);
-        saves.UnloadLevel();
-        active = true;
-        Debug.Log("Back to overworld");
-        activeVillage = null;
     }
 
-    public void Unload()
+    public void OnStart()
     {
-        saves.UnloadLevel();
+        active = false;
+    }
+
+    public void OnUnload()
+    {
         active = true;
-        Debug.Log("Back to overworld");
-        activeVillage = null;
         StopAllCoroutines();
     }
 }
