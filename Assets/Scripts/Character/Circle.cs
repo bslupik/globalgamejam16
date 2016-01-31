@@ -6,6 +6,9 @@ using System.Collections.Generic;
 [RequireComponent(typeof(LineRenderer))]
 public class Circle : MonoBehaviour {
 
+    [SerializeField]
+    protected float maxLength;
+
     PolygonCollider2D col;
 
     public PolygonCollider2D Collider { get { return col; } }
@@ -65,23 +68,26 @@ public class Circle : MonoBehaviour {
 
         rend.enabled = true;
 
-        while (Input.GetMouseButton(0))
+        float length = 0;
+        Vector2 sumPoints = Vector2.zero;
+
+        while (Input.GetMouseButton(0) && length < maxLength)
         {
             Vector3 newPoint = Draggable.mousePosInWorld();
             newPoint.z = -8.0f;
+            if (points.Count > 0)
+            {
+                float segmentLength = Vector2.Distance(points[points.Count - 1], newPoint);
+                sumPoints += (Vector2)(points[points.Count - 1] + newPoint) * segmentLength / 2;
+                length += segmentLength;
+            }
+
             points.Add(newPoint);
             rend.SetVertexCount(points.Count);
             rend.SetPositions(points.ToArray());
-            yield return null;
-        }
 
-        float length = 0;
-        Vector2 sumPoints = Vector2.zero;
-        for (int i = 1; i < points.Count; i++)
-        {
-            float segmentLength = Vector2.Distance(points[i], points[i - 1]);
-            sumPoints += (Vector2)(points[i] + points[i - 1]) * segmentLength / 2;
-            length += segmentLength;
+
+            yield return null;
         }
 
         averageCenter = sumPoints / length;
