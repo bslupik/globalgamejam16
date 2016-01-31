@@ -4,11 +4,14 @@ using System.Collections;
 public class TimedLife : Base
 {
     public float lifeTime;
+    public float lifeTimeBase;
+    public float lifeTimeVariation;
 
 	public override void Start()
 	{
 		base.Start();
-	}
+        lifeTime = lifeTimeBase + Random.Range(-lifeTimeVariation, lifeTimeVariation);
+    }
 	
 	public override void Update()
 	{

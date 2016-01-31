@@ -13,6 +13,6 @@ public class Drift : Base
 	
 	public override void Update()
 	{
-        transform.Translate(direction * speed * Time.deltaTime);
+        transform.Translate(direction * speed * Time.deltaTime, Space.World);
 	}
 }

@@ -30,6 +30,7 @@ public class Level : Base
     void Awake()
     {
         Array.Sort(orderedNumbers);
+        Debug.Log(orderedNumbers);
         sortedOrderedNumbers = new Queue<int>(orderedNumbers);
     }
 
@@ -61,6 +62,7 @@ public class Level : Base
 
     public bool OnBeat()
     {
+        Debug.Log(ScoreMultiplier());
         return ScoreMultiplier() >= BEAT_THRESHOLD;
     }
 
@@ -199,6 +201,16 @@ public class Level : Base
         {
             return false;
         }
+    }
+
+    public void ArrowMissed()
+    {
+        // Do something maybe
+    }
+
+    public void DodoKilled()
+    {
+        // Play sound, give points
     }
 }
 
