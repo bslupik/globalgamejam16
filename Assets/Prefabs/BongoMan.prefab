@@ -48,7 +48,7 @@ MonoBehaviour:
   - {fileID: 21300002, guid: 2f7c07c9c6b69c944879ba483800424d, type: 3}
   sequenceTwoSprites:
   - {fileID: 21300004, guid: 2f7c07c9c6b69c944879ba483800424d, type: 3}
-  - {fileID: 21300002, guid: 2f7c07c9c6b69c944879ba483800424d, type: 3}
+  - {fileID: 21300006, guid: 2f7c07c9c6b69c944879ba483800424d, type: 3}
 --- !u!212 &21238264
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -85,7 +85,12 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: sequenceTwoSprites.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300006, guid: 2f7c07c9c6b69c944879ba483800424d,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 138720}
