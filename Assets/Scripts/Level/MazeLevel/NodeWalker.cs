@@ -25,16 +25,12 @@ public class NodeWalker : Base {
         }
 		base.Update();
 
-        if(isAtNode() && !isDone())
+        if(shouldMove())
         {
-            Debug.Log("at node: " + targetNode);
             moveToNextNode();
         }
 
-        if(!isDone())
-        {
-            transform.Translate(direction * speed * Time.deltaTime, Space.World);
-        }
+        transform.Translate(direction * speed * Time.deltaTime, Space.World);
 	}
 
     public void Reset()
@@ -50,7 +46,7 @@ public class NodeWalker : Base {
 
     protected void moveToNextNode()
     {
-        if(nodes.Count == 0)
+        if (nodes.Count == 0)
         {
             targetNode = null;
             return;
@@ -58,6 +54,11 @@ public class NodeWalker : Base {
         targetNode = nodes.Dequeue();
         direction = (targetNode.transform.position - transform.position).normalized;
         animated.SetDirection(getAnimationDirection());
+    }
+
+    protected virtual bool shouldMove()
+    {
+        return IsAtNode() && !IsDone();
     }
 
     protected AnimatedFourDirections.Direction getAnimationDirection()
@@ -72,14 +73,14 @@ public class NodeWalker : Base {
         return AnimatedFourDirections.Direction.Down;
     }
 
-    protected bool isDone()
+    public bool IsDone()
     {
         return targetNode == null;
     }
 
-    protected bool isAtNode()
+    public bool IsAtNode()
     {
-        if(isDone())
+        if(IsDone())
             return false;
         return Vector2.Distance(this.transform.position, targetNode.transform.position) < 0.1f;
     }

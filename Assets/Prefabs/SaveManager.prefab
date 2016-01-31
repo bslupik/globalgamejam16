@@ -353,6 +353,8 @@ MonoBehaviour:
   - {fileID: 182130, guid: f1d20d1f16ec5f74fac5c69b250e9d3b, type: 2}
   - {fileID: 132166, guid: e3589b28d26b76c438f4e24af500ae4e, type: 2}
   - {fileID: 128098, guid: 191e241fb6043bc479656aebe564d11b, type: 2}
+  - {fileID: 107656, guid: e8bce219971fe804ca7a02ab9fc064cf, type: 2}
+  - {fileID: 141192, guid: 2f013e50a0cbbc046b65a25fc94a175b, type: 2}
   gameTime: 0
   loadedObjects: []
 --- !u!114 &11422490
@@ -869,7 +871,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: spawnableObjects.Array.size
-      value: 5
+      value: 33
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: spawnableObjects.Array.data[4]
@@ -879,6 +881,14 @@ Prefab:
       propertyPath: spawnableObjects.Array.data[25]
       value: 
       objectReference: {fileID: 154358, guid: a92aa45cf6c0ebd4db3ac2ba97241151, type: 2}
+    - target: {fileID: 0}
+      propertyPath: spawnableObjects.Array.data[31]
+      value: 
+      objectReference: {fileID: 107656, guid: e8bce219971fe804ca7a02ab9fc064cf, type: 2}
+    - target: {fileID: 0}
+      propertyPath: spawnableObjects.Array.data[32]
+      value: 
+      objectReference: {fileID: 141192, guid: 2f013e50a0cbbc046b65a25fc94a175b, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 136372}

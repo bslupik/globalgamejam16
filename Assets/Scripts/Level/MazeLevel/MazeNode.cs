@@ -11,6 +11,8 @@ public class MazeNode : OnBeatDraggable, IResettable
 
     LineRenderer rend;
 
+    PlayerNodeWalker player;
+
     bool locked = false;
 
     void Awake()
@@ -25,6 +27,7 @@ public class MazeNode : OnBeatDraggable, IResettable
         {
             order = setOrder;
         }
+        player = GameObject.FindObjectOfType<PlayerNodeWalker>();
     }
 
     protected override void OnMouseDown()
@@ -42,14 +45,19 @@ public class MazeNode : OnBeatDraggable, IResettable
 
     protected override void OnDragEnd()
     {
-        base.OnDragEnd();
-        if (!(level.PlayerActed(this)))
+        rend.enabled = false;
+        if(player.IsAtNode())
         {
-            reset();
-        }
-        else
-        {
-            locked = true;
+            base.OnDragEnd();
+            if (!(level.PlayerActed(this)))
+            {
+                reset();
+            }
+            else
+            {
+                locked = true;
+                player.PlayerMoved();
+            }
         }
     }
 
@@ -58,5 +66,6 @@ public class MazeNode : OnBeatDraggable, IResettable
         locked = false;
         gameObject.SetActive(true);
         rend.SetPosition(1, Vector3.zero);
+        rend.enabled = true;
     }
 }
