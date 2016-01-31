@@ -9,6 +9,9 @@ public class PuncturePoint : Base {
     [SerializeField]
     protected int setOrder = -1;
 
+    [SerializeField]
+    protected Sprite puncturedSprite;
+
     void Awake()
     {
         if (setOrder != -1)
@@ -21,8 +24,8 @@ public class PuncturePoint : Base {
     {
         if ((level as PunctureLevel).PlayerActed(order))
         {
-            Debug.Log("puncture");
-            Destroy(this.gameObject);
+            GetComponent<Collider2D>().enabled = false;
+            GetComponent<SpriteRenderer>().sprite = puncturedSprite;
         }
     }
 }
