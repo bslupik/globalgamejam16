@@ -1,9 +1,13 @@
 fileFormatVersion: 2
 guid: a15db945284984841951a7871540ebe8
-timeCreated: 1454203718
+timeCreated: 1454219945
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: MiniGame_Maze_RedRunningMan_Left_0
+    21300002: MiniGame_Maze_RedRunningMan_Left_1
+    21300004: MiniGame_Maze_RedRunningMan_Left_2
+    21300006: MiniGame_Maze_RedRunningMan_Left_3
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -30,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -38,7 +42,7 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -49,7 +53,84 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: MiniGame_Maze_RedRunningMan_Left_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 150
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -39, y: 77}
+        - {x: -39, y: -53}
+        - {x: -25, y: -83}
+        - {x: 21, y: -83}
+        - {x: 36, y: -73}
+        - {x: 36, y: 41}
+        - {x: 17, y: 77}
+    - name: MiniGame_Maze_RedRunningMan_Left_1
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 0
+        width: 150
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -36, y: 58}
+        - {x: -36, y: 18}
+        - {x: -25, y: -87}
+        - {x: -24, y: -93}
+        - {x: -8, y: -93}
+        - {x: 34, y: -81}
+        - {x: 34, y: 45}
+        - {x: 14, y: 58}
+    - name: MiniGame_Maze_RedRunningMan_Left_2
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 0
+        width: 150
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -47, y: 77}
+        - {x: -47, y: -44}
+        - {x: -36, y: -83}
+        - {x: 3, y: -83}
+        - {x: 28, y: -75}
+        - {x: 28, y: 38}
+        - {x: 9, y: 77}
+    - name: MiniGame_Maze_RedRunningMan_Left_3
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 0
+        width: 150
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11, y: 58}
+        - {x: -19, y: 57}
+        - {x: -24, y: 58}
+        - {x: -43, y: 58}
+        - {x: -43, y: 18}
+        - {x: -32, y: -87}
+        - {x: -31, y: -93}
+        - {x: 13, y: -93}
+        - {x: 27, y: -92}
+        - {x: 27, y: 32}
+        - {x: 6, y: 58}
     outline: []
   spritePackingTag: 
   userData: 
