@@ -11,6 +11,7 @@ GameObject:
   - 114: {fileID: 11415746}
   - 212: {fileID: 21225612}
   - 114: {fileID: 11420592}
+  - 114: {fileID: 11467178}
   m_Layer: 0
   m_Name: PeasantSlayerBackground
   m_TagString: LevelManager
@@ -88,6 +89,20 @@ MonoBehaviour:
   orderedNumbers: 
   shakeMagnitude: 0
   shakeDuration: 0
+--- !u!114 &11467178
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 127256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6692df79820dac1408ab7a85999d424f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: {fileID: 0}
+  level: {fileID: 0}
+  minDistance: 1
 --- !u!212 &21225612
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -136,6 +151,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_TagString
       value: LevelManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: minDistance
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

@@ -126,7 +126,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11421344, guid: b34bef1618de8614b93a58dc9a6c94e5, type: 2}
       propertyPath: fileName
-      value: PutOutFires
+      value: LassoAnimals
       objectReference: {fileID: 0}
     - target: {fileID: 101124, guid: b34bef1618de8614b93a58dc9a6c94e5, type: 2}
       propertyPath: m_IsActive
@@ -417,31 +417,31 @@ Prefab:
         type: 3}
     - target: {fileID: 22464098, guid: 957dfe116c7696a4fbfc068974c64ac8, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -5
+      value: -4.1
       objectReference: {fileID: 0}
     - target: {fileID: 22457940, guid: 957dfe116c7696a4fbfc068974c64ac8, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -5
+      value: 1.6
       objectReference: {fileID: 0}
     - target: {fileID: 22408692, guid: 957dfe116c7696a4fbfc068974c64ac8, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -5
+      value: -7.7
       objectReference: {fileID: 0}
     - target: {fileID: 22484460, guid: 957dfe116c7696a4fbfc068974c64ac8, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -5
+      value: -6.5
       objectReference: {fileID: 0}
     - target: {fileID: 22484460, guid: 957dfe116c7696a4fbfc068974c64ac8, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -107
+      value: -116.8
       objectReference: {fileID: 0}
     - target: {fileID: 22464098, guid: 957dfe116c7696a4fbfc068974c64ac8, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 106
+      value: 114.2
       objectReference: {fileID: 0}
     - target: {fileID: 22457940, guid: 957dfe116c7696a4fbfc068974c64ac8, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -34
+      value: -35.5
       objectReference: {fileID: 0}
     - target: {fileID: 22455112, guid: 957dfe116c7696a4fbfc068974c64ac8, type: 2}
       propertyPath: m_AnchoredPosition.x
@@ -449,8 +449,28 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22408692, guid: 957dfe116c7696a4fbfc068974c64ac8, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 34
+      value: 38.6
       objectReference: {fileID: 0}
+    - target: {fileID: 11465838, guid: 957dfe116c7696a4fbfc068974c64ac8, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f8e587023e54f39498bf665281b15191,
+        type: 3}
+    - target: {fileID: 11465276, guid: 957dfe116c7696a4fbfc068974c64ac8, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f8e587023e54f39498bf665281b15191,
+        type: 3}
+    - target: {fileID: 11442168, guid: 957dfe116c7696a4fbfc068974c64ac8, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f8e587023e54f39498bf665281b15191,
+        type: 3}
+    - target: {fileID: 11419728, guid: 957dfe116c7696a4fbfc068974c64ac8, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f8e587023e54f39498bf665281b15191,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 957dfe116c7696a4fbfc068974c64ac8, type: 2}
   m_IsPrefabParent: 0
