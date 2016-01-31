@@ -61,6 +61,7 @@ public class Level : Base
 
     public bool OnBeat()
     {
+        Debug.Log(ScoreMultiplier());
         return ScoreMultiplier() >= BEAT_THRESHOLD;
     }
 
@@ -199,6 +200,16 @@ public class Level : Base
         {
             return false;
         }
+    }
+
+    public void ArrowMissed()
+    {
+        // Do something maybe
+    }
+
+    public void DodoKilled()
+    {
+        // Play sound, give points
     }
 }
 

@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< ebe0246bcd25f7ed3652d7f2b2de0b443755af44
 guid: 28f59c1753f540741bd2ad6e3258f62f
 folderAsset: yes
 timeCreated: 1454179640
+=======
+guid: f36f9abcc9cb6a542b322f24d3063402
+folderAsset: yes
+timeCreated: 1454178945
+>>>>>>> Added bow, arrow, and dodo scripts. Also added some custom spawn conditions
 licenseType: Free
 DefaultImporter:
   userData: 
