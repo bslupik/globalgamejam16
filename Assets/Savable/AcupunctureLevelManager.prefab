@@ -62,6 +62,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   savableID: 9
   timeToSpawn: 0
+  metadata: []
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

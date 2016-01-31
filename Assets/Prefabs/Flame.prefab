@@ -61,6 +61,8 @@ MonoBehaviour:
   sound: {fileID: 0}
   level: {fileID: 0}
   lifeTime: 3
+  lifeTimeBase: 3
+  lifeTimeVariation: 1
 --- !u!212 &21270852
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -101,6 +103,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: lifeTime
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: lifeTimeBase
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: lifeTimeVariation
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

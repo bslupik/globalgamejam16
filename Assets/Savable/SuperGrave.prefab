@@ -73,8 +73,8 @@ MonoBehaviour:
   sound: {fileID: 0}
   level: {fileID: 0}
   spawnedObject: {fileID: 0}
-  baseSpawnTime: 3
-  spawnTimeVariation: 1
+  baseSpawnTime: 8
+  spawnTimeVariation: 2
   timeSinceSpawn: 0
   spawnTime: 0
   shouldSpawn: 0
@@ -89,8 +89,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a60a74faa62f6914cbcd1688dacddeb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sound: {fileID: 0}
-  level: {fileID: 0}
   savableID: 6
   timeToSpawn: 0
 --- !u!114 &11484748
@@ -104,8 +102,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99066c088200dca4f9cadeafc6ccde41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sound: {fileID: 0}
-  level: {fileID: 0}
   condition: {fileID: 0}
   spawnObject: {fileID: 108978, guid: 50c9b26eea845b349b264389ddd0e470, type: 2}
 --- !u!212 &21214390
@@ -158,6 +154,14 @@ Prefab:
       propertyPath: spawnObject
       value: 
       objectReference: {fileID: 108978, guid: 50c9b26eea845b349b264389ddd0e470, type: 2}
+    - target: {fileID: 0}
+      propertyPath: baseSpawnTime
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spawnTimeVariation
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 114450}
