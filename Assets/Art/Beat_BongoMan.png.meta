@@ -1,9 +1,13 @@
 fileFormatVersion: 2
 guid: 3a336b1f7b5eab4429a72d17939b808c
-timeCreated: 1454273011
+timeCreated: 1454275912
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Beat_BongoMan_0
+    21300002: Beat_BongoMan_1
+    21300004: Beat_BongoMan_2
+    21300006: Beat_BongoMan_3
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -38,7 +42,7 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -49,7 +53,115 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: Beat_BongoMan_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 200
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 76, y: -91.5}
+        - {x: 100, y: -66.5}
+        - {x: 100, y: 53.5}
+        - {x: 78, y: 110.5}
+        - {x: 46, y: 124.5}
+        - {x: -45, y: 124.5}
+        - {x: -90, y: 71.5}
+        - {x: -93, y: 51.5}
+        - {x: -93, y: -61.5}
+        - {x: -65, y: -104.5}
+        - {x: -34, y: -124.5}
+        - {x: 38, y: -124.5}
+        - {x: 42, y: -122.5}
+        - {x: 54, y: -115.5}
+        - {x: 69, y: -101.5}
+    - name: Beat_BongoMan_1
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 0
+        width: 200
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 87, y: 74.5}
+        - {x: 68, y: 103.5}
+        - {x: 37, y: 124.5}
+        - {x: -38, y: 124.5}
+        - {x: -70, y: 105.5}
+        - {x: -91, y: 60.5}
+        - {x: -100, y: 13.5}
+        - {x: -100, y: -33.5}
+        - {x: -93, y: -69.5}
+        - {x: -51, y: -118.5}
+        - {x: -34, y: -124.5}
+        - {x: 36, y: -124.5}
+        - {x: 53, y: -120.5}
+        - {x: 100, y: -65.5}
+        - {x: 100, y: 18.5}
+      - - {x: 97, y: 2.5}
+        - {x: 99, y: 0.5}
+        - {x: 100, y: 0.5}
+        - {x: 100, y: 11.5}
+        - {x: 97, y: 10.5}
+    - name: Beat_BongoMan_2
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 200
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 100, y: 38.5}
+        - {x: 97, y: 37.5}
+        - {x: 80, y: 79.5}
+        - {x: 68, y: 104.5}
+        - {x: 37, y: 124.5}
+        - {x: -40, y: 124.5}
+        - {x: -87, y: 92.5}
+        - {x: -100, y: 38.5}
+        - {x: -100, y: -74.5}
+        - {x: -44, y: -124.5}
+        - {x: 39, y: -124.5}
+        - {x: 66, y: -102.5}
+        - {x: 89, y: -68.5}
+        - {x: 100, y: -40.5}
+    - name: Beat_BongoMan_3
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 0
+        width: 200
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 88, y: 32.5}
+        - {x: 82, y: 70.5}
+        - {x: 42, y: 124.5}
+        - {x: -50, y: 124.5}
+        - {x: -59, y: 116.5}
+        - {x: -64, y: 112.5}
+        - {x: -82, y: 92.5}
+        - {x: -89, y: 79.5}
+        - {x: -92, y: 72.5}
+        - {x: -100, y: 65.5}
+        - {x: -100, y: -79.5}
+        - {x: -56, y: -124.5}
+        - {x: 30, y: -124.5}
+        - {x: 58, y: -102.5}
+        - {x: 88, y: -64.5}
     outline: []
   spritePackingTag: 
   userData: 
