@@ -26,6 +26,8 @@ public class SpawnData : IComparable<SpawnData>
             return 0;
         }
     }
+
+    public int order;
 }
 
 public class SaveManager : MonoBehaviour
@@ -136,6 +138,11 @@ public class SaveManager : MonoBehaviour
         newObject.spawnTime = float.Parse(data[0]);
         newObject.savableID = int.Parse(data[1]);
         newObject.spawnPosition = new Vector3(float.Parse(data[2]), float.Parse(data[3]), float.Parse(data[4]));
+        switch (newObject.savableID)
+        {
+            case 10: //puncture point
+                break;
+        }
         objectsToSpawn.Add(newObject);
     }
 

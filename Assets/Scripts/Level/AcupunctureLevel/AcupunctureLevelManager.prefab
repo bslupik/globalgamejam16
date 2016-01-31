@@ -9,6 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 432594}
   - 114: {fileID: 11459748}
+  - 114: {fileID: 11485124}
   m_Layer: 0
   m_Name: AcupunctureLevelManager
   m_TagString: LevelManager
@@ -44,15 +45,70 @@ MonoBehaviour:
   timeSinceBeat: 0
   timePerBeat: 1
   levelScore: 0
-  scoreText: {fileID: 0}
-  puncturePointNumbers: 010000000200000003000000
+  levelScoreBuffer: 0
+  orderedNumbers: 00000000010000000200000003000000040000000500000006000000
+  shakeMagnitude: 1
+  shakeDuration: 1
+--- !u!114 &11485124
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 192092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a60a74faa62f6914cbcd1688dacddeb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  savableID: 9
+  timeToSpawn: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: orderedNumbers.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: savableID
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: shakeMagnitude
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: shakeDuration
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: orderedNumbers.Array.data[1]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: orderedNumbers.Array.data[2]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: orderedNumbers.Array.data[3]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: orderedNumbers.Array.data[4]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: orderedNumbers.Array.data[5]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: orderedNumbers.Array.data[6]
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 192092}

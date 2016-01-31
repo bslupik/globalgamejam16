@@ -23,5 +23,12 @@ public class Savable : MonoBehaviour
         output.Write(transform.position.y);
         output.Write(' ');
         output.Write(transform.position.z);
+        switch (savableID)
+        {
+            case 10: //acupuncture points
+                output.Write(' ');
+                output.Write(GetComponent<PuncturePoint>().order);
+                break;
+        }
     }
 }
