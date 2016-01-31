@@ -29,7 +29,6 @@ public class Level : Base
 
 	public override void Start()
 	{
-        print("level start");
         base.Start();
         Array.Sort(orderedNumbers);
         sortedOrderedNumbers = new Queue<int>(orderedNumbers);
@@ -164,8 +163,10 @@ public class Level : Base
 
             if (node.order == sortedOrderedNumbers.Peek())
             {
+                Debug.Log("c");
                 completedObjects.Add(node);
                 sortedOrderedNumbers.Dequeue();
+                Debug.Log(target.order + " " + sortedOrderedNumbers.Peek());
                 if (target.order == sortedOrderedNumbers.Peek())
                 {
                     PlayerActed();
@@ -175,10 +176,12 @@ public class Level : Base
             ScreenShake();
             completedObjects.Clear();
             sortedOrderedNumbers = new Queue<int>(orderedNumbers);
+            Debug.Log("a");
             return false;
         }
         else
         {
+            Debug.Log("b");
             ScreenShake();
             return false;
         }

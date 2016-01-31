@@ -19,6 +19,7 @@ public class WritingRect : MonoBehaviour {
         {
             GameObject section = Instantiate(sectionPrefab);
             section.GetComponent<WritingSection>().Initialize(Vector3.Lerp(start, end, (float)i / numSegments), Vector3.Lerp(start, end, ((float)i + 1) / numSegments), width);
+            section.transform.SetParent(this.transform, true);
         }
 	}
 }

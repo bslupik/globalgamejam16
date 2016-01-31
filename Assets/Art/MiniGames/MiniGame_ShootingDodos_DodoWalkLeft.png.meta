@@ -1,9 +1,13 @@
 fileFormatVersion: 2
 guid: 1c684753cccc0934384107279baeafc2
-timeCreated: 1454206072
+timeCreated: 1454210319
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: MiniGame_ShootingDodos_DodoWalkLeft_0
+    21300002: MiniGame_ShootingDodos_DodoWalkLeft_1
+    21300004: MiniGame_ShootingDodos_DodoWalkLeft_2
+    21300006: MiniGame_ShootingDodos_DodoWalkLeft_3
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -30,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -38,7 +42,7 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -49,7 +53,164 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: MiniGame_ShootingDodos_DodoWalkLeft_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 400
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 125, y: 32}
+        - {x: 36, y: 42}
+        - {x: -16, y: 123}
+        - {x: -60, y: 123}
+        - {x: -75, y: 117}
+        - {x: -144, y: 87}
+        - {x: -160, y: 78}
+        - {x: -164, y: 69}
+        - {x: -164, y: 49}
+        - {x: -130, y: 16}
+        - {x: -140, y: -75}
+        - {x: -46, y: -118}
+        - {x: -35, y: -121}
+        - {x: 107, y: -121}
+        - {x: 148, y: -84}
+        - {x: 148, y: 14}
+        - {x: 141, y: 38}
+    - name: MiniGame_ShootingDodos_DodoWalkLeft_1
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 400
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 77, y: -67}
+        - {x: 88, y: -67}
+        - {x: 107, y: -74}
+        - {x: 142, y: -51}
+        - {x: 146, y: -44}
+        - {x: 146, y: 43}
+        - {x: 32, y: 107}
+        - {x: -96, y: 107}
+        - {x: -168, y: 76}
+        - {x: -168, y: -45}
+        - {x: -117, y: -129}
+        - {x: 69, y: -129}
+        - {x: 111, y: -125}
+        - {x: 117, y: -81}
+        - {x: 102, y: -73}
+        - {x: 91, y: -71}
+      - - {x: -63, y: -88}
+        - {x: -62, y: -91}
+        - {x: -59, y: -91}
+        - {x: -56, y: -88}
+        - {x: -56, y: -86}
+        - {x: -59, y: -85}
+      - - {x: -69, y: -76}
+        - {x: -77, y: -76}
+        - {x: -80, y: -82}
+        - {x: -80, y: -84}
+        - {x: -78, y: -85}
+        - {x: -72, y: -85}
+        - {x: -67, y: -81}
+        - {x: -67, y: -79}
+      - - {x: -90, y: -65}
+        - {x: -87, y: -67}
+        - {x: -84, y: -67}
+        - {x: -82, y: -66}
+        - {x: -82, y: -64}
+        - {x: -84, y: -60}
+        - {x: -89, y: -60}
+        - {x: -90, y: -61}
+    - name: MiniGame_ShootingDodos_DodoWalkLeft_2
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 0
+        width: 400
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 145, y: 9}
+        - {x: 132, y: 28}
+        - {x: 122, y: 31}
+        - {x: 106, y: 31}
+        - {x: 2, y: 122}
+        - {x: -59, y: 122}
+        - {x: -167, y: 81}
+        - {x: -167, y: 38}
+        - {x: -138, y: -39}
+        - {x: -35, y: -122}
+        - {x: 35, y: -122}
+        - {x: 89, y: -75}
+        - {x: 139, y: -51}
+        - {x: 145, y: -11}
+      - - {x: -96, y: -45}
+        - {x: -96, y: -47}
+        - {x: -91, y: -49}
+        - {x: -88, y: -48}
+        - {x: -88, y: -46}
+        - {x: -92, y: -42}
+        - {x: -93, y: -42}
+    - name: MiniGame_ShootingDodos_DodoWalkLeft_3
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 0
+        width: 400
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 137, y: 32}
+        - {x: 26, y: 107}
+        - {x: -89, y: 107}
+        - {x: -168, y: 54}
+        - {x: -168, y: -15}
+        - {x: -108, y: -60}
+        - {x: -78, y: -69}
+        - {x: -52, y: -75}
+        - {x: -67, y: -105}
+        - {x: -61, y: -123}
+        - {x: 41, y: -123}
+        - {x: 81, y: -114}
+        - {x: 123, y: -101}
+        - {x: 146, y: -41}
+        - {x: 146, y: 28}
+      - - {x: -63, y: -88}
+        - {x: -62, y: -91}
+        - {x: -59, y: -91}
+        - {x: -56, y: -88}
+        - {x: -56, y: -86}
+        - {x: -59, y: -85}
+      - - {x: -69, y: -76}
+        - {x: -77, y: -76}
+        - {x: -80, y: -82}
+        - {x: -80, y: -84}
+        - {x: -78, y: -85}
+        - {x: -72, y: -85}
+        - {x: -67, y: -81}
+        - {x: -67, y: -79}
+      - - {x: -90, y: -65}
+        - {x: -87, y: -67}
+        - {x: -84, y: -67}
+        - {x: -82, y: -66}
+        - {x: -82, y: -64}
+        - {x: -84, y: -60}
+        - {x: -89, y: -60}
+        - {x: -90, y: -61}
     outline: []
   spritePackingTag: 
   userData: 

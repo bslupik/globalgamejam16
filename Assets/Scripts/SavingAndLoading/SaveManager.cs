@@ -188,6 +188,7 @@ public class SaveManager : MonoBehaviour
                 newObject.metadata = new List<float>();
                 newObject.metadata.Add(float.Parse(data[5]));
                 break;
+            
         }
         objectsToSpawn.Add(newObject);
     }
