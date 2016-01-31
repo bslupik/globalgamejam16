@@ -100,6 +100,10 @@ public class WorldManager : MonoBehaviour
         yield return scripting.FadeOut();
         Time.timeScale = 0;
         instructionScreen.GetComponentInChildren<Image>().sprite = instructionBackground[currentLevelIndex];
+        for (int i = 0; i < villages.Length; ++i)
+        {
+            villages[i].gameObject.SetActive(false);
+        }
         instructionScreen.SetActive(true);
         yield return scripting.FadeIn();
         Time.timeScale = 1.0f;
@@ -126,6 +130,7 @@ public class WorldManager : MonoBehaviour
         for (int i = 0; i < villages.Length; ++i)
         {
             villages[i].OnUnload();
+            villages[i].gameObject.SetActive(false);
         }
 
         StartCoroutine(FadeToLevelFinish(finalScore));
@@ -170,6 +175,7 @@ public class WorldManager : MonoBehaviour
         yield return scripting.FadeOut();
         Time.timeScale = 0;
         levelFinish.SetActive(false);
+        villages[Random.Range(0, villages.Length)].gameObject.SetActive(true);
         yield return scripting.FadeIn();
         Time.timeScale = 1.0f;
     }
