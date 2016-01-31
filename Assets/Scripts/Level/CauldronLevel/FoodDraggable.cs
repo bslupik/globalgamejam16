@@ -3,8 +3,7 @@ using System.Collections;
 
 [RequireComponent(typeof(Collider2D))]
 [RequireComponent(typeof(Rigidbody2D))]
-public class FoodDraggable : OnBeatDraggable, IResettable {
-
+public class FoodDraggable : OnBeatDraggable, IResettable, IObserver<int> {
     public int order { get; set; }
 
     [SerializeField]
@@ -26,6 +25,14 @@ public class FoodDraggable : OnBeatDraggable, IResettable {
         {
             order = setOrder;
         }
+        if(order > 0)
+            this.gameObject.SetActive(false);
+    }
+
+    public override void Start()
+    {
+        base.Start();
+        level.Subscribe(this);
     }
 
     public void reset()
@@ -44,5 +51,13 @@ public class FoodDraggable : OnBeatDraggable, IResettable {
         base.OnDragEnd();
         if((level as CauldronLevel).PlayerActed(this))
             this.gameObject.SetActive(false);
+    }
+
+    public void Notify(int i)
+    {
+        if (order <= i)
+        {
+            this.gameObject.SetActive(true);
+        }
     }
 }
