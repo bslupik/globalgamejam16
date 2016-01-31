@@ -12,7 +12,7 @@ public class Level : Base, IObservable<int>
     public float levelScore = 0.0f;
     public float levelScoreBuffer = 0;
     public float levelTime = 0.0f;
-    public float maxLevelTime = 10.0f;
+    public float maxLevelTime = 30.0f;
     public WorldManager worldManager;
     // public Text scoreText;
 
