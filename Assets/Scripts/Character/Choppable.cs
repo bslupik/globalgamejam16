@@ -10,7 +10,6 @@ public class Choppable : AbstractSwipable
 	public override void Start()
 	{
 		base.Start();
-        Debug.Log("DING!");
 	}
 	
 	public override void Update()

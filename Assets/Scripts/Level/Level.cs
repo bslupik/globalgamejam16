@@ -26,7 +26,7 @@ public class Level : Base, IObservable<int>
     [SerializeField]
     protected float shakeDuration;
 
-    LinkedList<int> sortedOrderedNumbers;
+    Queue<int> sortedOrderedNumbers;
     List<IResettable> completedObjects = new List<IResettable>();
 
     List<Collider2D> overlappingColliders = new List<Collider2D>();
@@ -35,7 +35,7 @@ public class Level : Base, IObservable<int>
 	{
         base.Start();
         Array.Sort(orderedNumbers);
-        sortedOrderedNumbers = new LinkedList<int>(orderedNumbers);
+        sortedOrderedNumbers = new Queue<int>(orderedNumbers);
         // scoreText = GameObject.Find("ScoreText").GetComponent<Text>();
     }
 	
@@ -119,9 +119,9 @@ public class Level : Base, IObservable<int>
     {
         if (overlappingColliders.Contains(food.Collider))
         {
-            if (food.order == nextOrderedNumber())
+            if (food.order == sortedOrderedNumbers.Peek())
             {
-                sortedOrderedNumbers.RemoveFirst();
+                sortedOrderedNumbers.Dequeue();
                 PlayerActed();
                 completedObjects.Add(food);
                 orderObservable.Post(food.order + 3);
@@ -137,7 +137,7 @@ public class Level : Base, IObservable<int>
                 food.reset();
                 completedObjects.Clear();
                 overlappingColliders.Clear();
-                sortedOrderedNumbers = new LinkedList<int>(orderedNumbers);
+                sortedOrderedNumbers = new Queue<int>(orderedNumbers);
                 ScreenShake();
                 return false;
             }
@@ -165,33 +165,21 @@ public class Level : Base, IObservable<int>
         if (target != null)
         {
 
-            if (node.order == nextOrderedNumber())
+            if (node.order == sortedOrderedNumbers.Peek())
             {
-                Debug.Log("c");
-                sortedOrderedNumbers.RemoveFirst();
-                Debug.Log(target.order + " " + nextOrderedNumber());
-                if (target.order == nextOrderedNumber())
+                completedObjects.Add(node);
+                sortedOrderedNumbers.Dequeue();
+                if (target.order == sortedOrderedNumbers.Peek())
                 {
-                    completedObjects.Add(node);
                     PlayerActed();
-                    if(sortedOrderedNumbers.Count == 1)
-                    {
-                        MazeFinished();
-                    }
                     return true;
-                }
-                else
-                {
-                    sortedOrderedNumbers.AddFirst(node.order);
                 }
             }
             ScreenShake();
-            Debug.Log("a");
             return false;
         }
         else
         {
-            Debug.Log("b");
             ScreenShake();
             return false;
         }
@@ -199,9 +187,9 @@ public class Level : Base, IObservable<int>
 
     public bool PlayerActed(int order)
     {
-        if (order == nextOrderedNumber())
+        if (order == sortedOrderedNumbers.Peek())
         {
-            sortedOrderedNumbers.RemoveFirst();
+            sortedOrderedNumbers.Dequeue();
             PlayerActed();
             if (sortedOrderedNumbers.Count == 0)
             {
@@ -216,8 +204,6 @@ public class Level : Base, IObservable<int>
         }
     }
 
-    
-
     public void ArrowMissed()
     {
         // Do something maybe
@@ -226,20 +212,6 @@ public class Level : Base, IObservable<int>
     public void DodoKilled()
     {
         // Play sound, give points
-    }
-
-    public void MazeFinished()
-    {
-
-    }
-
-    private int nextOrderedNumber()
-    {
-        if (sortedOrderedNumbers.First == null)
-        {
-            return -1;
-        }
-        return sortedOrderedNumbers.First.Value;
     }
 
     public void EndLevel()
