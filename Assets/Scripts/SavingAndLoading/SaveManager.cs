@@ -141,7 +141,24 @@ public class SaveManager : MonoBehaviour
         {
             case 0: // Villager spawner
             case 1: // Grave
-                case 2
+            case 2: // Torch
+            case 6: // Super grave
+            case 12: // Fire hut
+            case 25: // Lasso animal
+                newObject.metadata = new List<float>();
+                if (data.Length >= 8)
+                {
+                    newObject.metadata.Add(float.Parse(data[5]));
+                    newObject.metadata.Add(float.Parse(data[6]));
+                    newObject.metadata.Add(float.Parse(data[7]));
+                }
+                else
+                {
+                    newObject.metadata.Add(0);
+                    newObject.metadata.Add(0);
+                    newObject.metadata.Add(0);
+                }
+                break;
             case 10: //puncture point
                 newObject.metadata = new List<float>();
                 newObject.metadata.Add(float.Parse(data[5]));
