@@ -512,7 +512,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 136628}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.676912, y: 0.016569018, z: 3}
+  m_LocalPosition: {x: 7.018338, y: -0.8705746, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 22464232}
@@ -899,8 +899,8 @@ MonoBehaviour:
   - LassoAnimals
   - PutOutFires
   goodScore:
+  - 5
   - 10
-  - 25
   - 10
   - 10
   - 8
@@ -912,8 +912,8 @@ MonoBehaviour:
   - 5
   - 10
   greatScore:
-  - 10
-  - 30
+  - 7
+  - 13
   - 15
   - 15
   - 12
@@ -925,8 +925,8 @@ MonoBehaviour:
   - 10
   - 12
   perfectScore:
-  - 25
-  - 35
+  - 10
+  - 15
   - 18
   - 18
   - 15
@@ -2507,11 +2507,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: goodScore.Array.data[0]
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: goodScore.Array.data[1]
-      value: 25
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: goodScore.Array.data[2]
@@ -2555,11 +2555,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: greatScore.Array.data[0]
-      value: 10
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: greatScore.Array.data[1]
-      value: 30
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: greatScore.Array.data[2]
@@ -2603,11 +2603,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: perfectScore.Array.data[0]
-      value: 25
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: perfectScore.Array.data[1]
-      value: 35
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: perfectScore.Array.data[2]
