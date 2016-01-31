@@ -10,8 +10,26 @@ GameObject:
   - 4: {fileID: 428392}
   - 114: {fileID: 11434364}
   - 212: {fileID: 21242612}
+  - 61: {fileID: 6181200}
+  - 114: {fileID: 11498942}
   m_Layer: 0
   m_Name: CauldronBackground
+  m_TagString: LevelManager
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &198470
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 498206}
+  - 212: {fileID: 21282004}
+  m_Layer: 0
+  m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24,11 +42,38 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 104926}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.94, y: 4.22, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 498206}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!4 &498206
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 198470}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 428392}
+  m_RootOrder: 0
+--- !u!61 &6181200
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 104926}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 5.98, y: 4.07}
 --- !u!114 &11434364
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -43,6 +88,50 @@ MonoBehaviour:
   savableID: 17
   timeToSpawn: 0
   metadata: []
+--- !u!114 &11498942
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 104926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1285d15719fa30445a0ba14f4bea0275, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: {fileID: 0}
+  level: {fileID: 0}
+  timeSinceBeat: 0
+  timePerBeat: 1
+  levelScore: 0
+  levelScoreBuffer: 0
+  levelTime: 0
+  maxLevelTime: 30
+  worldManager: {fileID: 0}
+  localTime: 0
+  totalScoreMult: 1
+  mazeNodeCount: 21
+  writingLineCount: 10
+  fishCaught: 0
+  circlesDrawn: 0
+  firesExtinguished: 0
+  dodosCaught: 0
+  dodoScoreValue: 1
+  ghostFailValue: 0.5
+  ghostScoreValue: 1
+  villagerFailValue: 1
+  villagerScoreValue: 1
+  lumberFailValue: 1
+  lumberScoreValue: 1
+  torchScoreValue: 1
+  acupunctureScoreValue: 1
+  acupunctureFailValue: 1
+  mazeScoreValue: 1
+  writingScoreValue: 1
+  cauldronScoreValue: 1
+  orderedNumbers: 0000000001000000020000000300000004000000
+  shakeMagnitude: 1
+  shakeDuration: 1
 --- !u!212 &21242612
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -70,6 +159,36 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ac4704f1edfb51b4c9f01ac1a2c1b6c5, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+--- !u!212 &21282004
+SpriteRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 198470}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_ReflectionProbeUsage: 0
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 94799e2a591ea1647ad21363a99df2c6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
