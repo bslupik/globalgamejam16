@@ -11,6 +11,9 @@ public class Level : Base, IObservable<int>
     public float timePerBeat = 1.0f;
     public float levelScore = 0.0f;
     public float levelScoreBuffer = 0;
+    public float levelTime = 0.0f;
+    public float maxLevelTime = 30.0f;
+    public WorldManager worldManager;
     public float localTime = 0f;
     public float totalScoreMult = 1f;
     public int mazeNodeCount = 21;
@@ -57,8 +60,10 @@ public class Level : Base, IObservable<int>
 	public override void Start()
 	{
         base.Start();
+        worldManager = GameObject.Find("WorldManager").GetComponent<WorldManager>();
         Array.Sort(orderedNumbers);
         sortedOrderedNumbers = new LinkedList<int>(orderedNumbers);
+        Debug.Log(sortedOrderedNumbers);
         // scoreText = GameObject.Find("ScoreText").GetComponent<Text>();
     }
 	
@@ -73,6 +78,11 @@ public class Level : Base, IObservable<int>
         }
         localTime += Time.deltaTime;
         // scoreText.text = "" + levelScore;
+        levelTime += Time.deltaTime;
+        if (levelTime >= maxLevelTime)
+        {
+            EndLevel();
+        }
     }
 
     public float ScoreMultiplier()
@@ -124,27 +134,20 @@ public class Level : Base, IObservable<int>
 
     public bool PlayerActed(FoodDraggable food)
     {
+        Debug.Log(sortedOrderedNumbers);
         if (overlappingColliders.Contains(food.Collider))
         {
             if (food.order == nextOrderedNumber())
             {
                 sortedOrderedNumbers.RemoveFirst();
                 PlayerActed();
-                completedObjects.Add(food);
                 orderObservable.Post(food.order + 3);
                 return true;
             }
             else
             {
-
-                for (int i = 0; i < completedObjects.Count; i++)
-                {
-                    completedObjects[i].reset();
-                }
                 food.reset();
-                completedObjects.Clear();
                 overlappingColliders.Clear();
-                sortedOrderedNumbers = new LinkedList<int>(orderedNumbers);
                 ScreenShake();
                 return false;
             }

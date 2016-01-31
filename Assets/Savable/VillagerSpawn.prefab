@@ -42,10 +42,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a60a74faa62f6914cbcd1688dacddeb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sound: {fileID: 0}
-  level: {fileID: 0}
   savableID: 0
   timeToSpawn: 0
+  metadata: []
 --- !u!114 &11482990
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -57,8 +56,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bdf1e87dff8e734da6bafbfbddc5004, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sound: {fileID: 0}
-  level: {fileID: 0}
   condition: {fileID: 0}
   spawnObject: {fileID: 173004, guid: 9eee5779de8f1084fa2a3fa87f26b461, type: 2}
   speedBase: 0.05
@@ -109,7 +106,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 60043b23f8b734b448ee8ab8be8716dc, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
 --- !u!1001 &100100000
@@ -126,6 +123,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: speedVariation
       value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Color.a
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

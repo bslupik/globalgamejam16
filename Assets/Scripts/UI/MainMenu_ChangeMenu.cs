@@ -49,4 +49,9 @@ public class MainMenu_ChangeMenu : MonoBehaviour {
             EndlessMenu.SetActive(true);
         }
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }

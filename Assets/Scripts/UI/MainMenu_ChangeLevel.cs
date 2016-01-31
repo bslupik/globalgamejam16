@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class MainMenu_ChangeLevel : MonoBehaviour {
 
-	public void ChangeLevel(int levelindex)
+	public void ChangeLevel(string sceneName)
     {
-        //SceneManager.LoadScene(levelindex);
+        SceneManager.LoadScene(sceneName);
     }
 
     public void ExitGame()

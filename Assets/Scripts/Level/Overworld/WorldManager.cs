@@ -24,13 +24,21 @@ public class WorldManager : MonoBehaviour
 
     public GameObject levelFinish;
     public GameObject instructionScreen;
+    public GameObject persistentUI;
+
+    public bool isEndlessMode;
+    public bool endlessShuffle;
+    public int[] endlessSequence;
+    public int endlessIndex;
 
     public void Start()
 	{
         levelFinish = GameObject.Find("LevelFinishUI");
         instructionScreen = GameObject.Find("InstructionScreen");
+        persistentUI = GameObject.Find("PersistentUI");
         levelFinish.SetActive(false);
         instructionScreen.SetActive(false);
+        persistentUI.SetActive(false);
         for (int i = 0; i < village.Length; ++i)
         {
             if (difficulty[i] == 0)
@@ -47,6 +55,29 @@ public class WorldManager : MonoBehaviour
             }
         }
         scripting = Camera.main.GetComponent<SceneChangeScripting>();
+
+        InitEndlessMode();
+    }
+
+    public void InitEndlessMode()
+    {
+        isEndlessMode = false;
+        string endlessSequenceString = PlayerPrefs.GetString("EndlessLevelSequence");
+        if (endlessSequenceString != null && endlessSequenceString.Length > 0)
+        {
+            isEndlessMode = true;
+            string[] endlessSequenceStringArray = endlessSequenceString.Split(' ');
+            endlessSequence = new int[endlessSequenceStringArray.Length];
+            for (int i = 0; i < endlessSequenceStringArray.Length; ++i)
+            {
+                endlessSequence[i] = int.Parse(endlessSequenceStringArray[i]);
+            }
+        }
+        string endlessShuffleString = PlayerPrefs.GetString("EndlessLevelShuffle");
+        if (endlessShuffleString != null)
+        {
+            endlessShuffle = bool.Parse(endlessShuffleString);
+        }
     }
 	
 	public void Update()
@@ -87,6 +118,7 @@ public class WorldManager : MonoBehaviour
         instructionScreen.SetActive(false);
         yield return scripting.FadeIn();
         Time.timeScale = 1.0f;
+        persistentUI.SetActive(true);
     }
 
     public void EndLevel(float finalScore)
@@ -104,6 +136,7 @@ public class WorldManager : MonoBehaviour
         yield return scripting.FadeOut();
         Time.timeScale = 0;
         GameObject.FindWithTag("SaveManager").GetComponent<SaveManager>().UnloadLevel();
+        persistentUI.SetActive(false);
         OnLevelFinished(finalScore);
         yield return scripting.FadeIn();
         Time.timeScale = 1.0f;
@@ -111,7 +144,25 @@ public class WorldManager : MonoBehaviour
 
     public void CloseLevelFinish()
     {
-        StartCoroutine(FadeToOverworld());
+        if(isEndlessMode)
+        {
+            SetNextEndlessLevel();
+            StartCoroutine(FadeToLevel());
+        }
+        else
+        {
+            StartCoroutine(FadeToOverworld());
+        }
+    }
+
+    public void SetNextEndlessLevel()
+    {
+        if(endlessShuffle)
+            endlessIndex = Random.Range(0, endlessSequence.Length);
+        else
+            endlessIndex = (endlessIndex + 1) % endlessSequence.Length;
+
+        currentLevelIndex = endlessSequence[endlessIndex];
     }
 
     public IEnumerator FadeToOverworld()

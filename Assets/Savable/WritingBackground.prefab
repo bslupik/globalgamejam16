@@ -10,9 +10,11 @@ GameObject:
   - 4: {fileID: 435534}
   - 114: {fileID: 11437522}
   - 212: {fileID: 21231492}
+  - 114: {fileID: 11428248}
+  - 114: {fileID: 11462684}
   m_Layer: 0
   m_Name: WritingBackground
-  m_TagString: Untagged
+  m_TagString: LevelManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,6 +31,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &11428248
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 140310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e11f22b440023644097889a09d62b52f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: {fileID: 0}
+  level: {fileID: 0}
+  timeSinceBeat: 0
+  timePerBeat: 1
+  levelScore: 0
+  levelScoreBuffer: 0
+  levelTime: 0
+  maxLevelTime: 30
+  worldManager: {fileID: 0}
+  orderedNumbers: 
+  shakeMagnitude: 0
+  shakeDuration: 0
 --- !u!114 &11437522
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -40,9 +65,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a60a74faa62f6914cbcd1688dacddeb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  savableID: 15
+  savableID: 16
   timeToSpawn: 0
   metadata: []
+--- !u!114 &11462684
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 140310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6692df79820dac1408ab7a85999d424f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: {fileID: 0}
+  level: {fileID: 0}
+  minDistance: 0
 --- !u!212 &21231492
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -85,6 +124,18 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 32c3e0c18f37b11459f61ea91d16d17a,
         type: 3}
+    - target: {fileID: 0}
+      propertyPath: maxLevelTime
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: savableID
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: LevelManager
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 140310}

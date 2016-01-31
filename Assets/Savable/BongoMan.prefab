@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 402714}
   - 114: {fileID: 11415890}
   - 212: {fileID: 21238264}
+  - 114: {fileID: 11478860}
   m_Layer: 20
   m_Name: BongoMan
   m_TagString: Untagged
@@ -49,6 +50,20 @@ MonoBehaviour:
   sequenceTwoSprites:
   - {fileID: 21300004, guid: 2f7c07c9c6b69c944879ba483800424d, type: 3}
   - {fileID: 21300006, guid: 2f7c07c9c6b69c944879ba483800424d, type: 3}
+--- !u!114 &11478860
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 138720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a60a74faa62f6914cbcd1688dacddeb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  savableID: 33
+  timeToSpawn: 0
+  metadata: []
 --- !u!212 &21238264
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -91,6 +106,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300006, guid: 2f7c07c9c6b69c944879ba483800424d,
         type: 3}
+    - target: {fileID: 0}
+      propertyPath: savableID
+      value: 33
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 138720}

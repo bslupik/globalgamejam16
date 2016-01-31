@@ -3,9 +3,9 @@ using System.Collections;
 
 public class WritingRect : MonoBehaviour {
     [SerializeField]
-    protected Vector2 start;
+    public Vector2 start;
     [SerializeField]
-    protected Vector2 end;
+    public Vector2 end;
     [SerializeField]
     protected float width;
     [SerializeField]

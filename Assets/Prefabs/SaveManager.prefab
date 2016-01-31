@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &103506
 GameObject:
   m_ObjectHideFlags: 1
@@ -319,7 +319,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outputFilePath: Assets\Resources\LevelFiles\
   inputFilePath: LevelFiles\
-  fileName: choppingwood
+  fileName: 
   savableObjects: []
   spawnableObjects:
   - {fileID: 179040, guid: 343d4de1f560afb469a1dcdf8eaf8fac, type: 2}
@@ -337,7 +337,7 @@ MonoBehaviour:
   - {fileID: 169240, guid: c8cf4ea4013ea7447b97f6ace0d9edf4, type: 2}
   - {fileID: 168872, guid: 065acd90fb539e247a39bd2a181ee4db, type: 2}
   - {fileID: 157954, guid: 6d30d86db7cfe2249b4b0ebeec86eff2, type: 2}
-  - {fileID: 166968, guid: 90b88a594bf2327418eecc916080fee1, type: 2}
+  - {fileID: 136152, guid: 44d076ee75c9311449506a52f218d747, type: 2}
   - {fileID: 140310, guid: 02e96657e267d01468e8f654585e1d05, type: 2}
   - {fileID: 104926, guid: f2e2b9f58726a3e428cf02452945bafd, type: 2}
   - {fileID: 100738, guid: 29b91b2e0dd8026468761f7d75148ded, type: 2}
@@ -355,6 +355,8 @@ MonoBehaviour:
   - {fileID: 128098, guid: 191e241fb6043bc479656aebe564d11b, type: 2}
   - {fileID: 107656, guid: e8bce219971fe804ca7a02ab9fc064cf, type: 2}
   - {fileID: 141192, guid: 2f013e50a0cbbc046b65a25fc94a175b, type: 2}
+  - {fileID: 138720, guid: 6e7f2477edda6c141a09f1b82fa1eee8, type: 2}
+  - {fileID: 127256, guid: 78c5c4ea263ea3044a01df816f4cb1fa, type: 2}
   gameTime: 0
   loadedObjects: []
 --- !u!114 &11422490
