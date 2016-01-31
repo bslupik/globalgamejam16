@@ -16,6 +16,7 @@ public class ExtendingBow : OnBeatDraggable {
         leftString = transform.Find("LeftString").GetComponent<LineRenderer>();
         rightString = transform.Find("RightString").GetComponent<LineRenderer>();
         bowArrow = transform.Find("BowArrow");
+        Spawner arrowSpawner = GameObject.Find("ArrowSpawner").GetComponent<Spawner>();
         arrowSpawnCondition = arrowSpawner.GetComponent<BowReleasedSpawnCondition>();
         mouseDist = 0.0f;
 	}
