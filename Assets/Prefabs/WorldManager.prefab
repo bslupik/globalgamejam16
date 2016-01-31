@@ -512,7 +512,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 136628}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 3}
+  m_LocalPosition: {x: 7.018338, y: -0.8705746, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 22464232}
@@ -899,9 +899,9 @@ MonoBehaviour:
   - LassoAnimals
   - PutOutFires
   goodScore:
+  - 5
   - 10
-  - 25
-  - 10
+  - 3
   - 10
   - 8
   - 5
@@ -912,9 +912,9 @@ MonoBehaviour:
   - 5
   - 10
   greatScore:
-  - 10
-  - 30
-  - 15
+  - 7
+  - 13
+  - 5
   - 15
   - 12
   - 10
@@ -925,9 +925,9 @@ MonoBehaviour:
   - 10
   - 12
   perfectScore:
-  - 25
-  - 35
-  - 18
+  - 10
+  - 15
+  - 7
   - 18
   - 15
   - 15
@@ -940,18 +940,18 @@ MonoBehaviour:
   difficulty: 010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
   village: 000000000000000000000000010000000100000001000000020000000200000002000000030000000300000003000000
   instructionBackground:
-  - {fileID: 21300000, guid: 6f1b0c85fee5f1449bf6099bafb8470f, type: 3}
-  - {fileID: 21300000, guid: 6f1b0c85fee5f1449bf6099bafb8470f, type: 3}
-  - {fileID: 21300000, guid: 6f1b0c85fee5f1449bf6099bafb8470f, type: 3}
-  - {fileID: 21300000, guid: 6f1b0c85fee5f1449bf6099bafb8470f, type: 3}
-  - {fileID: 21300000, guid: 6f1b0c85fee5f1449bf6099bafb8470f, type: 3}
-  - {fileID: 21300000, guid: 6f1b0c85fee5f1449bf6099bafb8470f, type: 3}
-  - {fileID: 21300000, guid: 6f1b0c85fee5f1449bf6099bafb8470f, type: 3}
-  - {fileID: 21300000, guid: 6f1b0c85fee5f1449bf6099bafb8470f, type: 3}
-  - {fileID: 21300000, guid: 6f1b0c85fee5f1449bf6099bafb8470f, type: 3}
-  - {fileID: 21300000, guid: 6f1b0c85fee5f1449bf6099bafb8470f, type: 3}
-  - {fileID: 21300000, guid: 6f1b0c85fee5f1449bf6099bafb8470f, type: 3}
-  - {fileID: 21300000, guid: 6f1b0c85fee5f1449bf6099bafb8470f, type: 3}
+  - {fileID: 21300000, guid: 71e35202e9224854e9b9a8089d886b1e, type: 3}
+  - {fileID: 21300000, guid: 81f4f7a2de1381b44bc363ddad65aaff, type: 3}
+  - {fileID: 21300000, guid: 8f1009cd37ab19041b2770e6435ef0f6, type: 3}
+  - {fileID: 21300000, guid: 4ad7eac241fc44c438cb1d4a0d8b464b, type: 3}
+  - {fileID: 21300000, guid: 7fff32b5f2165a647bb6a96efbbd2df5, type: 3}
+  - {fileID: 21300000, guid: fff0fef6cf1617c4e870ba2f22961779, type: 3}
+  - {fileID: 21300000, guid: 0d801d1d3471b0f40b0a9e23cbaa81de, type: 3}
+  - {fileID: 21300000, guid: 4e6bb92b35487d54da489a483bae3ee6, type: 3}
+  - {fileID: 21300000, guid: 006028fa6d8c64942b4b23f5352bc60d, type: 3}
+  - {fileID: 21300000, guid: ddd4e96453eeea5448f8bc693378399a, type: 3}
+  - {fileID: 21300000, guid: 95d204ba9e27d4e43ad924fb9fa25fe8, type: 3}
+  - {fileID: 21300000, guid: b869f76b4d51ad74cb4439cb85846d81, type: 3}
   music:
   - {fileID: 0}
   - {fileID: 0}
@@ -2507,15 +2507,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: goodScore.Array.data[0]
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: goodScore.Array.data[1]
-      value: 25
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: goodScore.Array.data[2]
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: goodScore.Array.data[3]
@@ -2555,15 +2555,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: greatScore.Array.data[0]
-      value: 10
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: greatScore.Array.data[1]
-      value: 30
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: greatScore.Array.data[2]
-      value: 15
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: greatScore.Array.data[3]
@@ -2603,15 +2603,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: perfectScore.Array.data[0]
-      value: 25
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: perfectScore.Array.data[1]
-      value: 35
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: perfectScore.Array.data[2]
-      value: 18
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: perfectScore.Array.data[3]
@@ -2733,6 +2733,66 @@ Prefab:
       propertyPath: village.Array.data[11]
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: instructionBackground.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 71e35202e9224854e9b9a8089d886b1e,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: instructionBackground.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 81f4f7a2de1381b44bc363ddad65aaff,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: instructionBackground.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 8f1009cd37ab19041b2770e6435ef0f6,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: instructionBackground.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: 4ad7eac241fc44c438cb1d4a0d8b464b,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: instructionBackground.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: 7fff32b5f2165a647bb6a96efbbd2df5,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: instructionBackground.Array.data[5]
+      value: 
+      objectReference: {fileID: 21300000, guid: fff0fef6cf1617c4e870ba2f22961779,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: instructionBackground.Array.data[6]
+      value: 
+      objectReference: {fileID: 21300000, guid: 0d801d1d3471b0f40b0a9e23cbaa81de,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: instructionBackground.Array.data[7]
+      value: 
+      objectReference: {fileID: 21300000, guid: 4e6bb92b35487d54da489a483bae3ee6,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: instructionBackground.Array.data[8]
+      value: 
+      objectReference: {fileID: 21300000, guid: 006028fa6d8c64942b4b23f5352bc60d,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: instructionBackground.Array.data[9]
+      value: 
+      objectReference: {fileID: 21300000, guid: ddd4e96453eeea5448f8bc693378399a,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: instructionBackground.Array.data[10]
+      value: 
+      objectReference: {fileID: 21300000, guid: 95d204ba9e27d4e43ad924fb9fa25fe8,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: instructionBackground.Array.data[11]
+      value: 
+      objectReference: {fileID: 21300000, guid: b869f76b4d51ad74cb4439cb85846d81,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 136628}

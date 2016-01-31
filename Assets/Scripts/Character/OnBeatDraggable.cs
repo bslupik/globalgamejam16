@@ -23,8 +23,7 @@ public class OnBeatDraggable : Draggable {
         else
         {
             //level.ScreenShake();
-            // TODO: Play error sound
-            // base.sound.PlaySound(0);
+            base.sound.PlaySound(0);
         }
     }
 
