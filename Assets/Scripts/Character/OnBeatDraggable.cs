@@ -18,7 +18,7 @@ public class OnBeatDraggable : Draggable {
         if(base.level.OnBeat())
         {
             base.level.PlayerActed();
-            StartCoroutine(base.DoDrag());
+            StartCoroutine(DoDrag());
         }
         else
         {
@@ -28,7 +28,7 @@ public class OnBeatDraggable : Draggable {
         }
     }
 
-    void OnMouseUp()
+    protected virtual void OnMouseUp()
     {
         base.level.PlayerActed();
     }
