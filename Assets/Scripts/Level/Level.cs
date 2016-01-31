@@ -63,6 +63,7 @@ public class Level : Base, IObservable<int>
         worldManager = GameObject.Find("WorldManager").GetComponent<WorldManager>();
         Array.Sort(orderedNumbers);
         sortedOrderedNumbers = new LinkedList<int>(orderedNumbers);
+        Debug.Log(sortedOrderedNumbers);
         // scoreText = GameObject.Find("ScoreText").GetComponent<Text>();
     }
 	
@@ -133,27 +134,20 @@ public class Level : Base, IObservable<int>
 
     public bool PlayerActed(FoodDraggable food)
     {
+        Debug.Log(sortedOrderedNumbers);
         if (overlappingColliders.Contains(food.Collider))
         {
             if (food.order == nextOrderedNumber())
             {
                 sortedOrderedNumbers.RemoveFirst();
                 PlayerActed();
-                completedObjects.Add(food);
                 orderObservable.Post(food.order + 3);
                 return true;
             }
             else
             {
-
-                for (int i = 0; i < completedObjects.Count; i++)
-                {
-                    completedObjects[i].reset();
-                }
                 food.reset();
-                completedObjects.Clear();
                 overlappingColliders.Clear();
-                sortedOrderedNumbers = new LinkedList<int>(orderedNumbers);
                 ScreenShake();
                 return false;
             }

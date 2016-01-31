@@ -155,6 +155,7 @@ public class SaveManager : MonoBehaviour
                     newObject.metadata.Add(0);
                 }
                 break;
+            case 14: //food
             case 27: // Maze Node
             case 9: // Acupuncture level manager
                 newObject.metadata = new List<float>();
@@ -262,6 +263,9 @@ public class SaveManager : MonoBehaviour
                 break;
             case 10: //puncture point
                 instantiatedObject.GetComponent<PuncturePoint>().setOrder = (int)(data.metadata[0]);
+                break;
+            case 14: //food
+                instantiatedObject.GetComponent<FoodDraggable>().setOrder = (int)(data.metadata[0]);
                 break;
         }
     }
