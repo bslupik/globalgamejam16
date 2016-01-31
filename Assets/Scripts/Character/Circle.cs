@@ -75,10 +75,12 @@ public class Circle : MonoBehaviour {
         {
             Vector3 newPoint = Draggable.mousePosInWorld();
             newPoint.z = -8.0f;
-
-            float segmentLength = Vector2.Distance(points[points.Count - 1], newPoint);
-            sumPoints += (Vector2)(points[points.Count - 1] + newPoint) * segmentLength / 2;
-            length += segmentLength;
+            if (points.Count > 0)
+            {
+                float segmentLength = Vector2.Distance(points[points.Count - 1], newPoint);
+                sumPoints += (Vector2)(points[points.Count - 1] + newPoint) * segmentLength / 2;
+                length += segmentLength;
+            }
 
             points.Add(newPoint);
             rend.SetVertexCount(points.Count);
