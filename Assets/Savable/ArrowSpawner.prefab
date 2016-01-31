@@ -11,6 +11,7 @@ GameObject:
   - 114: {fileID: 11498968}
   - 114: {fileID: 11422720}
   - 114: {fileID: 11493966}
+  - 114: {fileID: 11491574}
   m_Layer: 0
   m_Name: ArrowSpawner
   m_TagString: Untagged
@@ -46,6 +47,19 @@ MonoBehaviour:
   spawnedObject: {fileID: 0}
   maxObjects: 3
   objects: []
+--- !u!114 &11491574
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 182130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbec9e319d64d8e498da5de1c885dddd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: {fileID: 0}
+  level: {fileID: 0}
 --- !u!114 &11493966
 MonoBehaviour:
   m_ObjectHideFlags: 1

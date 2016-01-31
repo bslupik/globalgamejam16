@@ -76,27 +76,6 @@ MonoBehaviour:
   timePerBeat: 1
   levelScore: 0
   levelScoreBuffer: 0
-  musicIndex: 02000000
-  levelName:
-  - Torches_Easy
-  goodScore:
-  - 200
-  greatScore:
-  - 500
-  perfectScore:
-  - 800
-  difficulty: 00000000
-  village: 00000000
-  music:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  musicBeatSpeed:
-  - 0
-  - 0
-  - 0
-  - 0
   orderedNumbers: 
   shakeMagnitude: 0
   shakeDuration: 0
@@ -111,7 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a60a74faa62f6914cbcd1688dacddeb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  savableID: 20
+  savableID: 21
   timeToSpawn: 0
   metadata: []
 --- !u!114 &11494634
