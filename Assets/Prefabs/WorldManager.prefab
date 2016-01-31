@@ -901,7 +901,7 @@ MonoBehaviour:
   goodScore:
   - 5
   - 10
-  - 10
+  - 3
   - 10
   - 8
   - 5
@@ -914,7 +914,7 @@ MonoBehaviour:
   greatScore:
   - 7
   - 13
-  - 15
+  - 5
   - 15
   - 12
   - 10
@@ -927,7 +927,7 @@ MonoBehaviour:
   perfectScore:
   - 10
   - 15
-  - 18
+  - 7
   - 18
   - 15
   - 15
@@ -2515,7 +2515,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: goodScore.Array.data[2]
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: goodScore.Array.data[3]
@@ -2563,7 +2563,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: greatScore.Array.data[2]
-      value: 15
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: greatScore.Array.data[3]
@@ -2611,7 +2611,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: perfectScore.Array.data[2]
-      value: 18
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: perfectScore.Array.data[3]
