@@ -35,6 +35,17 @@ public class RectRoamer : Base {
         dest = randomRectPosition();
         distanceTraveled = 0.0f;
         totalDistance = Vector2.Distance(start, dest);
+        flipSprite();
+    }
+
+    protected void flipSprite()
+    {
+        // Assuming sprites are by default facing to the right
+        SpriteRenderer spriteRenderer = this.transform.GetComponent<SpriteRenderer>();
+        if (spriteRenderer)
+        {
+            spriteRenderer.flipX = (dest.x < transform.position.x);
+        }
     }
 
     protected Vector2 randomRectPosition()
