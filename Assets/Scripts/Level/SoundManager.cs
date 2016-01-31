@@ -25,10 +25,15 @@ public class SoundManager : MonoBehaviour
     {
         foregroundMusic.Play(targetClip);
     }
-
-
+    
     public void PlaySound(int soundIndex)
     {
-        //soundSource.PlayOneShot(sounds[soundIndex]);
+        soundSource.PlayOneShot(sounds[soundIndex]);
+    }
+
+    public void PlayActionSound(int actionIndex, int scoreIndex)
+    {
+        PlaySound(actionIndex);
+        Callback.FireAndForget(() => PlaySound(scoreIndex), sounds[actionIndex].length, this);
     }
 }

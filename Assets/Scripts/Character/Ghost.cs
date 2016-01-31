@@ -36,9 +36,28 @@ public class Ghost : TimedLife
         if (health > 0)
         {
             level.GhostEscaped();
+            StartCoroutine(FadeOut());
         }
+        else
+        {
+            level.GhostClicked();
+            StartCoroutine(Death());
+        }
+    }
 
-        StartCoroutine(Death());
+    public void Fade(float fadeTime)
+    {
+        Color currentColor = GetComponent<SpriteRenderer>().color;
+        currentColor.a = fadeTime;
+        GetComponent<SpriteRenderer>().color = currentColor;
+    }
+
+    IEnumerator FadeOut()
+    {
+        GetComponent<Collider2D>().enabled = false;
+        SpriteRenderer rend = GetComponent<SpriteRenderer>();
+        yield return Callback.DoLerp((float l) => Fade(l), 1.0f, this, reverse: true);
+        Destroy(this.gameObject);
     }
 
     IEnumerator Death()
