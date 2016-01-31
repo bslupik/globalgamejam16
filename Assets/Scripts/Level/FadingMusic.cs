@@ -73,7 +73,6 @@ public class FadingMusic : MonoBehaviour {
         }
         else
         {
-            Debug.LogError("FadingMusic clip " + targetClip + " not found!");
             this.state = FadeState.None;
             this.targetClip = -1;
             music.Stop();

@@ -12,7 +12,7 @@ public class Level : Base, IObservable<int>
     public float levelScore = 0.0f;
     public float levelScoreBuffer = 0;
     public float levelTime = 0.0f;
-    public float maxLevelTime = 30.0f;
+    public float maxLevelTime = 33.0f;
     public WorldManager worldManager;
     public float localTime = 0f;
     public float totalScoreMult = 1f;
@@ -64,6 +64,12 @@ public class Level : Base, IObservable<int>
         Array.Sort(orderedNumbers);
         sortedOrderedNumbers = new LinkedList<int>(orderedNumbers);
         Debug.Log(sortedOrderedNumbers);
+        sound.PlayBackground(worldManager.musicIndex[worldManager.currentLevelIndex]);
+        sound.PlayForeground(worldManager.musicIndex[worldManager.currentLevelIndex]);
+        if (maxLevelTime > 29 && maxLevelTime < 31)
+        {
+            maxLevelTime = 33.0f;
+        }
         // scoreText = GameObject.Find("ScoreText").GetComponent<Text>();
     }
 	
@@ -96,6 +102,22 @@ public class Level : Base, IObservable<int>
     {
         //Debug.Log(ScoreMultiplier());
         return ScoreMultiplier() >= BEAT_THRESHOLD;
+    }
+
+    public void PlayBaseActionSound()
+    {
+        if (ScoreMultiplier() < 0.5f)
+        {
+            sound.PlaySound(0);
+        }
+        else if (ScoreMultiplier() < 0.75f)
+        {
+            sound.PlaySound(1);
+        }
+        else
+        {
+            sound.PlaySound(2);
+        }
     }
 
     public void PlayerActed(float score = 1.0f)
