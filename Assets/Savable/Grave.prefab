@@ -70,8 +70,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99066c088200dca4f9cadeafc6ccde41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sound: {fileID: 0}
-  level: {fileID: 0}
   condition: {fileID: 0}
   spawnObject: {fileID: 193638, guid: ec68487a90cb1c840bac3489bc1ae981, type: 2}
 --- !u!114 &11462230
@@ -85,8 +83,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a60a74faa62f6914cbcd1688dacddeb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sound: {fileID: 0}
-  level: {fileID: 0}
   savableID: 1
   timeToSpawn: 0
 --- !u!114 &11488250
@@ -103,8 +99,8 @@ MonoBehaviour:
   sound: {fileID: 0}
   level: {fileID: 0}
   spawnedObject: {fileID: 0}
-  baseSpawnTime: 3
-  spawnTimeVariation: 1
+  baseSpawnTime: 4
+  spawnTimeVariation: 3
   timeSinceSpawn: 0
   spawnTime: 0
   shouldSpawn: 0
@@ -148,6 +144,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: savableID
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: baseSpawnTime
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spawnTimeVariation
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
