@@ -13,7 +13,9 @@ GameObject:
   - 61: {fileID: 6155444}
   - 50: {fileID: 5035126}
   - 114: {fileID: 11429824}
-  m_Layer: 0
+  - 114: {fileID: 11458798}
+  - 114: {fileID: 11420190}
+  m_Layer: 25
   m_Name: HutFire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +29,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 117398}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -47, y: 500, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -80,6 +82,25 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11420190
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 117398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaf4bcf9733c9744eb73238e650cb016, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: {fileID: 0}
+  level: {fileID: 0}
+  spawnedObject: {fileID: 0}
+  baseSpawnTime: 3
+  spawnTimeVariation: 1
+  timeSinceSpawn: 0
+  spawnTime: 0
+  shouldSpawn: 0
 --- !u!114 &11429824
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -93,6 +114,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sound: {fileID: 0}
   level: {fileID: 0}
+--- !u!114 &11458798
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 117398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac1a9b7abab34d249a4b7b5c6a75bfbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  condition: {fileID: 0}
+  spawnObject: {fileID: 117398}
+  minX: 0
+  maxX: 0
+  minY: 0
+  maxY: 0
+  distanceVariation: 4
 --- !u!212 &21258206
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -129,7 +168,43 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: baseSpawnTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spawnTimeVariation
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: shouldSpawn
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spawnObject
+      value: 
+      objectReference: {fileID: 117398}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: distanceVariation
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 117398}

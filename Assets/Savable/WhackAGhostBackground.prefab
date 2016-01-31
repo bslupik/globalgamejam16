@@ -10,9 +10,10 @@ GameObject:
   - 4: {fileID: 469474}
   - 212: {fileID: 21267078}
   - 114: {fileID: 11414354}
+  - 114: {fileID: 11454232}
   m_Layer: 0
   m_Name: WhackAGhostBackground
-  m_TagString: Untagged
+  m_TagString: LevelManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40,10 +41,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a60a74faa62f6914cbcd1688dacddeb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sound: {fileID: 0}
-  level: {fileID: 0}
   savableID: 7
   timeToSpawn: 0
+  metadata: []
+--- !u!114 &11454232
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 153586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e11f22b440023644097889a09d62b52f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: {fileID: 0}
+  level: {fileID: 0}
+  timeSinceBeat: 0
+  timePerBeat: 1
+  levelScore: 0
+  levelScoreBuffer: 0
+  orderedNumbers: 
+  shakeMagnitude: 0
+  shakeDuration: 0
 --- !u!212 &21267078
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -80,7 +100,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: LevelManager
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 153586}

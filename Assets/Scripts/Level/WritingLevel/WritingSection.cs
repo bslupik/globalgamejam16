@@ -21,13 +21,13 @@ public class WritingSection : Base, ISwipable {
         this.end = end;
         col.size = new Vector2(Vector2.Distance(start, end), width);
         rend.SetWidth(width, width);
+        rend.SetPositions(new Vector3[] { start, end });
         this.transform.position = (start + end) / 2;
         this.transform.rotation = (end - start).ToRotation();
     }
 
     public void Notify(SwipableMessage m)
     {
-        rend.SetPositions(new Vector3[] { start, end });
-        Debug.Log("Swipe");
+        rend.SetColors(Color.white, Color.white);
     }
 }

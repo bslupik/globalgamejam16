@@ -82,6 +82,7 @@ MonoBehaviour:
   health: 0
   maxHealth: 200
   clickDamage: 100
+  deathMat: {fileID: 2100000, guid: 556e1e4b48dd1a940aa98d7e37aa2243, type: 2}
 --- !u!114 &11446932
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -167,6 +168,10 @@ Prefab:
       propertyPath: lifeTime
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: deathMat
+      value: 
+      objectReference: {fileID: 2100000, guid: 556e1e4b48dd1a940aa98d7e37aa2243, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 108978}

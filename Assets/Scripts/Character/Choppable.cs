@@ -10,6 +10,7 @@ public class Choppable : AbstractSwipable
 	public override void Start()
 	{
 		base.Start();
+        Debug.Log("DING!");
 	}
 	
 	public override void Update()
@@ -27,5 +28,12 @@ public class Choppable : AbstractSwipable
 
         GetComponent<SpriteRenderer>().sprite = chopped;
         level.Chopped(type);
+    }
+
+    public void animate(bool active)
+    {
+        choppable = active;
+        Vector3 baseScale = transform.localScale;
+        Callback.DoLerp((float l) => transform.localScale = l * baseScale, 0.1f, this);
     }
 }

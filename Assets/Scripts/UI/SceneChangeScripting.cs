@@ -15,11 +15,11 @@ public class SceneChangeScripting : MonoBehaviour {
 
     public Coroutine FadeOut()
     {
-        return Callback.DoLerp((float l) => { foreach (Blit blit in blits) blit.fadeProgress = l; }, 2, this);
+        return Callback.DoLerp((float l) => { foreach (Blit blit in blits) blit.fadeProgress = l; }, 1, this, mode :  Callback.Mode.REALTIME);
     }
 
     public Coroutine FadeIn()
     {
-        return Callback.DoLerp((float l) => { foreach (Blit blit in blits) blit.fadeProgress = l; }, 2, this, reverse: true, mode: Callback.Mode.REALTIME);
+        return Callback.DoLerp((float l) => { foreach (Blit blit in blits) blit.fadeProgress = l; }, 1, this, reverse: true, mode: Callback.Mode.REALTIME);
     }
 }

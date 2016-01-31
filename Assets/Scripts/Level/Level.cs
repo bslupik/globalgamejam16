@@ -197,6 +197,10 @@ public class Level : Base, IObservable<int>
         {
             sortedOrderedNumbers.Dequeue();
             PlayerActed();
+            if (sortedOrderedNumbers.Count == 0)
+            {
+                GameObject.Find("WorldManager").GetComponent<WorldManager>().EndLevel(levelScore);
+            }
             return true;
         }
         else

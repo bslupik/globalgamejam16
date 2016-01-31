@@ -59,7 +59,6 @@ public class SaveManager : MonoBehaviour
 	public void Update()
 	{
         gameTime += Time.deltaTime;
-        //print(objectsToSpawn.Count);
         while (objectsToSpawn.Count > 0 && gameTime >= objectsToSpawn[objectsToSpawn.Count - 1].spawnTime)
         {
             SpawnObject(objectsToSpawn[objectsToSpawn.Count - 1]);
