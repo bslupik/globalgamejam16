@@ -12,6 +12,7 @@ GameObject:
   - 61: {fileID: 6160248}
   - 114: {fileID: 11435758}
   - 50: {fileID: 5090234}
+  - 114: {fileID: 11411228}
   m_Layer: 13
   m_Name: AttackVillager
   m_TagString: Untagged
@@ -62,6 +63,26 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
+--- !u!114 &11411228
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 173004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 795ef089e86058c478f8a831adcec453, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: {fileID: 0}
+  level: {fileID: 0}
+  beatRenderer: {fileID: 21255952}
+  sequenceOneSprites:
+  - {fileID: 21300000, guid: 2226a61dae5b47e42a97e668faf86731, type: 3}
+  - {fileID: 21300002, guid: 2226a61dae5b47e42a97e668faf86731, type: 3}
+  sequenceTwoSprites:
+  - {fileID: 21300004, guid: 2226a61dae5b47e42a97e668faf86731, type: 3}
+  - {fileID: 21300006, guid: 2226a61dae5b47e42a97e668faf86731, type: 3}
 --- !u!114 &11435758
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -73,6 +94,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38ce864c3779e704084ba15e9a668206, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sound: {fileID: 0}
+  level: {fileID: 0}
   health: 0
   maxHealth: 100
   damagePerHit: 60
@@ -119,6 +142,14 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 0}
+      propertyPath: sequenceOneSprites.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: sequenceTwoSprites.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: lifeTime
       value: 5
       objectReference: {fileID: 0}
@@ -130,6 +161,30 @@ Prefab:
       propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: beatRenderer
+      value: 
+      objectReference: {fileID: 21255952}
+    - target: {fileID: 0}
+      propertyPath: sequenceOneSprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 2226a61dae5b47e42a97e668faf86731,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: sequenceOneSprites.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300002, guid: 2226a61dae5b47e42a97e668faf86731,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: sequenceTwoSprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300004, guid: 2226a61dae5b47e42a97e668faf86731,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: sequenceTwoSprites.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300006, guid: 2226a61dae5b47e42a97e668faf86731,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 173004}
