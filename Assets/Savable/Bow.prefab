@@ -74,7 +74,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 109762}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.1, y: 0, z: 0}
+  m_LocalPosition: {x: -0.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 421780}
@@ -113,7 +113,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100140}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.1, y: 0, z: 0}
+  m_LocalPosition: {x: -0.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 421780}
@@ -129,9 +129,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0.40084407, y: -0.0040079947}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 1.0540124, y: 1.986072}
+  m_Size: {x: 1, y: 4}
 --- !u!114 &11448658
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -159,11 +159,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sound: {fileID: 0}
   level: {fileID: 0}
+  distanceToFire: 1.25
   leftString: {fileID: 0}
   rightString: {fileID: 0}
   bowArrow: {fileID: 0}
   arrowSpawner: {fileID: 0}
-  arrowSpawnCondition: {fileID: 0}
 --- !u!120 &12053864
 LineRenderer:
   m_ObjectHideFlags: 1
@@ -191,7 +191,7 @@ LineRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Positions:
-  - {x: 0, y: -1, z: 0}
+  - {x: 0, y: -2.1, z: 0}
   - {x: 0, y: 0.03, z: 0}
   m_Parameters:
     startWidth: 0.03
@@ -230,7 +230,7 @@ LineRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Positions:
-  - {x: 0, y: 1, z: 0}
+  - {x: 0, y: 2.1, z: 0}
   - {x: 0, y: -0.03, z: 0}
   m_Parameters:
     startWidth: 0.03
@@ -268,7 +268,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3f2d8e9e75d245c4aadb75c3704d8d6a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c1863f3bf34d91e4a84e1c380297d60c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -298,7 +298,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 296d12f9717bcf140a18e5fe6be61016, type: 3}
+  m_Sprite: {fileID: 21300000, guid: feb79d7ff3b1bf440b62b5e5fea23d80, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -324,8 +324,44 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 296d12f9717bcf140a18e5fe6be61016,
+      objectReference: {fileID: 21300000, guid: feb79d7ff3b1bf440b62b5e5fea23d80,
         type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_LocalPosition.x
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Positions.Array.data[0].y
+      value: -2.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Offset.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Size.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_UsedByEffector
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: maxCharge
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: distanceToFire
+      value: 1.25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 132166}

@@ -1,9 +1,13 @@
 fileFormatVersion: 2
 guid: 868e248656de8464ba85cba8b0355e55
-timeCreated: 1454206073
+timeCreated: 1454210269
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: MiniGame_ShootingDodos_DodoWalkRight_0
+    21300002: MiniGame_ShootingDodos_DodoWalkRight_1
+    21300004: MiniGame_ShootingDodos_DodoWalkRight_2
+    21300006: MiniGame_ShootingDodos_DodoWalkRight_3
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -30,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -38,7 +42,7 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -49,7 +53,164 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: MiniGame_ShootingDodos_DodoWalkRight_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 400
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 158, y: 71}
+        - {x: 75, y: 107}
+        - {x: 20, y: 107}
+        - {x: -5, y: 95}
+        - {x: 2, y: 27}
+        - {x: -123, y: 45}
+        - {x: -156, y: 16}
+        - {x: -156, y: -33}
+        - {x: -151, y: -49}
+        - {x: -121, y: -81}
+        - {x: -90, y: -114}
+        - {x: -24, y: -123}
+        - {x: 68, y: -123}
+        - {x: 108, y: -44}
+        - {x: 138, y: 0}
+        - {x: 158, y: 14}
+      - - {x: 46, y: -88}
+        - {x: 49, y: -91}
+        - {x: 51, y: -91}
+        - {x: 53, y: -89}
+        - {x: 52, y: -86}
+        - {x: 48, y: -85}
+      - - {x: 60, y: -76}
+        - {x: 57, y: -78}
+        - {x: 57, y: -80}
+        - {x: 59, y: -85}
+        - {x: 70, y: -85}
+        - {x: 70, y: -81}
+        - {x: 67, y: -76}
+      - - {x: 76, y: -60}
+        - {x: 72, y: -64}
+        - {x: 74, y: -67}
+        - {x: 78, y: -66}
+        - {x: 80, y: -64}
+        - {x: 80, y: -62}
+        - {x: 78, y: -60}
+    - name: MiniGame_ShootingDodos_DodoWalkRight_1
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 400
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 120, y: 91}
+        - {x: 48, y: 122}
+        - {x: -14, y: 122}
+        - {x: -20, y: 42}
+        - {x: -151, y: 36}
+        - {x: -155, y: 21}
+        - {x: -155, y: -40}
+        - {x: -151, y: -56}
+        - {x: -57, y: -88}
+        - {x: -45, y: -122}
+        - {x: 66, y: -122}
+        - {x: 157, y: 9}
+        - {x: 157, y: 79}
+        - {x: 149, y: 85}
+      - - {x: 82, y: -42}
+        - {x: 78, y: -46}
+        - {x: 78, y: -47}
+        - {x: 80, y: -49}
+        - {x: 85, y: -49}
+        - {x: 86, y: -46}
+        - {x: 86, y: -44}
+        - {x: 83, y: -42}
+    - name: MiniGame_ShootingDodos_DodoWalkRight_2
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 0
+        width: 400
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 107, y: -43}
+        - {x: 107, y: -12}
+        - {x: 142, y: 3}
+        - {x: 158, y: 23}
+        - {x: 158, y: 107}
+        - {x: -66, y: 107}
+        - {x: -156, y: 18}
+        - {x: -156, y: -33}
+        - {x: -151, y: -49}
+        - {x: -119, y: -70}
+        - {x: -107, y: -70}
+        - {x: -97, y: -67}
+        - {x: -113, y: -72}
+        - {x: -126, y: -80}
+        - {x: -114, y: -102}
+        - {x: -59, y: -114}
+        - {x: 17, y: -129}
+        - {x: 70, y: -129}
+        - {x: 77, y: -126}
+        - {x: 80, y: -112}
+        - {x: 73, y: -106}
+      - - {x: 46, y: -88}
+        - {x: 49, y: -91}
+        - {x: 51, y: -91}
+        - {x: 53, y: -89}
+        - {x: 52, y: -86}
+        - {x: 48, y: -85}
+      - - {x: 60, y: -76}
+        - {x: 57, y: -78}
+        - {x: 57, y: -80}
+        - {x: 59, y: -85}
+        - {x: 70, y: -85}
+        - {x: 70, y: -81}
+        - {x: 67, y: -76}
+      - - {x: 76, y: -60}
+        - {x: 72, y: -64}
+        - {x: 74, y: -67}
+        - {x: 78, y: -66}
+        - {x: 80, y: -64}
+        - {x: 80, y: -62}
+        - {x: 78, y: -60}
+    - name: MiniGame_ShootingDodos_DodoWalkRight_3
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 0
+        width: 400
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 147, y: 43}
+        - {x: 147, y: 67}
+        - {x: 139, y: 84}
+        - {x: 110, y: 90}
+        - {x: 38, y: 121}
+        - {x: -32, y: 121}
+        - {x: -165, y: 47}
+        - {x: -165, y: -26}
+        - {x: -153, y: -50}
+        - {x: -91, y: -123}
+        - {x: -3, y: -123}
+        - {x: 98, y: -94}
+        - {x: 107, y: 6}
+        - {x: 132, y: 21}
     outline: []
   spritePackingTag: 
   userData: 
