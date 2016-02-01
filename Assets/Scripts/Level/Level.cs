@@ -199,7 +199,7 @@ public class Level : Base, IObservable<int>
             PlayerActed();
             if (sortedOrderedNumbers.Count == 0)
             {
-                GameObject.Find("WorldManager").GetComponent<WorldManager>().EndLevel(levelScore);
+                EndLevel();
             }
             return true;
         }
@@ -218,6 +218,11 @@ public class Level : Base, IObservable<int>
     public void DodoKilled()
     {
         // Play sound, give points
+    }
+
+    public void EndLevel()
+    {
+        GameObject.Find("WorldManager").GetComponent<WorldManager>().EndLevel(levelScore);
     }
 }
 
